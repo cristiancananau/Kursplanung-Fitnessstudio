@@ -1,0 +1,177 @@
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix vidp: <https://bmake.th-brandenburg.de/vidp#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix fitness: <http://www.sport.de/> .
+
+### Vocabulary Definition ###
+#<https://bmake.th-brandenburg.de/vidp#> a owl:Ontology , voaf:Vocabulary ;
+#	dc:rights "Copyright © 2017 BMaKE, THB" ;
+#	dc:publisher wd:Q1391182 ; 
+#	dc:title "Basic Schema for Educational Video Platform" ;
+#	rdfs:label "vidp Schema (BMaKE)"@en ;
+#	vann:preferredNamespacePrefix "vidp" ; 
+#	vann:preferredNamespaceUri "https://bmake.th-brandenburg.de/vidp#" ;
+#	dc:description <https://bmake.th-brandenburg.de/downloads/VideoPlatformBaseSchema.svg> , "This ontology is mainly defined under the reuse of schema.org classes, relations and attributes. It is aimed at structuring a semantic CMS based on OntoWiki for offering access to educational video material produced at Brandenburg University of Applied Sciences."@en ;
+#	dcterms:issued "2017-11-28"^^xsd:date ;
+#	dcterms:modified "2018-05-22"^^xsd:date ;
+#	rdfs:comment "This ontology is mainly defined under the reuse of schema.org classes, relations and attributes. It is aimed at structuring a semantic CMS based on OntoWiki for offering access to educational video material produced at Brandenburg University of Applied Sciences. "@en ;
+#	owl:versionInfo "v 0.5-reduced - complete refactoring according to the application requirements. New proprietary classes: DoubleClip, VideoLecture, LectureSeries - slightly reduced for didactic reasons."@en ;
+#	schema:license <http://creativecommons.org/licenses/by/3.0/> ;
+#	skos:prefLabel "vidp ontology"@en . 
+#
+#wd:Q1391182 a schema:Organization ;
+#	rdfs:legalName "THB - Technische Hochschule Brandenburg"@de ; 
+#	schema:name	"BUAS - Brandenburg University of Applied Sciences"@en ;
+#	schema:location wd:Q3931 ;
+#	schema:url "http://th-brandenburg.de" .	
+#	
+#wd:Q3931 a schema:Place .
+	
+
+### Definition of Re-Used Classes ### 
+schema:Event a owl:Class ;
+			rdfs:label "Event"@en ;
+			rdfs:comment "KOMMENTAR"@en .
+			
+schema:SportsEvent a owl:Class ;
+			rdfs:label "SportsEvent"@en ;
+			rdfs:subClassOf schema:Event ;
+			rdfs:comment "The core of this Model which defines the offered fitness course."@en .
+								
+schema:Person a owl:Class ;
+			rdfs:label "Person"@en ;
+			rdfs:comment "Mainly used for identifying participants and trainers."@en .
+
+schema:Place a owl:Class ;
+			rdfs:label "Place"@en ;
+			rdfs:comment "Mainly used for identifying geographical places."@en .
+			
+schema:Enumeration a owl:Class ;
+			rdfs:label "Enumeration"@en ;
+			rdfs:comment "KOMMENTAR"@en .
+			
+schema:Intangible a owl:Class ;
+			rdfs:label "Intangible"@en ;
+			rdfs:comment "General class for intangible entities."@en .
+
+schema:Quantity a owl:Class ;
+			rdfs:label "Quantity"@en ;
+			rdfs:comment "Used for specification of quantities such as distance, time, mass, weight, etc."@en ;
+			rdfs:subClassOf schema:Intangible .
+			
+schema:DataType a rdfs:Class ;
+			rdfs:label "Data Type"@en ;
+			rdfs:comment "Encompasses basic data types for typing literals."@en .
+
+schema:Duration a owl:Class ;
+			rdfs:label "Duration"@en ;
+			rdfs:comment "Here used for specifying the duration of a SportsEvent."@en ;
+			rdfs:subClassOf schema:Quantity .
+			
+schema:Text a rdfs:Class ;
+			rdfs:label "Text"@en ;
+			rdfs:comment "General class for all literals being of any textual Datatype."@en ;
+			rdfs:subClassOf schema:DataType .
+			
+schema:Date a rdfs:Class ;
+			rdfs:label "Date"@en ;
+			rdfs:comment "General class for all literals indicating a data."@en ;
+			rdfs:subClassOf schema:DataType .
+
+### Definition of specific Classes ### 
+fitness:Participant a owl:Class ;
+			rdfs:label "Participant"@en ;
+			rdfs:comment "A potential participant of a fitness course."@en ;
+			rdfs:subClassOf schema:Person .
+
+fitness:Trainer a owl:Class ;
+			rdfs:label "Trainer"@en ;
+			rdfs:comment "A trainer who is executing the fitness course."@en ;
+			rdfs:subClassOf schema:Person .
+			
+fitness:Expertise a owl:Class ;
+			rdfs:label "Expertise"@en ;
+			rdfs:comment "Skills and references of a trainer."@en ;
+			rdfs:subClassOf schema:Enumeration .
+
+### Object properties ###
+schema:participant a owl:ObjectProperty ;
+			rdfs:label "participant"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range fitness:Participant .
+
+schema:organizer a owl:ObjectProperty ;
+			rdfs:label "organizer"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range fitness:Trainer .
+
+
+schema:location a owl:ObjectProperty ;
+			rdfs:label "location"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Place .
+
+fitness:areaOfExpertise a owl:ObjectProperty ;
+			rdfs:label "area of expertise"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain fitness:Trainer ;
+			rdfs:range fitness:Expertise .
+						
+### Datatype Properties ###
+schema:name a owl:DatatypeProperty ;
+			rdfs:label "name"@en ;
+			rdfs:comment "General datatype property, potentially usable for names of all resources."@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:domain fitness:Trainer ;
+			rdfs:range schema:Text .
+			
+schema:startDate a owl:DatatypeProperty ;
+			rdfs:label "startDate"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Date .
+
+schema:endDate a owl:DatatypeProperty ;
+			rdfs:label "endDate"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Date .
+
+schema:duration a owl:DatatypeProperty ;
+			rdfs:label "duration"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Duration .
+
+fitness:gymEquipment a owl:DatatypeProperty ;
+			rdfs:label "gymEquipment"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain schema:Place ;
+			rdfs:range schema:Text .
+
+schema:gender a owl:DatatypeProperty ;
+			rdfs:label "gender"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain fitness:Participant ;
+			rdfs:domain fitness:Trainer ;
+			rdfs:range schema:Text .
+
+fitness:trainingLevel a owl:DatatypeProperty ;
+			rdfs:label "trainingLevel"@en ;
+			rdfs:comment "KOMMENTAR"@en ;
+			rdfs:domain fitness:Participant ;
+			rdfs:range schema:Text .
+			
+						
