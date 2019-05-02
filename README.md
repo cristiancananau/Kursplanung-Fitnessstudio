@@ -1,4 +1,5 @@
-﻿#Kursplanung Fitnessstudio
+﻿# Kursplanung Fitnessstudio
+
 Diese Domäne dient der Aufbereitung von notwendigem Wissen, welches potentiellen Teilnehmern von Kursen eines spezifischen Fitnessstudios in Brandenburg bereitgestellt werden soll. Weitere Angebote des Fitnessstudios, wie beispielsweise Service, Verkauf, Beratung oder ähnliches, werden hierbei nicht beachtet. Sofern möglich wird sowohl beim grafischen, als auch beim technischen Modell standardisiertes Vokabular von schema.org verwendet.
 Dementsprechend kann ein Kurs im Fitnessstudio auch als „SportsEvent“ als Unterklasse von „Event“ bezeichnet werden. Diesem zugeordnet sind:
 
