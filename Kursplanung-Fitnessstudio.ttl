@@ -11,30 +11,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix fitness: <http://www.sport.de/> .
-
-### Vocabulary Definition ###
-#<https://bmake.th-brandenburg.de/vidp#> a owl:Ontology , voaf:Vocabulary ;
-#	dc:rights "Copyright © 2017 BMaKE, THB" ;
-#	dc:publisher wd:Q1391182 ; 
-#	dc:title "Basic Schema for Educational Video Platform" ;
-#	rdfs:label "vidp Schema (BMaKE)"@en ;
-#	vann:preferredNamespacePrefix "vidp" ; 
-#	vann:preferredNamespaceUri "https://bmake.th-brandenburg.de/vidp#" ;
-#	dc:description <https://bmake.th-brandenburg.de/downloads/VideoPlatformBaseSchema.svg> , "This ontology is mainly defined under the reuse of schema.org classes, relations and attributes. It is aimed at structuring a semantic CMS based on OntoWiki for offering access to educational video material produced at Brandenburg University of Applied Sciences."@en ;
-#	dcterms:issued "2017-11-28"^^xsd:date ;
-#	dcterms:modified "2018-05-22"^^xsd:date ;
-#	rdfs:comment "This ontology is mainly defined under the reuse of schema.org classes, relations and attributes. It is aimed at structuring a semantic CMS based on OntoWiki for offering access to educational video material produced at Brandenburg University of Applied Sciences. "@en ;
-#	owl:versionInfo "v 0.5-reduced - complete refactoring according to the application requirements. New proprietary classes: DoubleClip, VideoLecture, LectureSeries - slightly reduced for didactic reasons."@en ;
-#	schema:license <http://creativecommons.org/licenses/by/3.0/> ;
-#	skos:prefLabel "vidp ontology"@en . 
-#
-#wd:Q1391182 a schema:Organization ;
-#	rdfs:legalName "THB - Technische Hochschule Brandenburg"@de ; 
-#	schema:name	"BUAS - Brandenburg University of Applied Sciences"@en ;
-#	schema:location wd:Q3931 ;
-#	schema:url "http://th-brandenburg.de" .	
-#	
-#wd:Q3931 a schema:Place .
 	
 
 ### Definition of Re-Used Classes ### 
