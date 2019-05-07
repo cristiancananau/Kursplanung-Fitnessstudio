@@ -2,6 +2,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix vidp: <https://bmake.th-brandenburg.de/vidp#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -108,8 +109,7 @@ fitness:areaOfExpertise a owl:ObjectProperty ;
 schema:name a owl:DatatypeProperty ;
 			rdfs:label "name"@en ;
 			rdfs:comment "General datatype property, potentially usable for names of all resources."@en ;
-			rdfs:domain schema:SportsEvent ;
-			rdfs:domain fitness:Trainer ;
+			rdfs:domain [owl:unionOf schema:Place, schema:SportsEvent, fitness:Trainer];
 			rdfs:range schema:Text .
 			
 schema:startDate a owl:DatatypeProperty ;
@@ -139,8 +139,7 @@ fitness:gymEquipment a owl:DatatypeProperty ;
 schema:gender a owl:DatatypeProperty ;
 			rdfs:label "gender"@en ;
 			rdfs:comment "KOMMENTAR"@en ;
-			rdfs:domain fitness:Participant ;
-			rdfs:domain fitness:Trainer ;
+			rdfs:domain schema:Person ;
 			rdfs:range schema:Text .
 
 fitness:trainingLevel a owl:DatatypeProperty ;
