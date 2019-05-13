@@ -10,7 +10,7 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
-@prefix fitness: <http://www.sport.de/> .
+@prefix fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio> .
 	
 
 ### Definition of Re-Used Classes ### 
