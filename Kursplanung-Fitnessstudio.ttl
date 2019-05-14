@@ -35,15 +35,6 @@ schema:Enumeration a owl:Class ;
 			rdfs:label "Enumeration"@en ;
 			rdfs:comment "KOMMENTAR"@en .
 			
-schema:Intangible a owl:Class ;
-			rdfs:label "Intangible"@en ;
-			rdfs:comment "General class for intangible entities."@en .
-
-schema:Quantity a owl:Class ;
-			rdfs:label "Quantity"@en ;
-			rdfs:comment "Used for specification of quantities such as distance, time, mass, weight, etc."@en ;
-			rdfs:subClassOf schema:Intangible .
-			
 schema:DataType a rdfs:Class ;
 			rdfs:label "Data Type"@en ;
 			rdfs:comment "Encompasses basic data types for typing literals."@en .
@@ -109,7 +100,7 @@ fitness:areaOfExpertise a owl:ObjectProperty ;
 schema:name a owl:DatatypeProperty ;
 			rdfs:label "name"@en ;
 			rdfs:comment "General datatype property, potentially usable for names of all resources."@en ;
-			rdfs:domain [owl:unionOf schema:Place, schema:SportsEvent, fitness:Trainer];
+			rdfs:domain [owl:unionOf (schema:Place schema:SportsEvent fitness:Trainer)];
 			rdfs:range schema:Text .
 			
 schema:startDate a owl:DatatypeProperty ;
@@ -147,5 +138,3 @@ fitness:trainingLevel a owl:DatatypeProperty ;
 			rdfs:comment "KOMMENTAR"@en ;
 			rdfs:domain fitness:Participant ;
 			rdfs:range schema:Text .
-			
-						
