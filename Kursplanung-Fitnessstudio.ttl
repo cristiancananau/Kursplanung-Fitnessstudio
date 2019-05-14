@@ -15,36 +15,36 @@
 
 ### Definition of Re-Used Classes ### 
 schema:Event a owl:Class ;
-			rdfs:label "Event"@en ;
+			rdfs:label "Event"@en .
 			
 			
 schema:SportsEvent a owl:Class ;
 			rdfs:label "SportsEvent"@en ;
-			rdfs:subClassOf schema:Event ;
+			rdfs:subClassOf schema:Event .
 			
 								
 schema:Person a owl:Class ;
-			rdfs:label "Person"@en ;
+			rdfs:label "Person"@en .
 			
 
 schema:Place a owl:Class ;
-			rdfs:label "Place"@en ;
+			rdfs:label "Place"@en .
 			
 			
 schema:Enumeration a owl:Class ;
-			rdfs:label "Enumeration"@en ;
+			rdfs:label "Enumeration"@en .
 			
 			
 schema:Duration a owl:Class ;
-			rdfs:label "Duration"@en ;
-			rdfs:subClassOf schema:Quantity .
+			rdfs:label "Duration"@en .
+			
 			
 schema:Text a rdfs:Class ;
-			rdfs:label "Text"@en ;
+			rdfs:label "Text"@en .
 			
 			
 schema:Date a rdfs:Class ;
-			rdfs:label "Date"@en ;
+			rdfs:label "Date"@en .
 			
 
 ### Definition of specific Classes ### 
