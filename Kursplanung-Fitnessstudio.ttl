@@ -60,23 +60,58 @@ fitness:Expertise a owl:Class ;
 			rdfs:label "Expertise"@en ;
 			rdfs:subClassOf schema:Enumeration .
 			
-### FILL LABELS ###
+### FITNESS TRAINER ###
 fitness:CCananau a schema:Person, fitness:Trainer, fitness:Expertise ;
 	schema:gender "male" ;
 	schema:name "Cristian Cananau" ;
-	fitness:areaOfExpertise "Fitnessbombe" .
+	fitness:areaOfExpertise "Fitnessbombe", "MMA-Trainer", "Frauen-Yoga-Trainer" .
 	
 fitness:DSchulz a schema:Person, fitness:Trainer, fitness:Expertise ;
 	schema:gender "male" ;
 	schema:name "Dennis Shulz" ;
-	fitness:areaOfExpertise "Fitnesslapen" .
+	fitness:areaOfExpertise "Fitnesstrainer", "Athletic", "Schwimminstruktor".
 	
 fitness:JShyshlin a schema:Person, fitness:Trainer, fitness:Expertise ;
 	schema:gender "male" ;
 	schema:name "Juri Shyshlin" ;
-	fitness:areaOfExpertise "Fitnesslapen" .
+	fitness:areaOfExpertise "Fitnesstrainer", "Jiu-Jitsu-Trainer" .
+	
+###FITNESS PARTICIPANT###
+	
+fitness:Participat1 a schema:Person, fitness:Participant, fitness:Expertise ;
+	schema:gender "male" ;
+	fitness:trainingLevel "Beginner" .
 
-### http://fbwsvcdev.th-brandenburg.de:8080/fuseki/dataset.html ###
+fitness:Participat2 a schema:Person, fitness:Participant, fitness:Expertise ;
+	schema:gender "female" ;
+	fitness:trainingLevel "Advanced" .
+
+fitness:Participat3 a schema:Person, fitness:Participant, fitness:Expertise ;
+	schema:gender "female" ;
+	fitness:trainingLevel "Beginner" .
+	
+###PLACE###
+fitness:Raum1 a schema:Place ;
+	schema:name "Yogaraum" ;
+	fitness:gymEquipment "Sportmatte" .
+	
+fitness:Raum2 a schema:Place ;
+	schema:name "Fitnessraum" ;
+	fitness:gymEquipment "Gymkleidungen" .
+
+fitness:Raum3 a schema:Place ;
+	schema:name "Rennbahnraum" ;
+	fitness:gymEquipment "Sportschue" .
+	
+###SPORTEVENT###
+fitness:YogaTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Participant ;
+	schema:location fitness:Raum1 ;
+	schema:name "Yoga Tai Chi" ;
+	schema:startDate "01.02.2019T15:00:00";
+	schema:participant fitness:Participat3 ;
+	schema:organizer fitness:CCananau ;
+	schema:endDate "01.02.2019T17:00:00" ;
+	schema:duration "2 Stunden" .
 	
 ### Object properties ###
 schema:participant a owl:ObjectProperty ;
