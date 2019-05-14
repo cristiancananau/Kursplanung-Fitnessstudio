@@ -59,7 +59,25 @@ fitness:Trainer a owl:Class ;
 fitness:Expertise a owl:Class ;
 			rdfs:label "Expertise"@en ;
 			rdfs:subClassOf schema:Enumeration .
+			
+### FILL LABELS ###
+fitness:CCananau a schema:Person, fitness:Trainer, fitness:Expertise ;
+	schema:gender "male" ;
+	schema:name "Cristian Cananau" ;
+	fitness:areaOfExpertise "Fitnessbombe" .
+	
+fitness:DSchulz a schema:Person, fitness:Trainer, fitness:Expertise ;
+	schema:gender "male" ;
+	schema:name "Dennis Shulz" ;
+	fitness:areaOfExpertise "Fitnesslapen" .
+	
+fitness:JShyshlin a schema:Person, fitness:Trainer, fitness:Expertise ;
+	schema:gender "male" ;
+	schema:name "Juri Shyshlin" ;
+	fitness:areaOfExpertise "Fitnesslapen" .
 
+### http://fbwsvcdev.th-brandenburg.de:8080/fuseki/dataset.html ###
+	
 ### Object properties ###
 schema:participant a owl:ObjectProperty ;
 			rdfs:label "participant"@en ;
