@@ -78,16 +78,28 @@ fitness:JShyshlin a schema:Person, fitness:Trainer, fitness:Expertise ;
 	
 ###FITNESS PARTICIPANT###
 	
-fitness:Participat1 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipatCircle1 a schema:Person, fitness:Participant, fitness:Expertise ;
 	schema:gender "female" ;
 	fitness:trainingLevel "Beginner" .
 
-fitness:Participat2 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipatCircle2 a schema:Person, fitness:Participant, fitness:Expertise ;
 	schema:gender "male" ;
 	fitness:trainingLevel "Building on" .
 
-fitness:Participat3 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipatCircle3 a schema:Person, fitness:Participant, fitness:Expertise ;
 	schema:gender "male" ;
+	fitness:trainingLevel "Advanced" .
+	
+fitness:ParticipatCircle4 a schema:Person, fitness:Participant, fitness:Expertise ;
+	schema:gender "male" ;
+	fitness:trainingLevel "Beginner" .
+	
+fitness:ParticipatCircle5 a schema:Person, fitness:Participant, fitness:Expertise ;
+	schema:gender "female" ;
+	fitness:trainingLevel "Building on" .
+	
+fitness:ParticipatCircle6 a schema:Person, fitness:Participant, fitness:Expertise ;
+	schema:gender "female" ;
 	fitness:trainingLevel "Advanced" .
 	
 ###PLACE###
@@ -110,7 +122,7 @@ fitness:YogaTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Par
 	schema:location fitness:Raum1 ;
 	schema:name "Yoga Tai Chi" ;
 	schema:startDate "01.02.2019T15:00:00";
-	schema:participant fitness:Participat1 ;
+	schema:participant fitness:ParticipatCircle1 ;
 	schema:organizer fitness:CCananau ;
 	schema:endDate "01.02.2019T17:00:00" ;
 	schema:duration "2 Stunden" .
@@ -119,7 +131,7 @@ fitness:AthleticTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness
 	schema:location fitness:Raum2 ;
 	schema:name "Athletic" ;
 	schema:startDate "02.02.2019T16:00:00";
-	schema:participant fitness:Participat3 ;
+	schema:participant fitness:ParticipatCircle3, fitness:ParticipatCircle6 ;
 	schema:organizer fitness:DSchulz ;
 	schema:endDate "02.02.2019T18:30:00" ;
 	schema:duration "2 Stunden und 30 Minuten" .
@@ -128,7 +140,7 @@ fitness:FitnessTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:
 	schema:location fitness:Raum3 ;
 	schema:name "Fitness" ;
 	schema:startDate "03.02.2019T17:15:00";
-	schema:participant fitness:Participat2 ;
+	schema:participant fitness:ParticipatCircle2, fitness:ParticipatCircle5 ;
 	schema:organizer fitness:JShyshlin ;
 	schema:endDate "03.02.2019T19:00:00" ;
 	schema:duration "1 Stunden und 45 Minuten" .
