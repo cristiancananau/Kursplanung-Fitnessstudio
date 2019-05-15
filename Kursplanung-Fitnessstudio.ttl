@@ -84,13 +84,14 @@ fitness:Participat1 a schema:Person, fitness:Participant, fitness:Expertise ;
 
 fitness:Participat2 a schema:Person, fitness:Participant, fitness:Expertise ;
 	schema:gender "female" ;
-	fitness:trainingLevel "Advanced" .
+	fitness:trainingLevel "Building on" .
 
 fitness:Participat3 a schema:Person, fitness:Participant, fitness:Expertise ;
 	schema:gender "female" ;
-	fitness:trainingLevel "Beginner" .
+	fitness:trainingLevel "Advanced" .
 	
 ###PLACE###
+
 fitness:Raum1 a schema:Place ;
 	schema:name "Yogaraum" ;
 	fitness:gymEquipment "Sportmatte" .
@@ -104,14 +105,33 @@ fitness:Raum3 a schema:Place ;
 	fitness:gymEquipment "Sportschue" .
 	
 ###SPORTEVENT###
+
 fitness:YogaTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Participant ;
 	schema:location fitness:Raum1 ;
 	schema:name "Yoga Tai Chi" ;
 	schema:startDate "01.02.2019T15:00:00";
-	schema:participant fitness:Participat3 ;
+	schema:participant fitness:Participat1 ;
 	schema:organizer fitness:CCananau ;
 	schema:endDate "01.02.2019T17:00:00" ;
 	schema:duration "2 Stunden" .
+	
+fitness:AthleticTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Participant ;
+	schema:location fitness:Raum2 ;
+	schema:name "Athletic" ;
+	schema:startDate "02.02.2019T16:00:00";
+	schema:participant fitness:Participat3 ;
+	schema:organizer fitness:DSchulz ;
+	schema:endDate "02.02.2019T18:30:00" ;
+	schema:duration "2 Stunden und 30 Minuten" .
+	
+fitness:FitnessTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Participant ;
+	schema:location fitness:Raum3 ;
+	schema:name "Fitness" ;
+	schema:startDate "03.02.2019T17:15:00";
+	schema:participant fitness:Participat2 ;
+	schema:organizer fitness:JShyshlin ;
+	schema:endDate "03.02.2019T19:00:00" ;
+	schema:duration "1 Stunden und 45 Minuten" .
 	
 ### Object properties ###
 schema:participant a owl:ObjectProperty ;
