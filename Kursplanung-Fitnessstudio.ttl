@@ -79,15 +79,15 @@ fitness:JShyshlin a schema:Person, fitness:Trainer, fitness:Expertise ;
 ###FITNESS PARTICIPANT###
 	
 fitness:Participat1 a schema:Person, fitness:Participant, fitness:Expertise ;
-	schema:gender "male" ;
+	schema:gender "female" ;
 	fitness:trainingLevel "Beginner" .
 
 fitness:Participat2 a schema:Person, fitness:Participant, fitness:Expertise ;
-	schema:gender "female" ;
+	schema:gender "male" ;
 	fitness:trainingLevel "Building on" .
 
 fitness:Participat3 a schema:Person, fitness:Participant, fitness:Expertise ;
-	schema:gender "female" ;
+	schema:gender "male" ;
 	fitness:trainingLevel "Advanced" .
 	
 ###PLACE###
