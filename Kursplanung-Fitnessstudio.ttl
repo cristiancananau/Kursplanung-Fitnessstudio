@@ -45,7 +45,38 @@ schema:Text a rdfs:Class ;
 			
 schema:Date a rdfs:Class ;
 			rdfs:label "Date"@en .
-			
+
+schema:Expertise a rdfs:Class;
+			rdfs:label "Expertise"@en;
+			rdfs:subClassOf schema:Enumeration .
+
+### Definition of Expertise ###
+fitness:Fitnessbombe rdf:type owl:NamedIndividual ,
+			fitness:Expertise;
+			rdfs:label "Fitnessbombe"@en .
+fitness:MMA rdf:type owl:NamedIndividual ,
+			fitness:Expertise;
+			rdfs:label "MMA-Trainer"@en .
+
+fitness:Frauen-Yoga a owl:Class ;
+			rdfs:label "Frauen-Yoga"@en ;
+			rdfs:subClassOf schema:Person .
+
+fitness:Fitnesstrainer a owl:Class ;
+			rdfs:label "Fitnesstrainer"@en ;
+			rdfs:subClassOf schema:Person .
+
+fitness:Athletic a owl:Class ;
+			rdfs:label "Athletic"@en ;
+			rdfs:subClassOf schema:Person .
+
+fitness:Schwimminstruktor a owl:Class ;
+			rdfs:label "Schwimminstruktor"@en ;
+			rdfs:subClassOf schema:Person .
+
+fitness:Jiu-Jitsu a owl:Class ;
+			rdfs:label "Jiu-Jitsu"@en ;
+			rdfs:subClassOf schema:Person .
 
 ### Definition of specific Classes ### 
 fitness:Participant a owl:Class ;
@@ -61,44 +92,45 @@ fitness:Expertise a owl:Class ;
 			rdfs:subClassOf schema:Enumeration .
 			
 ### FITNESS TRAINER ###
-fitness:CCananau a schema:Person, fitness:Trainer, fitness:Expertise ;
+fitness:CCananau a fitness:Trainer ;
 	schema:gender "male" ;
 	schema:name "Cristian Cananau" ;
-	fitness:areaOfExpertise "Fitnessbombe", "MMA-Trainer", "Frauen-Yoga-Trainer" .
+	fitness:areaOfExpertise  fitness:Fitnessbombe,  fitness:MMA, fitness:Frauen-Yoga .
 	
-fitness:DSchulz a schema:Person, fitness:Trainer, fitness:Expertise ;
+fitness:DSchulz a fitness:Trainer ;
 	schema:gender "male" ;
 	schema:name "Dennis Shulz" ;
-	fitness:areaOfExpertise "Fitnesstrainer", "Athletic", "Schwimminstruktor".
+	fitness:areaOfExpertise  fitness:Fitnesstrainer,  fitness:Athletic, fitness:Schwimminstruktor .
+
 	
-fitness:JShyshlin a schema:Person, fitness:Trainer, fitness:Expertise ;
+fitness:JShyshlin a fitness:Trainer ;
 	schema:gender "male" ;
 	schema:name "Juri Shyshlin" ;
-	fitness:areaOfExpertise "Fitnesstrainer", "Jiu-Jitsu-Trainer" .
+	fitness:areaOfExpertise  fitness:Fitnesstrainer,  fitness:MMA, fitness:Jiu-Jitsu .
 	
 ###FITNESS PARTICIPANT###
 	
-fitness:ParticipatCircle1 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipantCircle1 a fitness:Participant;
 	schema:gender "female" ;
 	fitness:trainingLevel "Beginner" .
 
-fitness:ParticipatCircle2 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipantCircle2 a fitness:Participant;
 	schema:gender "male" ;
 	fitness:trainingLevel "Building on" .
 
-fitness:ParticipatCircle3 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipantCircle3 a fitness:Participant;
 	schema:gender "male" ;
 	fitness:trainingLevel "Advanced" .
 	
-fitness:ParticipatCircle4 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipantCircle4 a fitness:Participant;
 	schema:gender "male" ;
 	fitness:trainingLevel "Beginner" .
 	
-fitness:ParticipatCircle5 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipantCircle5 a fitness:Participant;
 	schema:gender "female" ;
 	fitness:trainingLevel "Building on" .
 	
-fitness:ParticipatCircle6 a schema:Person, fitness:Participant, fitness:Expertise ;
+fitness:ParticipantCircle6 a fitness:Participant;
 	schema:gender "female" ;
 	fitness:trainingLevel "Advanced" .
 	
