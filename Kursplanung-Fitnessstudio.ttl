@@ -150,7 +150,7 @@ fitness:Raum3 a schema:Place ;
 	
 ###SPORTEVENT###
 
-fitness:YogaTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Participant ;
+fitness:YogaTag a schema:SportsEvent ;
 	schema:location fitness:Raum1 ;
 	schema:name "Yoga Tai Chi" ;
 	schema:startDate "01.02.2019T15:00:00";
@@ -159,7 +159,7 @@ fitness:YogaTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Par
 	schema:endDate "01.02.2019T17:00:00" ;
 	schema:duration "2 Stunden" .
 	
-fitness:AthleticTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Participant ;
+fitness:AthleticTag a schema:SportsEvent ;
 	schema:location fitness:Raum2 ;
 	schema:name "Athletic" ;
 	schema:startDate "02.02.2019T16:00:00";
@@ -168,7 +168,7 @@ fitness:AthleticTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness
 	schema:endDate "02.02.2019T18:30:00" ;
 	schema:duration "2 Stunden und 30 Minuten" .
 	
-fitness:FitnessTag a schema:SportsEvent, schema:Place, fitness:Trainer, fitness:Participant ;
+fitness:FitnessTag a schema:SportsEvent ;
 	schema:location fitness:Raum3 ;
 	schema:name "Fitness" ;
 	schema:startDate "03.02.2019T17:15:00";
