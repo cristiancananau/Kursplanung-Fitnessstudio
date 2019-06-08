@@ -51,9 +51,10 @@ schema:Expertise a rdfs:Class;
 			rdfs:subClassOf schema:Enumeration .
 
 ### Definition of Expertise ###
-fitness:Fitnessbombe rdf:type owl:NamedIndividual ,
+fitness:Kampfsport rdf:type owl:NamedIndividual ,
 			fitness:Expertise;
-			rdfs:label "Fitnessbombe"@en .
+			rdfs:label "Kampfsport"@en .
+			
 fitness:MMA rdf:type owl:NamedIndividual ,
 			fitness:Expertise;
 			rdfs:label "MMA-Trainer"@en .
@@ -62,21 +63,41 @@ fitness:Frauen-Yoga a owl:Class ;
 			rdfs:label "Frauen-Yoga"@en ;
 			rdfs:subClassOf schema:Person .
 
-fitness:Fitnesstrainer a owl:Class ;
-			rdfs:label "Fitnesstrainer"@en ;
+fitness:Muskelaufbau a owl:Class ;
+			rdfs:label "Muskelaufba"@en ;
 			rdfs:subClassOf schema:Person .
 
-fitness:Athletic a owl:Class ;
-			rdfs:label "Athletic"@en ;
+fitness:Tanz a owl:Class ;
+			rdfs:label "Tanz"@en ;
+			rdfs:subClassOf schema:Person .
+			
+fitness:Gymnastik a owl:Class ;
+			rdfs:label "Gymnastik"@en ;
+			rdfs:subClassOf schema:Person .
+			
+fitness:Kondition a owl:Class ;
+			rdfs:label "Kondition"@en ;
 			rdfs:subClassOf schema:Person .
 
 fitness:Schwimminstruktor a owl:Class ;
 			rdfs:label "Schwimminstruktor"@en ;
 			rdfs:subClassOf schema:Person .
-
-fitness:Jiu-Jitsu a owl:Class ;
-			rdfs:label "Jiu-Jitsu"@en ;
+			
+fitness:Biking a owl:Class ;
+			rdfs:label "Biking"@en ;
 			rdfs:subClassOf schema:Person .
+			
+fitness:Ballsport a owl:Class ;
+			rdfs:label "Ballsport"@en ;
+			rdfs:subClassOf schema:Enumeration .
+			
+fitness:Entspannung a owl:Class ;
+			rdfs:label "Entspannung"@en ;
+			rdfs:subClassOf schema:Enumeration .
+			
+fitness:Stretching a owl:Class ;
+			rdfs:label "Stretching"@en ;
+			rdfs:subClassOf schema:Enumeration .
 
 ### Definition of specific Classes ### 
 fitness:Participant a owl:Class ;
@@ -91,91 +112,1026 @@ fitness:Expertise a owl:Class ;
 			rdfs:label "Expertise"@en ;
 			rdfs:subClassOf schema:Enumeration .
 			
+			
 ### FITNESS TRAINER ###
-fitness:CCananau a fitness:Trainer ;
+fitness:CristianCananau a fitness:Trainer ;
 	schema:gender "male" ;
 	schema:name "Cristian Cananau" ;
-	fitness:areaOfExpertise  fitness:Fitnessbombe,  fitness:MMA, fitness:Frauen-Yoga .
-	
-fitness:DSchulz a fitness:Trainer ;
-	schema:gender "male" ;
-	schema:name "Dennis Shulz" ;
-	fitness:areaOfExpertise  fitness:Fitnesstrainer,  fitness:Athletic, fitness:Schwimminstruktor .
+	fitness:areaOfExpertise  fitness:Kampfsport, fitness:Frauen-Yoga,  fitness:Muskelaufbau .
 
+fitness:JenniferFerle a fitness:Trainer ;
+	schema:gender "female" ;
+	schema:name "Jennifer Ferle" ;
+	fitness:areaOfExpertise  fitness:Tanz, fitness:Gymnastik,  fitness:Kondition .
 	
-fitness:JShyshlin a fitness:Trainer ;
+fitness:JuriShyshlin a fitness:Trainer ;
 	schema:gender "male" ;
 	schema:name "Juri Shyshlin" ;
-	fitness:areaOfExpertise  fitness:Fitnesstrainer,  fitness:MMA, fitness:Jiu-Jitsu .
+	fitness:areaOfExpertise fitness:Kondition, fitness:Muskelaufbau .
 	
+fitness:DennisShulz a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Dennis Shulz" ;
+	fitness:areaOfExpertise fitness:Schwimminstruktor, fitness:Muskelaufbau .
+	
+fitness:MaxMustermann a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Max Mustermann" ;
+	fitness:areaOfExpertise fitness:Biking, fitness:Kondition, fitness:Muskelaufbau .
+
+fitness:DirkKeller a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Dirk Keller" ;
+	fitness:areaOfExpertise fitness:Ballsport, fitness:Muskelaufbau, fitness:Kondition .
+
+fitness:MarkBlume a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Mark Blume" ;
+	fitness:areaOfExpertise fitness:Entspannung, fitness:Stretching, fitness:Muskelaufbau .
+	
+
 ###FITNESS PARTICIPANT###
 	
-fitness:ParticipantCircle1 a fitness:Participant;
-	schema:gender "female" ;
-	fitness:trainingLevel "Beginner" .
-
-fitness:ParticipantCircle2 a fitness:Participant;
-	schema:gender "male" ;
-	fitness:trainingLevel "Building on" .
-
-fitness:ParticipantCircle3 a fitness:Participant;
-	schema:gender "male" ;
-	fitness:trainingLevel "Advanced" .
-	
-fitness:ParticipantCircle4 a fitness:Participant;
-	schema:gender "male" ;
+fitness:BeginnerMale a fitness:Participant ;
+	schema:gender "male";
 	fitness:trainingLevel "Beginner" .
 	
-fitness:ParticipantCircle5 a fitness:Participant;
+fitness:BeginnerFemale a fitness:Participant ;
 	schema:gender "female" ;
-	fitness:trainingLevel "Building on" .
+	fitness:trainingLevel "Beginner" .
 	
-fitness:ParticipantCircle6 a fitness:Participant;
+fitness:BeginnerDivers a fitness:Participant ;
+	schema:gender "divers" ;
+	fitness:trainingLevel "Beginner" .
+	
+fitness:FortgeschrittenMale a fitness:Participant ;
+	schema:gender "male";
+	fitness:trainingLevel "Fortgeschritten" .
+	
+fitness:FortgeschrittenFemale a fitness:Participant ;
 	schema:gender "female" ;
-	fitness:trainingLevel "Advanced" .
+	fitness:trainingLevel "Fortgeschritten" .
+	
+fitness:FortgeschrittenDivers a fitness:Participant ;
+	schema:gender "divers" ;
+	fitness:trainingLevel "Fortgeschritten" .
+
 	
 ###PLACE###
 
-fitness:Raum1 a schema:Place ;
+fitness:R100 a schema:Place ;
 	schema:name "Yogaraum" ;
-	fitness:gymEquipment "Sportmatte" .
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Hanteln", "Langhanteln" .
 	
-fitness:Raum2 a schema:Place ;
+fitness:R101 a schema:Place ;
 	schema:name "Fitnessraum" ;
-	fitness:gymEquipment "Gymkleidungen" .
-
-fitness:Raum3 a schema:Place ;
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Hanteln", "Holz-Schwerter", "TRX-Equipment", "Ballett-Stange" .
+	
+fitness:R102 a schema:Place ;
 	schema:name "Rennbahnraum" ;
-	fitness:gymEquipment "Sportschue" .
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Boxhandschuhe", "Schutzkleidung", "Sportfahrräder", "Hanteln" .
+	
+fitness:R103 a schema:Place ;
+	schema:name "Springraum" ;
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Springseile", "Stepper", "Hanteln" .
+	
+fitness:R104 a schema:Place ;
+	schema:name "Gymnastikraum" ;
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Stepper", "Gummibänder", "Gymnastikbälle", "Langhanteln", "Gewichte" .
+	
+fitness:R105 a schema:Place ;
+	schema:name "Gymnastikraum2" ;
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Kettle-Bälle", "Gewichte", "Hanteln", "Langhanteln", "Gymnastik-Bälle" .
+
+fitness:Schwimmhalle a schema:Place ;
+	schema:name "Schwimmhalle" ;
+	fitness:gymEquipment "Schwimmnudeln", "Tauchringe", "Gewichte" .
+
+fitness:Outdoor a schema:Place ;
+	schema:name "Outdoor" ;
+	fitness:gymEquipment "Badminton-Schläger", "Volleybälle", "Outdoor-Hanteln" .
+	
+
 	
 ###SPORTEVENT###
+	
+fitness:FunctionalTraining a schema:SportsEvent ;	
+	schema:name "Body Fit" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
 
-fitness:YogaTag a schema:SportsEvent ;
-	schema:location fitness:Raum1 ;
-	schema:name "Yoga Tai Chi" ;
-	schema:startDate "01.02.2019T15:00:00";
-	schema:participant fitness:ParticipatCircle1 ;
-	schema:organizer fitness:CCananau ;
-	schema:endDate "01.02.2019T17:00:00" ;
-	schema:duration "2 Stunden" .
+fitness:FunctionalTraining a schema:SportsEvent ;
+	schema:name "Functional Training" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Kickboxen a schema:SportsEvent ;
+	schema:name "Kickboxen" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Pilates a schema:SportsEvent ;
+	schema:name "Pilates" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:StepAerobic a schema:SportsEvent ;
+	schema:name "Step Aerobic " ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Yoga a schema:SportsEvent ;
+	schema:name "Yoga" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Tanzen a schema:SportsEvent ;
+	schema:name "Tanzen" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BauchBeinePo a schema:SportsEvent ;
+	schema:name "Bauch Beine Po" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginneMale ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:AquaFitness a schema:SportsEvent ;
+	schema:name "Aqua Fitness" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Sixpack a schema:SportsEvent ;
+	schema:name "Sixpack" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:CircleTraining a schema:SportsEvent ;
+	schema:name "Circle Training" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Funktionsgymnastik a schema:SportsEvent ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:Place fitness:R100 ;
+	schema:name "Funktionsgymnastik" ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:endDate "Tue Oct 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:JiuJitsu a schema:SportsEvent ;
+	schema:name "Jiu Jitsu" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Schwimmen a schema:SportsEvent ;
+	schema:name "Schwimmen" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Zumba a schema:SportsEvent ;
+	schema:name "Zumba" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FatburnerWorkout a schema:SportsEvent ;
+	schema:name "Fatburner Workout" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Powerfitness a schema:SportsEvent ;
+	schema:name "Powerfitness" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Bodyshape a schema:SportsEvent ;
+	schema:name "Bodyshape" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BodyFit a schema:SportsEvent ;
+	schema:name "Body Fit" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FunctionalTraining a schema:SportsEvent ;
+	schema:name "Functional Training" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Kickboxen a schema:SportsEvent ;
+	schema:name "Kickboxen" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Pilates a schema:SportsEvent ;
+	schema:name "Pilates" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:StepAerobic a schema:SportsEvent ;
+	schema:name "Step Aerobic " ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Yoga a schema:SportsEvent ;
+	schema:name "Yoga" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Tanzen a schema:SportsEvent ;
+	schema:name "Tanzen" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BauchBeinePo a schema:SportsEvent ;
+	schema:name "Bauch Beine Po" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:AquaFitness a schema:SportsEvent ;
+	schema:name "Aqua Fitness" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Sixpack a schema:SportsEvent ;
+	schema:name "Sixpack" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:CircleTraining a schema:SportsEvent ;
+	schema:name "Circle Training" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Funktionsgymnastik a schema:SportsEvent ;
+	schema:name "Funktionsgymnastik" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:endDate "Tue Oct 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:JiuJitsu a schema:SportsEvent ;
+	schema:name "Jiu Jitsu" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Schwimmen a schema:SportsEvent ;
+	schema:name "Schwimmen" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Zumba a schema:SportsEvent ;
+	schema:name "Zumba" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FatburnerWorkout a schema:SportsEvent ;
+	schema:name "Fatburner Workout" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Powerfitness a schema:SportsEvent ;
+	schema:name "Powerfitness" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Bodyshape a schema:SportsEvent ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:name "Bodyshape" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:Place fitness:R105 ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Aikido a schema:SportsEvent ;
+	schema:name "Aikido" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Badminton a schema:SportsEvent ;
+	schema:name "Badminton" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Ballett a schema:SportsEvent ;
+	schema:name "Ballett" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BeachVolleyball a schema:SportsEvent ;
+	schema:name "Beach Volleyball" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:DanceAerobic a schema:SportsEvent ;
+	schema:Place fitness:R102 ;
+	schema:name "Dance Aerobic" ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FigurPur a schema:SportsEvent ;
+	schema:name "Figur Pur" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:RückenFit a schema:SportsEvent ;
+	schema:name "Rücken Fit" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Wirbelsäulengymnastik a schema:SportsEvent ;
+	schema:name "Wirbelsäulengymnastik" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:TRX a schema:SportsEvent ;
+	schema:name "TRX" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BikeIntense a schema:SportsEvent ;
+	schema:name "Bike Intense " ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BikeandClimb a schema:SportsEvent ;
+	schema:name "Bike & Climb" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Powercore a schema:SportsEvent ;
+	schema:name "Powercore" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:endDate "Tue Oct 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BikeBasics a schema:SportsEvent ;
+	schema:name "BikeBasics" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FitnessRunning a schema:SportsEvent ;
+	schema:name "Fitness Running" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:OutdoorCircuit a schema:SportsEvent ;
+	schema:name "Outdoor Circuit" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:StrongBack a schema:SportsEvent ;
+	schema:name "Strong Back" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BodyCombat a schema:SportsEvent ;
+	schema:name "BodyCombat" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Crosstraining a schema:SportsEvent ;
+	schema:name "Crosstraining" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Gymnastic a schema:SportsEvent ;
+	schema:name "Gymnastic" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FloatYoga a schema:SportsEvent ;
+	schema:name "Float Yoga" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:JumpingFitness a schema:SportsEvent ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:name "Jumping Fitness" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:AquaRunning a schema:SportsEvent ;
+	schema:name "Aqua Running" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Mommyfit a schema:SportsEvent ;
+	schema:name "Mommyfit" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BodyPump a schema:SportsEvent ;
+	schema:name "BodyPump" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:HotIron a schema:SportsEvent ;
+	schema:name "Hot Iron" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BodyFight a schema:SportsEvent ;
+	schema:Place fitness:R105 ;
+	schema:name "Body Fight" ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:LatinoDance a schema:SportsEvent ;
+	schema:name "Latino Dance" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:TaiChi a schema:SportsEvent ;
+	schema:name "Tai Chi" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Kettleball a schema:SportsEvent ;
+	schema:name "Kettleball" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:AthletiCore a schema:SportsEvent ;
+	schema:name "AthletiCore " ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:endDate "Tue Oct 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FullBodyStretch a schema:SportsEvent ;
+	schema:name "Full Body Stretch" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:PowerCircle a schema:SportsEvent ;
+	schema:name "PowerCircle" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Aikido a schema:SportsEvent ;
+	schema:name "Aikido" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Badminton a schema:SportsEvent ;
+	schema:name "Badminton" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Ballett a schema:SportsEvent ;
+	schema:name "Ballett" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BeachVolleyball a schema:SportsEvent ;
+	schema:name "Beach Volleyball" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:DanceAerobic a schema:SportsEvent ;
+	schema:name "Dance Aerobic" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FigurPur a schema:SportsEvent ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:name "Figur Pur" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:RückenFit a schema:SportsEvent ;
+	schema:name "Rücken Fit" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Wirbelsäulengymnastik a schema:SportsEvent ;
+	schema:name "Wirbelsäulengymnastik" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:TRX a schema:SportsEvent ;
+	schema:name "TRX" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BikeIntense a schema:SportsEvent ;
+	schema:name "Bike Intense " ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BikeandClimb a schema:SportsEvent ;
+	schema:name "Bike & Climb" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Powercore a schema:SportsEvent ;
+	schema:name "Powercore" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BikeBasics a schema:SportsEvent ;
+	schema:name "BikeBasics" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FitnessRunning schema:duration "P0Y0M0DT00H90M0S" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	a schema:SportsEvent ;
+	schema:name "Fitness Running" .
+
+fitness:OutdoorCircuit a schema:SportsEvent ;
+	schema:name "Outdoor Circuit" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:StrongBack a schema:SportsEvent ;
+	schema:name "Strong Back" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:endDate "Tue Oct 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BodyCombat a schema:SportsEvent ;
+	schema:name "BodyCombat" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Crosstraining a schema:SportsEvent ;
+	schema:name "Crosstraining" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Gymnastic a schema:SportsEvent ; 
+	schema:name "Gymnastic" ;
+	schema:Place fitness:R101 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FloatYoga a schema:SportsEvent ;
+	schema:name "Float Yoga" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:JumpingFitness a schema:SportsEvent ;
+	schema:name "Jumping Fitness" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:AquaRunning a schema:SportsEvent ;
+	schema:name "Aqua Running" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Mommyfit a schema:SportsEvent ;
+	schema:name "Mommyfit" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BodyPump a schema:SportsEvent ;
+	schema:name "BodyPump" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Tue Jan 01 00:00:00 CET 2019" ;
+	schema:endDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:HotIron a schema:SportsEvent ;
+	schema:name "Hot Iron" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:BodyFight a schema:SportsEvent ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	 schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:name "Body Fight" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:LatinoDance a schema:SportsEvent ;
+	schema:name "Latino Dance" ;
+	schema:endDate "Sun Sep 01 00:00:00 CEST 2019" ;
+	schema:startDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:Place fitness:R103 ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:TaiChi a schema:SportsEvent ;
+	schema:name "Tai Chi" ;
+	schema:Place fitness:R104 ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
+	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:Kettleball	a schema:SportsEvent ;
+	schema:name "Kettleball" ;
+	schema:Place fitness:R105 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Mar 01 00:00:00 CET 2019" ;
+	schema:endDate "Sat Jun 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:AthletiCore a schema:SportsEvent ;
+	schema:name "AthletiCore " ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Mon Jul 01 00:00:00 CEST 2019" ;
+	schema:endDate "Tue Oct 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:FullBodyStretch	a schema:SportsEvent ;
+	schema:name "Full Body Stretch" ;
+	schema:Place fitness:R102 ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:endDate "Thu Aug 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+
+fitness:PowerCircle a schema:SportsEvent ;
+	schema:name "PowerCircle" ;
+	schema:Place fitness:R100 ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:startDate "Fri Feb 01 00:00:00 CET 2019" ;
+	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
+	schema:duration "P0Y0M0DT00H90M0S" .
+		
 	
-fitness:AthleticTag a schema:SportsEvent ;
-	schema:location fitness:Raum2 ;
-	schema:name "Athletic" ;
-	schema:startDate "02.02.2019T16:00:00";
-	schema:participant fitness:ParticipatCircle3, fitness:ParticipatCircle6 ;
-	schema:organizer fitness:DSchulz ;
-	schema:endDate "02.02.2019T18:30:00" ;
-	schema:duration "2 Stunden und 30 Minuten" .
 	
-fitness:FitnessTag a schema:SportsEvent ;
-	schema:location fitness:Raum3 ;
-	schema:name "Fitness" ;
-	schema:startDate "03.02.2019T17:15:00";
-	schema:participant fitness:ParticipatCircle2, fitness:ParticipatCircle5 ;
-	schema:organizer fitness:JShyshlin ;
-	schema:endDate "03.02.2019T19:00:00" ;
-	schema:duration "1 Stunden und 45 Minuten" .
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 ### Object properties ###
 schema:participant a owl:ObjectProperty ;
