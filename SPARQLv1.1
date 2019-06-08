@@ -166,8 +166,8 @@ WHERE{
     		schema:startDate ?startDate;
     		schema:participant [schema:gender ?participantGender] ;
     		schema:organizer [schema:name ?organizerName; fitness:areaOfExpertise ?organizerAreaOfExpertise] ;
-			schema:endDate ?endDate ;
-			schema:duration ?duration .
+		schema:endDate ?endDate ;
+		schema:duration ?duration .
 }
 
 LIMIT 25
@@ -183,9 +183,9 @@ SELECT ?sportEventName ?locationName ?startDate ?endDate
 WHERE{
   		?SportsEvent a schema:SportsEvent;
     		schema:name ?sportEventName ;
-    		schema:location [schema:name ?locationName] ;
+    		schema:Place [schema:name ?locationName] ;
     		schema:startDate ?startDate;
-			schema:endDate ?endDate .
+		schema:endDate ?endDate .
 }
 
 ------------------------- 	Wie lange dauert der Kurs?  ------------------------------
@@ -197,10 +197,10 @@ SELECT ?sportEventName ?locationName ?startDate ?endDate ?duration
 WHERE{
   		?SportsEvent a schema:SportsEvent;
     		schema:name ?sportEventName ;
-    		schema:location [schema:name ?locationName] ;
+    		schema:Place [schema:name ?locationName] ;
     		schema:startDate ?startDate;
-			schema:endDate ?endDate ;
-			schema:duration ?duration .
+		schema:endDate ?endDate ;
+		schema:duration ?duration .
 }
 
 ------------------------- 	Welche Sportausrüstung wird dafür benötigt? ------------------------------
@@ -212,22 +212,26 @@ SELECT ?sportEventName ?locationName ?gymEquipment
 WHERE{
   		?SportsEvent a schema:SportsEvent;
     		schema:name ?sportEventName ;
-    		schema:location [schema:name ?locationName; fitness:gymEquipment ?gymEquipment] .
+    		schema:Place [schema:name ?locationName; fitness:gymEquipment ?gymEquipment] .
 }
-
 
 ------------ Durch wen wird der Kurs organisiert und durchgeführt? Warum ist diese Person fachlich dafür geeignet? ------------------------------------------------------------------------
 
+
 PREFIX schema: <https://schema.org/>
 PREFIX fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
-SELECT ?sportEventName ?locationName ?organizerName ?organizerAreaOfExpertise
+SELECT ?sportEventName ?locationName ?organizerName ?organizerAreaOfExpertiseName
 WHERE{
   		?SportsEvent a schema:SportsEvent;
     		schema:name ?sportEventName ;
-    		schema:location [schema:name ?locationName] ;
-    		schema:organizer [schema:name ?organizerName; fitness:areaOfExpertise ?organizerAreaOfExpertise] .
+    		schema:Place [schema:name ?locationName] ;
+    		schema:organizer [schema:name ?organizerName; fitness:areaOfExpertise [rdfs:label ?organizerAreaOfExpertiseName]] .
 }
+
 
 ------------------------------------- An welchen Teilnehmerkreis richtet sich der Kurs? -------------------------------------
 
@@ -238,7 +242,7 @@ SELECT ?sportEventName ?participantTrainingLevel ?participantGender
 WHERE{
   		?SportsEvent a schema:SportsEvent;
     		schema:name ?sportEventName ;
-    		schema:location [schema:name ?locationName] ;
+    		schema:Place [schema:name ?locationName] ;
     		schema:participant [fitness:trainingLevel ?participantTrainingLevel; schema:gender ?participantGender] .
 }
 
