@@ -1116,23 +1116,6 @@ fitness:PowerCircle a schema:SportsEvent ;
 	schema:duration "P0Y0M0DT00H90M0S" .
 		
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 ### Object properties ###
 schema:participant a owl:ObjectProperty ;
 			rdfs:label "participant"@en ;
