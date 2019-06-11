@@ -59,45 +59,46 @@ fitness:MMA rdf:type owl:NamedIndividual ,
 			fitness:Expertise;
 			rdfs:label "MMA-Trainer"@en .
 
-fitness:Frauen-Yoga a owl:Class ;
-			rdfs:label "Frauen-Yoga"@en ;
-			rdfs:subClassOf schema:Person .
+fitness:Frauen-Yoga rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Frauen-Yoga"@en .
 
-fitness:Muskelaufbau a owl:Class ;
-			rdfs:label "Muskelaufba"@en ;
-			rdfs:subClassOf schema:Person .
 
-fitness:Tanz a owl:Class ;
-			rdfs:label "Tanz"@en ;
-			rdfs:subClassOf schema:Person .
-			
-fitness:Gymnastik a owl:Class ;
-			rdfs:label "Gymnastik"@en ;
-			rdfs:subClassOf schema:Person .
-			
-fitness:Kondition a owl:Class ;
-			rdfs:label "Kondition"@en ;
-			rdfs:subClassOf schema:Person .
+fitness:Muskelaufbau rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Muskelaufba"@en .
 
-fitness:Schwimminstruktor a owl:Class ;
-			rdfs:label "Schwimminstruktor"@en ;
-			rdfs:subClassOf schema:Person .
+fitness:Tanz rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Tanz"@en .
 			
-fitness:Biking a owl:Class ;
-			rdfs:label "Biking"@en ;
-			rdfs:subClassOf schema:Person .
+fitness:Gymnastik rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Gymnastik"@en .
 			
-fitness:Ballsport a owl:Class ;
-			rdfs:label "Ballsport"@en ;
-			rdfs:subClassOf schema:Enumeration .
+fitness:Kondition rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Kondition"@en .
+
+fitness:Schwimminstruktor rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Schwimminstruktor"@en .
 			
-fitness:Entspannung a owl:Class ;
-			rdfs:label "Entspannung"@en ;
-			rdfs:subClassOf schema:Enumeration .
+fitness:Biking rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Biking"@en .
 			
-fitness:Stretching a owl:Class ;
-			rdfs:label "Stretching"@en ;
-			rdfs:subClassOf schema:Enumeration .
+fitness:Ballsport rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Ballsport"@en .
+			
+fitness:Entspannung rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Entspannung"@en .
+			
+fitness:Stretching rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:label "Stretching"@en .
 
 ### Definition of specific Classes ### 
 fitness:Participant a owl:Class ;
@@ -1115,6 +1116,7 @@ fitness:PowerCircle a schema:SportsEvent ;
 	schema:endDate "Wed May 01 00:00:00 CEST 2019" ;
 	schema:duration "P0Y0M0DT00H90M0S" .
 		
+
 	
 ### Object properties ###
 schema:participant a owl:ObjectProperty ;
