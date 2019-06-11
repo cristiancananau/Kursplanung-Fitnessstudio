@@ -162,15 +162,14 @@ SELECT ?sportEventName ?locationName ?startDate ?participantGender ?organizerNam
 WHERE{
   		?SportsEvent a schema:SportsEvent;
     		schema:name ?sportEventName ;
-    		schema:location [schema:name ?locationName] ;
+    		schema:Place [schema:name ?locationName] ;
     		schema:startDate ?startDate;
     		schema:participant [schema:gender ?participantGender] ;
     		schema:organizer [schema:name ?organizerName; fitness:areaOfExpertise ?organizerAreaOfExpertise] ;
-		schema:endDate ?endDate ;
-		schema:duration ?duration .
+			schema:endDate ?endDate ;
+			schema:duration ?duration .
 }
-
-LIMIT 25
+ Limit 50
 
 
 
