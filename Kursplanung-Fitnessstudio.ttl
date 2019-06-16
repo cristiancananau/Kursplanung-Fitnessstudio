@@ -10,7 +10,7 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
-@prefix fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio#> .
+@prefix fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio/> .
 	
 
 ### Definition of Re-Used Classes ### 
@@ -46,9 +46,20 @@ schema:Text a rdfs:Class ;
 schema:Date a rdfs:Class ;
 			rdfs:label "Date"@en .
 
-schema:Expertise a rdfs:Class;
-			rdfs:label "Expertise"@en;
+			
+### Definition of specific Classes ### 
+fitness:Participant a owl:Class ;
+			rdfs:label "Participant"@en ;
+			rdfs:subClassOf schema:Person .
+
+fitness:Trainer a owl:Class ;
+			rdfs:label "Trainer"@en ;
+			rdfs:subClassOf schema:Person .
+			
+fitness:Expertise a owl:Class ;
+			rdfs:label "Expertise"@en ;
 			rdfs:subClassOf schema:Enumeration .
+			
 
 ### Definition of Expertise ###
 fitness:Kampfsport rdf:type owl:NamedIndividual ,
@@ -100,19 +111,6 @@ fitness:Stretching rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
 			rdfs:label "Stretching"@en .
 
-### Definition of specific Classes ### 
-fitness:Participant a owl:Class ;
-			rdfs:label "Participant"@en ;
-			rdfs:subClassOf schema:Person .
-
-fitness:Trainer a owl:Class ;
-			rdfs:label "Trainer"@en ;
-			rdfs:subClassOf schema:Person .
-			
-fitness:Expertise a owl:Class ;
-			rdfs:label "Expertise"@en ;
-			rdfs:subClassOf schema:Enumeration .
-			
 			
 ### FITNESS TRAINER ###
 fitness:CristianCananau a fitness:Trainer ;
