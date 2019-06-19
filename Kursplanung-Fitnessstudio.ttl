@@ -64,51 +64,63 @@ fitness:Expertise a owl:Class ;
 ### Definition of Expertise ###
 fitness:Kampfsport rdf:type owl:NamedIndividual ,
 			fitness:Expertise;
+			rdfs:comment "Kenntnisse über umfängliche Techniken verschiedener Kampfsportarten und -künste.";
 			rdfs:label "Kampfsport"@de .
 			
 fitness:MMA rdf:type owl:NamedIndividual ,
 			fitness:Expertise;
+			rdfs:comment "Kenntnisse sowohl über Bodenkampf, als auch Boxen, Kickboxen und Thaiboxen.";
 			rdfs:label "MMA-Trainer"@en .
 
 fitness:Frauen-Yoga rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über die philosophische Lehre und über zugehörige passende Übungen.";
 			rdfs:label "Frauen-Yoga"@de .
 
 
 fitness:Muskelaufbau rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über die Anatomie des meschlichen Körpers sowie den gezielten Muskelaufbau durch Schaffung entsprechender Reize.";
 			rdfs:label "Muskelaufbau"@de .
 
 fitness:Tanz rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über bekannte Techniken, sowie deren Anwendung anhand von Beispielchoreographien.";
 			rdfs:label "Tanz"@de .
 			
 fitness:Gymnastik rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über gängige Gynastikübungen inklusive zugehöriger Warmup- und Cooldownübungen.";
 			rdfs:label "Gymnastik"@de .
 			
 fitness:Kondition rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse verschiedener Methoden zur Steigerung der Kondition, sowohl mit dem eigenen Körper und mit zugelassenen Geräten.";
 			rdfs:label "Kondition"@de .
 
 fitness:Schwimminstruktor rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Ausbildung als Rettungsschwimmer, sowie Kenntnisse über Übungen im Wasser.";
 			rdfs:label "Schwimminstruktor"@de .
 			
 fitness:Biking rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über den sicheren Einsatz verschiedener Zweirad-/ Fahrradmodelle für Trainingszwecke.";
 			rdfs:label "Biking"@en .
 			
 fitness:Ballsport rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über Techniken und Regeln über in Deutschland populäre Ballsportarten.";
 			rdfs:label "Ballsport"@de .
 			
 fitness:Entspannung rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über Entspannungstechniken mit zugelassenen Hilfsmitteln.";
 			rdfs:label "Entspannung"@de .
 			
 fitness:Stretching rdf:type owl:NamedIndividual ,
 			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über verschiedenste Dehnübung zur begleitung verschiedenster Primärsportarten.";
 			rdfs:label "Stretching"@en .
 
 			
