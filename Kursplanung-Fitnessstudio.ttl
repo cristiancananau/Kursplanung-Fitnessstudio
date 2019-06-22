@@ -45,6 +45,9 @@ schema:Text a rdfs:Class ;
 schema:DayOfWeek a rdfs:Class ;
 			rdfs:label "DayOfWeek"@en .
 
+schema:Time a rdfs:Class ;
+			rdfs:label "Time"@en .
+
 
 ### Definition of specific Classes ### 
 fitness:Participant a owl:Class ;
@@ -1302,3 +1305,13 @@ schema:dayOfWeek a owl:DatatypeProperty ;
 			rdfs:label "dayOfWeek"@en ;
 			rdfs:domain schema:SportsEvent ;
 			rdfs:range schema:DayOfWeek .
+
+schema:opens a owl:DatatypeProperty ;
+			rdfs:label "opens"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Time .
+
+schema:closes a owl:DatatypeProperty ;
+			rdfs:label "closes"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Time .
