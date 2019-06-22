@@ -764,7 +764,7 @@ fitness:StrongBack a schema:SportsEvent ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
 	schema:startDate "Mon Apr 01 00:00:00 CEST 2019" ;
 	schema:endDate "Mon Jul 01 00:00:00 CEST 2019" ;
-	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken".;
+	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken" ;
 	schema:duration "P0Y0M0DT00H90M0S" .
 
 fitness:BodyCombat a schema:SportsEvent ;
@@ -1085,7 +1085,7 @@ fitness:StrongBack a schema:SportsEvent ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
 	schema:startDate "Mon Jul 01 00:00:00 CEST 2019" ;
 	schema:endDate "Tue Oct 01 00:00:00 CEST 2019" ;
-	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken".;
+	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken" ;
 	schema:duration "P0Y0M0DT00H90M0S" .
 
 fitness:BodyCombat a schema:SportsEvent ;
