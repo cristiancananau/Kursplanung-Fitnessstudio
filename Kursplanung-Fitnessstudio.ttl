@@ -32,12 +32,7 @@ schema:Place a owl:Class ;
 			
 			
 schema:Enumeration a owl:Class ;
-			rdfs:label "Enumeration"@en .
-			
-			
-schema:Duration a owl:Class ;
-			rdfs:label "Duration"@en .
-			
+			rdfs:label "Enumeration"@en .			
 			
 schema:Text a rdfs:Class ;
 			rdfs:label "Text"@en .
@@ -1280,11 +1275,6 @@ schema:name a owl:DatatypeProperty ;
 			rdfs:label "name"@en ;
 			rdfs:domain [owl:unionOf (schema:Place schema:SportsEvent fitness:Trainer)];
 			rdfs:range schema:Text .
-
-schema:duration a owl:DatatypeProperty ;
-			rdfs:label "duration"@en ;
-			rdfs:domain schema:SportsEvent ;
-			rdfs:range schema:Duration .
 
 fitness:gymEquipment a owl:DatatypeProperty ;
 			rdfs:label "gymEquipment"@en ;
