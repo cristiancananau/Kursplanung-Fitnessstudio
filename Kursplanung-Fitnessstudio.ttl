@@ -41,12 +41,11 @@ schema:Duration a owl:Class ;
 			
 schema:Text a rdfs:Class ;
 			rdfs:label "Text"@en .
-			
-			
-schema:Date a rdfs:Class ;
-			rdfs:label "Date"@en .
 
-			
+schema:DayOfWeek a rdfs:Class ;
+			rdfs:label "DayOfWeek"@en .
+
+
 ### Definition of specific Classes ### 
 fitness:Participant a owl:Class ;
 			rdfs:label "Participant"@en ;
@@ -1278,16 +1277,6 @@ schema:name a owl:DatatypeProperty ;
 			rdfs:label "name"@en ;
 			rdfs:domain [owl:unionOf (schema:Place schema:SportsEvent fitness:Trainer)];
 			rdfs:range schema:Text .
-			
-schema:startDate a owl:DatatypeProperty ;
-			rdfs:label "startDate"@en ;
-			rdfs:domain schema:SportsEvent ;
-			rdfs:range schema:Date .
-
-schema:endDate a owl:DatatypeProperty ;
-			rdfs:label "endDate"@en ;
-			rdfs:domain schema:SportsEvent ;
-			rdfs:range schema:Date .
 
 schema:duration a owl:DatatypeProperty ;
 			rdfs:label "duration"@en ;
@@ -1308,3 +1297,8 @@ fitness:trainingLevel a owl:DatatypeProperty ;
 			rdfs:label "trainingLevel"@en ;
 			rdfs:domain fitness:Participant ;
 			rdfs:range schema:Text .
+
+schema:dayOfWeek a owl:DatatypeProperty ;
+			rdfs:label "dayOfWeek"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:DayOfWeek .
