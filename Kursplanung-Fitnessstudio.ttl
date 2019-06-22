@@ -508,7 +508,7 @@ fitness:AquaFitness a schema:SportsEvent ;
 	schema:name "Aqua Fitness" ;
 	schema:Place fitness:Schwimmhalle ;
 	schema:organizer fitness:DennisSchulz ;
-	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
 	schema:opens "16:00" ;
 	schema:closes "17:30" ;
 	schema:dayOfWeek "Thursday" ;
@@ -663,26 +663,6 @@ fitness:FigurPur a schema:SportsEvent ;
 	schema:closes "15:30" ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Diese Kurs wird von den Teilnehmern mitgestaltet um individuelle Schwachstellen auszugleichen." .
-
-fitness:RückenFit a schema:SportsEvent ;
-	schema:name "Rücken Fit" ;
-	schema:Place fitness:R104Gymnastikraum ;
-	schema:organizer fitness:DennisSchulz ;
-	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
-	schema:opens "14:00" ;
-	schema:closes "15:30" ;
-	schema:dayOfWeek "Friday" ;
-	rdfs:comment "Gezielte Übungen für den gesamten Rücken." .
-
-fitness:Wirbelsäulengymnastik a schema:SportsEvent ;
-	schema:name "Wirbelsäulengymnastik" ;
-	schema:Place fitness:R105Gymnastikraum2 ;
-	schema:organizer fitness:DennisSchulz ;
-	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
-	schema:opens "16:00" ;
-	schema:closes "17:30" ;
-	schema:dayOfWeek "Friday" ;
-	rdfs:comment "Stärkung der Wirbelsäule für alle Altersgruppen. Guter Ausgleich für Bürojobs." .
 
 fitness:TRX a schema:SportsEvent ;
 	schema:name "TRX" ;
@@ -983,26 +963,6 @@ fitness:FigurPur a schema:SportsEvent ;
 	schema:closes "15:30" ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Diese Kurs wird von den Teilnehmern mitgestaltet um individuelle Schwachstellen auszugleichen." .
-
-fitness:RückenFit a schema:SportsEvent ;
-	schema:name "Rücken Fit" ;
-	schema:Place fitness:R104Gymnastikraum ;
-	schema:organizer fitness:DennisSchulz ;
-	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
-	schema:opens "16:00" ;
-	schema:closes "17:30" ;
-	schema:dayOfWeek "Monday" ;
-	rdfs:comment "Gezielte Übungen für den gesamten Rücken." .
-
-fitness:Wirbelsäulengymnastik a schema:SportsEvent ;
-	schema:name "Wirbelsäulengymnastik" ;
-	schema:Place fitness:R105Gymnastikraum2 ;
-	schema:organizer fitness:DennisSchulz ;
-	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
-	schema:opens "08:00" ;
-	schema:closes "09:30" ;
-	schema:dayOfWeek "Tuesday" ;
-	rdfs:comment "Stärkung der Wirbelsäule für alle Altersgruppen. Guter Ausgleich für Bürojobs." .
 
 fitness:TRX a schema:SportsEvent ;
 	schema:name "TRX" ;
