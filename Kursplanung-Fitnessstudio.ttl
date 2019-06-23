@@ -364,7 +364,7 @@ fitness:FunktionsgymnastikBeginner a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Funktionsgymnastik bietet eine gute Ergänzung zum Alltag; vor allem wenn man einen Bürojob ausübt." .
 
-fitness:JiuJitsuFortgeschrittenFortgeschritten a schema:SportsEvent ;
+fitness:JiuJitsuFortgeschritten a schema:SportsEvent ;
 	schema:name "Jiu Jitsu Fortgeschritten" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:CristianCananau ;
@@ -425,7 +425,7 @@ fitness:BodyshapeBeginner a schema:SportsEvent ;
 	rdfs:comment "Kombination aus effektiven Fitnessübungen für deinen Körper." .
 
 fitness:BodyFitFortgeschritten a schema:SportsEvent ;
-	schema:name "Body Fit Fortgeschritten Fortgeschritten" ;
+	schema:name "Body Fit Fortgeschritten" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -845,7 +845,7 @@ fitness:BodyFightBeginner a schema:SportsEvent ;
 	rdfs:comment "Als Sportkurs und als gezieltes Training für Selbstverteidigung." .
 
 fitness:LatinoDanceBeginner a schema:SportsEvent ;
-	schema:name "Latino Dance Beginner Beginner" ;
+	schema:name "Latino Dance Beginner" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
