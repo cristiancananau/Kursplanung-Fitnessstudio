@@ -244,8 +244,8 @@ fitness:Outdoor a schema:Place ;
 	
 ###SPORTEVENT###
 	
-fitness:BodyFit a schema:SportsEvent ;	
-	schema:name "Body Fit" ;
+fitness:BodyFitBeginner a schema:SportsEvent ;	
+	schema:name "Body Fit Beginner" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -254,8 +254,8 @@ fitness:BodyFit a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Halte deinen Körper fit und spüre das Brennen in jedem Muskel." .
 
-fitness:FunctionalTraining a schema:SportsEvent ;
-	schema:name "Functional Training" ;
+fitness:FunctionalTrainingBeginner a schema:SportsEvent ;
+	schema:name "Functional Training Beginner" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -264,8 +264,8 @@ fitness:FunctionalTraining a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Nicht nur pure Muselmasse ist wichtig, man muss auch mit ihr umgehen können." .
 
-fitness:Kickboxen a schema:SportsEvent ;
-	schema:name "Kickboxen" ;
+fitness:KickboxenFortgeschritten a schema:SportsEvent ;
+	schema:name "Kickboxen Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -274,8 +274,8 @@ fitness:Kickboxen a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Kickboxen eignet sich hervorragend, um seine allgemeine Fitness, Kraft und Kondition zu steigern." .
 
-fitness:Pilates a schema:SportsEvent ;
-	schema:name "Pilates" ; 
+fitness:PilatesBeginner a schema:SportsEvent ;
+	schema:name "Pilates Beginner" ; 
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -284,8 +284,8 @@ fitness:Pilates a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Dieser Kurs bietet eine sanfte, aber trotzdem sehr wirkungsvolle Trainingsmethode für Körper und Geist." .
 
-fitness:StepAerobic a schema:SportsEvent ;
-	schema:name "Step Aerobic " ;
+fitness:StepAerobicBeginner a schema:SportsEvent ;
+	schema:name "Step Aerobic Beginner" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -294,8 +294,8 @@ fitness:StepAerobic a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Pepp dich und stepp dich." .
 
-fitness:Yoga a schema:SportsEvent ;
-	schema:name "Yoga" ;
+fitness:YogaBeginner a schema:SportsEvent ;
+	schema:name "Yoga Beginner" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -304,8 +304,8 @@ fitness:Yoga a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Yoga bietet dir eine Möglichkeit, den Ausgleich für deinen Tag zu finden." .
 
-fitness:Tanzen a schema:SportsEvent ;
-	schema:name "Tanzen" ;
+fitness:TanzenBeginner a schema:SportsEvent ;
+	schema:name "Tanzen Beginner" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -314,8 +314,8 @@ fitness:Tanzen a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Tanzen kann nicht nur toll aussehen, sondern fördert den Körper auf verschiedene Weise." .
 
-fitness:BauchBeinePo a schema:SportsEvent ;
-	schema:name "Bauch Beine Po" ;
+fitness:BauchBeinePoBeginner a schema:SportsEvent ;
+	schema:name "Bauch Beine Po Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale ;
@@ -324,8 +324,8 @@ fitness:BauchBeinePo a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Für einen guten Unterkörper." .
 
-fitness:AquaFitness a schema:SportsEvent ;
-	schema:name "Aqua Fitness" ;
+fitness:AquaFitnessBeginner a schema:SportsEvent ;
+	schema:name "Aqua Fitness Beginner" ;
 	schema:Place fitness:Schwimmhalle ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -334,8 +334,8 @@ fitness:AquaFitness a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Durch gezielte Übungen im Wasser können Museln aufgebaut und die Kondition gesteigert werden." .
 
-fitness:Sixpack a schema:SportsEvent ;
-	schema:name "Sixpack" ;
+fitness:SixpackFortgeschritten a schema:SportsEvent ;
+	schema:name "Sixpack Fortgeschritten" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -344,8 +344,8 @@ fitness:Sixpack a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Für den Waschbrettbauch." .
 
-fitness:CircleTraining a schema:SportsEvent ;
-	schema:name "Circle Training" ;
+fitness:CircleTrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Circle Training Fortgeschritten" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -354,18 +354,18 @@ fitness:CircleTraining a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Verschiedene Übungen für den ganzen Körper." .
 
-fitness:Funktionsgymnastik a schema:SportsEvent ;
+fitness:FunktionsgymnastikBeginner a schema:SportsEvent ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:Place fitness:R100Yogaraum ;
-	schema:name "Funktionsgymnastik" ;
+	schema:name "Funktionsgymnastik Beginner" ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
 	schema:opens "12:00" ;
 	schema:closes "13:30" ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Funktionsgymnastik bietet eine gute Ergänzung zum Alltag; vor allem wenn man einen Bürojob ausübt." .
 
-fitness:JiuJitsu a schema:SportsEvent ;
-	schema:name "Jiu Jitsu" ;
+fitness:JiuJitsuFortgeschrittenFortgeschritten a schema:SportsEvent ;
+	schema:name "Jiu Jitsu Fortgeschritten" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -374,8 +374,8 @@ fitness:JiuJitsu a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Diese japanische Kampfkunst ist anstregend und erfordert viel Disziplin." .
 
-fitness:Schwimmen a schema:SportsEvent ;
-	schema:name "Schwimmen" ;
+fitness:SchwimmenFortgeschritten a schema:SportsEvent ;
+	schema:name "Schwimmen Fortgeschritten" ;
 	schema:Place fitness:Schwimmhalle ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -384,8 +384,8 @@ fitness:Schwimmen a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Der klassische Schwimmkurs." .
 
-fitness:Zumba a schema:SportsEvent ;
-	schema:name "Zumba" ;
+fitness:ZumbaBeginner a schema:SportsEvent ;
+	schema:name "Zumba Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -394,8 +394,8 @@ fitness:Zumba a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Verschiedene Koreographien die deinen Köper födern." .
 
-fitness:FatburnerWorkout a schema:SportsEvent ;
-	schema:name "Fatburner Workout" ;
+fitness:FatburnerWorkoutBeginner a schema:SportsEvent ;
+	schema:name "Fatburner Workout Beginner" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -404,8 +404,8 @@ fitness:FatburnerWorkout a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Ideal zum Abnehmen und zum Definieren." .
 
-fitness:Powerfitness a schema:SportsEvent ;
-	schema:name "Powerfitness" ;
+fitness:PowerfitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Powerfitness Fortgeschritten" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -414,8 +414,8 @@ fitness:Powerfitness a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Intensive Fitnessübungen." .
 
-fitness:Bodyshape a schema:SportsEvent ;
-	schema:name "Bodyshape" ;
+fitness:BodyshapeBeginner a schema:SportsEvent ;
+	schema:name "Bodyshape Beginner" ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -424,8 +424,8 @@ fitness:Bodyshape a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Kombination aus effektiven Fitnessübungen für deinen Körper." .
 
-fitness:BodyFit a schema:SportsEvent ;
-	schema:name "Body Fit" ;
+fitness:BodyFitFortgeschritten a schema:SportsEvent ;
+	schema:name "Body Fit Fortgeschritten Fortgeschritten" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -434,8 +434,8 @@ fitness:BodyFit a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Halte deinen Körper fit und spüre das Brennen in jedem Muskel." .
 
-fitness:FunctionalTraining a schema:SportsEvent ;
-	schema:name "Functional Training" ;
+fitness:FunctionalTrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Functional Training Fortgeschritten" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -444,8 +444,8 @@ fitness:FunctionalTraining a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Nicht nur pure Muselmasse ist wichtig, man muss auch mit ihr umgehen können." .
 
-fitness:Kickboxen a schema:SportsEvent ;
-	schema:name "Kickboxen" ;
+fitness:KickboxenBeginner a schema:SportsEvent ;
+	schema:name "Kickboxen Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -454,8 +454,8 @@ fitness:Kickboxen a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Kickboxen eignet sich hervorragend, um seine allgemeine Fitness, Kraft und Kondition zu steigern." .
 
-fitness:Pilates a schema:SportsEvent ;
-	schema:name "Pilates" ;
+fitness:PilatesFortgeschritten a schema:SportsEvent ;
+	schema:name "Pilates Fortgeschritten" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -464,8 +464,8 @@ fitness:Pilates a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Dieser Kurs bietet eine sanfte, aber trotzdem sehr wirkungsvolle Trainingsmethode für Körper und Geist." .
 
-fitness:StepAerobic a schema:SportsEvent ;
-	schema:name "Step Aerobic " ;
+fitness:StepAerobicFortgeschritten a schema:SportsEvent ;
+	schema:name "Step Aerobic Fortgeschritten" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -474,8 +474,8 @@ fitness:StepAerobic a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Pepp dich und stepp dich." .
 
-fitness:Yoga a schema:SportsEvent ;
-	schema:name "Yoga" ;
+fitness:YogaFortgeschritten a schema:SportsEvent ;
+	schema:name "Yoga Fortgeschritten" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -494,8 +494,8 @@ fitness:Tanzen a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Tanzen kann nicht nur toll aussehen, sondern fördert den Körper auf verschiedene Weise." .
 
-fitness:BauchBeinePo a schema:SportsEvent ;
-	schema:name "Bauch Beine Po" ;
+fitness:BauchBeinePoFortgeschritten a schema:SportsEvent ;
+	schema:name "Bauch Beine Po Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -504,8 +504,8 @@ fitness:BauchBeinePo a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Für einen guten Unterkörper." .
 
-fitness:AquaFitness a schema:SportsEvent ;
-	schema:name "Aqua Fitness" ;
+fitness:AquaFitnessBeginner a schema:SportsEvent ;
+	schema:name "Aqua Fitness Beginner" ;
 	schema:Place fitness:Schwimmhalle ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -514,8 +514,8 @@ fitness:AquaFitness a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Durch gezielte Übungen im Wasser können Museln aufgebaut und die Kondition gesteigert werden." .
 
-fitness:Sixpack a schema:SportsEvent ;
-	schema:name "Sixpack" ;
+fitness:SixpackBeginner a schema:SportsEvent ;
+	schema:name "Sixpack Beginner" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -524,8 +524,8 @@ fitness:Sixpack a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Für den Waschbrettbauch." .
 
-fitness:CircleTraining a schema:SportsEvent ;
-	schema:name "Circle Training" ;
+fitness:CircleTrainingBeginner a schema:SportsEvent ;
+	schema:name "Circle Training Beginner" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -534,8 +534,8 @@ fitness:CircleTraining a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Verschiedene Übungen für den ganzen Körper." .
 
-fitness:Funktionsgymnastik a schema:SportsEvent ;
-	schema:name "Funktionsgymnastik" ;
+fitness:FunktionsgymnastikFortgeschritten a schema:SportsEvent ;
+	schema:name "Funktionsgymnastik Fortgeschritten" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -544,8 +544,8 @@ fitness:Funktionsgymnastik a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Funktionsgymnastik bietet eine gute Ergänzung zum Alltag; vor allem wenn man einen Bürojob ausübt." .
 
-fitness:JiuJitsu a schema:SportsEvent ;
-	schema:name "Jiu Jitsu" ;
+fitness:JiuJitsuBeginner a schema:SportsEvent ;
+	schema:name "Jiu Jitsu Beginner" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -554,8 +554,8 @@ fitness:JiuJitsu a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Diese japanische Kampfkunst ist anstregend und erfordert viel Disziplin." .
 
-fitness:Schwimmen a schema:SportsEvent ;
-	schema:name "Schwimmen" ;
+fitness:SchwimmenBeginner a schema:SportsEvent ;
+	schema:name "Schwimmen Beginner" ;
 	schema:Place fitness:Schwimmhalle ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -564,8 +564,8 @@ fitness:Schwimmen a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Der klassische Schwimmkurs." .
 
-fitness:Zumba a schema:SportsEvent ;
-	schema:name "Zumba" ;
+fitness:ZumbaFortgeschritten a schema:SportsEvent ;
+	schema:name "Zumba Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -574,8 +574,8 @@ fitness:Zumba a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Verschiedene Koreographien die deinen Köper födern." .
 
-fitness:FatburnerWorkout a schema:SportsEvent ;
-	schema:name "Fatburner Workout" ;
+fitness:FatburnerWorkoutFortgeschritten a schema:SportsEvent ;
+	schema:name "Fatburner Workout Fortgeschritten" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -584,8 +584,8 @@ fitness:FatburnerWorkout a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Ideal zum Abnehmen und zum Definieren." .
 
-fitness:Powerfitness a schema:SportsEvent ;
-	schema:name "Powerfitness" ;
+fitness:PowerfitnessBeginner a schema:SportsEvent ;
+	schema:name "Powerfitness Beginner" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -594,18 +594,18 @@ fitness:Powerfitness a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Intensive Fitnessübungen." .
 
-fitness:Bodyshape a schema:SportsEvent ;
+fitness:BodyshapeFortgeschritten a schema:SportsEvent ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
-	schema:name "Bodyshape" ;
+	schema:name "Bodyshape Fortgeschritten" ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:opens "12:00" ;
 	schema:closes "13:30" ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Kombination aus effektiven Fitnessübungen für deinen Körper." .
 
-fitness:Aikido a schema:SportsEvent ;
-	schema:name "Aikido" ;
+fitness:AikidoBeginner a schema:SportsEvent ;
+	schema:name "Aikido Beginner" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -614,8 +614,8 @@ fitness:Aikido a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Diese defensive japanische Kampfkunst eignet sich auch, um Technik und Kondition zu verbessern." .
 
-fitness:Badminton a schema:SportsEvent ;
-	schema:name "Badminton" ;
+fitness:BadmintonBeginner a schema:SportsEvent ;
+	schema:name "Badminton Beginner" ;
 	schema:Place fitness:Outdoor ;
 	schema:organizer fitness:DirkKeller ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -624,8 +624,8 @@ fitness:Badminton a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Spaß und Spiel kombiniert mit hervorragenden Übungen." .
 
-fitness:Ballett a schema:SportsEvent ;
-	schema:name "Ballett" ;
+fitness:BallettBeginner a schema:SportsEvent ;
+	schema:name "Ballett Beginner" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -634,8 +634,8 @@ fitness:Ballett a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Nicht nur zum Spaß. Auch der Gleichgewichtssinn und die Kontrolle über den eigenen Körper werden gefödert." .
 
-fitness:BeachVolleyball a schema:SportsEvent ;
-	schema:name "Beach Volleyball" ;
+fitness:BeachVolleyballBeginner a schema:SportsEvent ;
+	schema:name "Beach Volleyball Beginner" ;
 	schema:Place fitness:Outdoor ;
 	schema:organizer fitness:DirkKeller ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -644,9 +644,9 @@ fitness:BeachVolleyball a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Beachen im Freien, was will man mehr." .
 
-fitness:DanceAerobic a schema:SportsEvent ;
+fitness:DanceAerobicBeginner a schema:SportsEvent ;
 	schema:Place fitness:R102Rennbahnraum ;
-	schema:name "Dance Aerobic" ;
+	schema:name "Dance Aerobic Beginner" ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
 	schema:opens "16:00" ;
@@ -654,8 +654,8 @@ fitness:DanceAerobic a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Kontrolliertes Tanzen, welches den Körper fördert." .
 
-fitness:FigurPur a schema:SportsEvent ;
-	schema:name "Figur Pur" ;
+fitness:FigurPurBeginner a schema:SportsEvent ;
+	schema:name "Figur Pur Beginner" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -664,8 +664,8 @@ fitness:FigurPur a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Diese Kurs wird von den Teilnehmern mitgestaltet um individuelle Schwachstellen auszugleichen." .
 
-fitness:TRX a schema:SportsEvent ;
-	schema:name "TRX" ;
+fitness:TRXBeginner a schema:SportsEvent ;
+	schema:name "TRX Beginner" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -674,8 +674,8 @@ fitness:TRX a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Ganzkörpertraining in Schlingen zur Förderung aller Muselgruppen." .
 
-fitness:BikeIntense a schema:SportsEvent ;
-	schema:name "Bike Intense " ;
+fitness:BikeIntenseBeginner a schema:SportsEvent ;
+	schema:name "Bike Intense Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -684,8 +684,8 @@ fitness:BikeIntense a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Gemeinsamen Fahrradtraining mit HIIT-Ansatz bringt jeden Teilnehmer zum Schwitzen." .
 
-fitness:BikeandClimb a schema:SportsEvent ;
-	schema:name "Bike & Climb" ;
+fitness:BikeandClimbBeginner a schema:SportsEvent ;
+	schema:name "Bike & Climb Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -694,8 +694,8 @@ fitness:BikeandClimb a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Simulationen unterschiedlicher Bergfahrten bringen euch zum Schwitzen." .
 
-fitness:Powercore a schema:SportsEvent ;
-	schema:name "Powercore" ;
+fitness:PowercoreBeginner a schema:SportsEvent ;
+	schema:name "Powercore Beginner" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -704,8 +704,8 @@ fitness:Powercore a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Intensives Training der Körpermitte." .
 
-fitness:BikeBasics a schema:SportsEvent ;
-	schema:name "BikeBasics" ;
+fitness:BikeBasicsBeginner a schema:SportsEvent ;
+	schema:name "BikeBasics Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -714,8 +714,8 @@ fitness:BikeBasics a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Fahrradtraining zur Steiegerung der Kondition und der richtigen Körperhaltung." .
 
-fitness:FitnessRunning a schema:SportsEvent ;
-	schema:name "Fitness Running" ;
+fitness:FitnessRunningBeginner a schema:SportsEvent ;
+	schema:name "Fitness Running Beginner" ;
 	schema:Place fitness:Outdoor ;
 	schema:organizer fitness:DirkKeller ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -724,8 +724,8 @@ fitness:FitnessRunning a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Neben dem Konditionsaufbau, wird beim FitnessRunning auch die Muskulatur weiterhin stark beansprucht." .
 
-fitness:OutdoorCircuit a schema:SportsEvent ;
-	schema:name "Outdoor Circuit" ;
+fitness:OutdoorCircuitBeginner a schema:SportsEvent ;
+	schema:name "Outdoor Circuit Beginner" ;
 	schema:Place fitness:Outdoor ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -734,8 +734,8 @@ fitness:OutdoorCircuit a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Das Workout findet als Circletraining im Freien statt und bietet den Teilnehmern abwechslungsreiche Übungen." .
 
-fitness:StrongBack a schema:SportsEvent ;
-	schema:name "Strong Back" ;
+fitness:StrongBackBeginner a schema:SportsEvent ;
+	schema:name "Strong Back Beginner" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -744,8 +744,8 @@ fitness:StrongBack a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken" .
 
-fitness:BodyCombat a schema:SportsEvent ;
-	schema:name "BodyCombat" ;
+fitness:BodyCombatBeginner a schema:SportsEvent ;
+	schema:name "BodyCombat Beginner" ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -754,8 +754,8 @@ fitness:BodyCombat a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Bodycombat beansprucht die Beine, definiert Arme, Rücken und Schultern und ist ein großartiges Core-Training." .
 
-fitness:Crosstraining a schema:SportsEvent ;
-	schema:name "Crosstraining" ;
+fitness:CrosstrainingBeginner a schema:SportsEvent ;
+	schema:name "Crosstraining Beginner" ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -764,8 +764,8 @@ fitness:Crosstraining a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Gleichmäßige Kräftigung möglichst vieler Muskelgruppen, sowie der Aufbau und Stärkung der Kondition aller Kursteilnehmer." .
 
-fitness:Gymnastic a schema:SportsEvent ;
-	schema:name "Gymnastic" ;
+fitness:GymnasticBeginner a schema:SportsEvent ;
+	schema:name "Gymnastic Beginner" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -774,8 +774,8 @@ fitness:Gymnastic a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Gymnastik-Übungen trainieren Kraft, Beweglichkeit und Koordination zur Musik." .
 
-fitness:FloatYoga a schema:SportsEvent ;
-	schema:name "Float Yoga" ;
+fitness:FloatYogaBeginner a schema:SportsEvent ;
+	schema:name "Float Yoga Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MarkBlume ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -784,9 +784,9 @@ fitness:FloatYoga a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Yoga auf dem Wasser stärkt die Körpermitte, deinen Gleichgewichtssinn und die Konzentration." .
 
-fitness:JumpingFitness a schema:SportsEvent ;
+fitness:JumpingFitnessBeginner a schema:SportsEvent ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
-	schema:name "Jumping Fitness" ;
+	schema:name "Jumping Fitness Beginner" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:opens "10:00" ;
@@ -794,8 +794,8 @@ fitness:JumpingFitness a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Mit cooler Musik und Springseilen setzen sich die Kursteilnehmer in Bewegung und stärken ihre Kondition." .
 
-fitness:AquaRunning a schema:SportsEvent ;
-	schema:name "Aqua Running" ;
+fitness:AquaRunningBeginner a schema:SportsEvent ;
+	schema:name "Aqua Running Beginner" ;
 	schema:Place fitness:Schwimmhalle ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -804,8 +804,8 @@ fitness:AquaRunning a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Gelenkschonendes Laufen für die Kondition unter Wasser." .
 
-fitness:Mommyfit a schema:SportsEvent ;
-	schema:name "Mommyfit" ;
+fitness:MommyfitBeginner a schema:SportsEvent ;
+	schema:name "Mommyfit Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:DirkKeller ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -814,8 +814,8 @@ fitness:Mommyfit a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Für alle werdenden Mütter, die auch während der Schwangerschaft fit bleiben möchten." .
 
-fitness:BodyPump a schema:SportsEvent ;
-	schema:name "BodyPump" ;
+fitness:BodyPumpBeginner a schema:SportsEvent ;
+	schema:name "BodyPump Beginner" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -824,8 +824,8 @@ fitness:BodyPump a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Mit Langhanteln wird der gesamte Körper trainiert." .
 
-fitness:HotIron a schema:SportsEvent ;
-	schema:name "Hot Iron" ;
+fitness:HotIronBeginner a schema:SportsEvent ;
+	schema:name "Hot Iron Beginner" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -834,9 +834,9 @@ fitness:HotIron a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Hot Iron ist ein mitreißendes Kraftausdauertraining mit der Langhantel. Für Jeden als Trainingsmöglichkeit geeignet, wenn bei klassischen Kräftigungskursen nicht mehr die gewünschten Trainingseffekte erzielt werden." .
 
-fitness:BodyFight a schema:SportsEvent ;
+fitness:BodyFightBeginner a schema:SportsEvent ;
 	schema:Place fitness:R105Gymnastikraum2 ;
-	schema:name "Body Fight" ;
+	schema:name "Body Fight Beginner" ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
 	schema:opens "08:00" ;
@@ -844,8 +844,8 @@ fitness:BodyFight a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Als Sportkurs und als gezieltes Training für Selbstverteidigung." .
 
-fitness:LatinoDance a schema:SportsEvent ;
-	schema:name "Latino Dance" ;
+fitness:LatinoDanceBeginner a schema:SportsEvent ;
+	schema:name "Latino Dance Beginner Beginner" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -854,8 +854,8 @@ fitness:LatinoDance a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Mit heißen Moves und coolen Beats wird den Kursteilnehmern eingeheizt." .
 
-fitness:TaiChi a schema:SportsEvent ;
-	schema:name "Tai Chi" ;
+fitness:TaiChiBeginner a schema:SportsEvent ;
+	schema:name "Tai Chi Beginner" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:MarkBlume ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -864,8 +864,8 @@ fitness:TaiChi a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Mit Hilfe fernöstlicher Entspannungskunst und Meditation entfliehen Kurstteilnehmer ihrem Alltag." .
 
-fitness:Kettleball a schema:SportsEvent ;
-	schema:name "Kettleball" ;
+fitness:KettleballBeginner a schema:SportsEvent ;
+	schema:name "Kettleball Beginner" ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -874,8 +874,8 @@ fitness:Kettleball a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Bei dem Kettleball Kurs wird mit Hilfe von Kettleballs der gesamte Körper trainiert." .
 
-fitness:AthletiCore a schema:SportsEvent ;
-	schema:name "AthletiCore " ;
+fitness:AthletiCoreBeginner a schema:SportsEvent ;
+	schema:name "AthletiCore Beginner" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -884,8 +884,8 @@ fitness:AthletiCore a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Es wird eine Stärkung des Rumpfes durch verschiedene athletische Übungen erzielt." .
 
-fitness:FullBodyStretch a schema:SportsEvent ;
-	schema:name "Full Body Stretch" ;
+fitness:FullBodyStretchBeginner a schema:SportsEvent ;
+	schema:name "Full Body Stretch Beginner" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MarkBlume ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -894,8 +894,8 @@ fitness:FullBodyStretch a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Für diejenigen, die gerne ihren Körper durch gezieltes Stretchen entspannen und dehnen wollen." .
 
-fitness:PowerCircle a schema:SportsEvent ;
-	schema:name "PowerCircle" ;
+fitness:PowerCircleBeginner a schema:SportsEvent ;
+	schema:name "PowerCircle Beginner" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
@@ -904,8 +904,8 @@ fitness:PowerCircle a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Der Kurs richtet sich an alle sportbegeisterten, die ihre Muskulatur stärken und weiter ausbauen wollen" .
 
-fitness:Aikido a schema:SportsEvent ;
-	schema:name "Aikido" ;
+fitness:AikidoFortgeschritten a schema:SportsEvent ;
+	schema:name "Aikido Fortgeschritten" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -914,8 +914,8 @@ fitness:Aikido a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Diese defensive japanische Kampfkunst eignet sich auch, um Technik und Kondition zu verbessern." .
 
-fitness:Badminton a schema:SportsEvent ;
-	schema:name "Badminton" ;
+fitness:BadmintonFortgeschritten a schema:SportsEvent ;
+	schema:name "Badminton Fortgeschritten" ;
 	schema:Place fitness:Outdoor ;
 	schema:organizer fitness:DirkKeller ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -924,8 +924,8 @@ fitness:Badminton a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Spaß und Spiel kombiniert mit hervorragenden Übungen." .
 
-fitness:Ballett a schema:SportsEvent ;
-	schema:name "Ballett" ;
+fitness:BallettFortgeschritten a schema:SportsEvent ;
+	schema:name "Ballett Fortgeschritten" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -934,8 +934,8 @@ fitness:Ballett a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Nicht nur zum Spaß. Auch der Gleichgewichtssinn und die Kontrolle über den eigenen Körper werden gefödert." .
 
-fitness:BeachVolleyball a schema:SportsEvent ;
-	schema:name "Beach Volleyball" ;
+fitness:BeachVolleyballFortgeschritten a schema:SportsEvent ;
+	schema:name "Beach Volleyball Fortgeschritten" ;
 	schema:Place fitness:Outdoor ;
 	schema:organizer fitness:DirkKeller ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -944,8 +944,8 @@ fitness:BeachVolleyball a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Beachen im Freien, was will man mehr." .
 
-fitness:DanceAerobic a schema:SportsEvent ;
-	schema:name "Dance Aerobic" ;
+fitness:DanceAerobicFortgeschritten a schema:SportsEvent ;
+	schema:name "Dance Aerobic Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -954,9 +954,9 @@ fitness:DanceAerobic a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Kontrolliertes Tanzen, welches den Körper fördert." .
 
-fitness:FigurPur a schema:SportsEvent ;
+fitness:FigurPurFortgeschritten a schema:SportsEvent ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
-	schema:name "Figur Pur" ;
+	schema:name "Figur Pur Fortgeschritten" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:opens "14:00" ;
@@ -964,8 +964,8 @@ fitness:FigurPur a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Diese Kurs wird von den Teilnehmern mitgestaltet um individuelle Schwachstellen auszugleichen." .
 
-fitness:TRX a schema:SportsEvent ;
-	schema:name "TRX" ;
+fitness:TRXFortgeschritten a schema:SportsEvent ;
+	schema:name "TRX Fortgeschritten" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -974,8 +974,8 @@ fitness:TRX a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Ganzkörpertraining in Schlingen zur Förderung aller Muselgruppen." .
 
-fitness:BikeIntense a schema:SportsEvent ;
-	schema:name "Bike Intense " ;
+fitness:BikeIntenseFortgeschritten a schema:SportsEvent ;
+	schema:name "Bike Intense Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -984,8 +984,8 @@ fitness:BikeIntense a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Gemeinsamen Fahrradtraining mit HIIT-Ansatz bringt jeden Teilnehmer zum Schwitzen." .
 
-fitness:BikeandClimb a schema:SportsEvent ;
-	schema:name "Bike & Climb" ;
+fitness:BikeandClimbFortgeschritten a schema:SportsEvent ;
+	schema:name "Bike & Climb Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -994,8 +994,8 @@ fitness:BikeandClimb a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Simulationen unterschiedlicher Bergfahrten bringen euch zum Schwitzen." .
 
-fitness:Powercore a schema:SportsEvent ;
-	schema:name "Powercore" ;
+fitness:PowercoreFortgeschritten a schema:SportsEvent ;
+	schema:name "Powercore Fortgeschritten" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1004,8 +1004,8 @@ fitness:Powercore a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Intensives Training der Körpermitte." .
 
-fitness:BikeBasics a schema:SportsEvent ;
-	schema:name "BikeBasics" ;
+fitness:BikeBasicsFortgeschritten a schema:SportsEvent ;
+	schema:name "BikeBasics Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1014,7 +1014,7 @@ fitness:BikeBasics a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Fahrradtraining zur Steiegerung der Kondition und der richtigen Körperhaltung." .
 
-fitness:FitnessRunning a schema:SportsEvent ;
+fitness:FitnessRunningFortgeschritten a schema:SportsEvent ;
 	schema:Place fitness:Outdoor ;
 	schema:organizer fitness:DirkKeller ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1022,10 +1022,10 @@ fitness:FitnessRunning a schema:SportsEvent ;
 	schema:closes "11:30" ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Neben dem Konditionsaufbau, wird beim FitnessRunning auch die Muskulatur weiterhin stark beansprucht.";
-	schema:name "Fitness Running" .
+	schema:name "Fitness Running Fortgeschritten" .
 
-fitness:OutdoorCircuit a schema:SportsEvent ;
-	schema:name "Outdoor Circuit" ;
+fitness:OutdoorCircuitFortgeschritten a schema:SportsEvent ;
+	schema:name "Outdoor Circuit Fortgeschritten" ;
 	schema:Place fitness:Outdoor ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1034,8 +1034,8 @@ fitness:OutdoorCircuit a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Das Workout findet als Circletraining im Freien statt und bietet den Teilnehmern abwechslungsreiche Übungen." .
 
-fitness:StrongBack a schema:SportsEvent ;
-	schema:name "Strong Back" ;
+fitness:StrongBackFortgeschritten a schema:SportsEvent ;
+	schema:name "Strong Back Fortgeschritten" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1044,8 +1044,8 @@ fitness:StrongBack a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken" .
 
-fitness:BodyCombat a schema:SportsEvent ;
-	schema:name "BodyCombat" ;
+fitness:BodyCombatFortgeschritten a schema:SportsEvent ;
+	schema:name "BodyCombat Fortgeschritten" ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1054,8 +1054,8 @@ fitness:BodyCombat a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Bodycombat beansprucht die Beine, definiert Arme, Rücken und Schultern und ist ein großartiges Core-Training." .
 
-fitness:Crosstraining a schema:SportsEvent ;
-	schema:name "Crosstraining" ;
+fitness:CrosstrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Crosstraining Fortgeschritten" ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1064,8 +1064,8 @@ fitness:Crosstraining a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Gleichmäßige Kräftigung möglichst vieler Muskelgruppen, sowie der Aufbau und Stärkung der Kondition aller Kursteilnehmer." .
 
-fitness:Gymnastic a schema:SportsEvent ; 
-	schema:name "Gymnastic" ;
+fitness:GymnasticFortgeschritten a schema:SportsEvent ; 
+	schema:name "Gymnastic Fortgeschritten" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1074,8 +1074,8 @@ fitness:Gymnastic a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Gymnastik-Übungen trainieren Kraft, Beweglichkeit und Koordination zur Musik." .
 
-fitness:FloatYoga a schema:SportsEvent ;
-	schema:name "Float Yoga" ;
+fitness:FloatYogaFortgeschritten a schema:SportsEvent ;
+	schema:name "Float Yoga Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MarkBlume ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1084,8 +1084,8 @@ fitness:FloatYoga a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Yoga auf dem Wasser stärkt die Körpermitte, deinen Gleichgewichtssinn und die Konzentration." .
 
-fitness:JumpingFitness a schema:SportsEvent ;
-	schema:name "Jumping Fitness" ;
+fitness:JumpingFitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Jumping Fitness Fortgeschritten" ;
 	schema:Place fitness:R103Springraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1094,8 +1094,8 @@ fitness:JumpingFitness a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Mit cooler Musik und Springseilen setzen sich die Kursteilnehmer in Bewegung und stärken ihre Kondition." .
 
-fitness:AquaRunning a schema:SportsEvent ;
-	schema:name "Aqua Running" ;
+fitness:AquaRunningFortgeschritten a schema:SportsEvent ;
+	schema:name "Aqua Running Fortgeschritten" ;
 	schema:Place fitness:Schwimmhalle ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1104,8 +1104,8 @@ fitness:AquaRunning a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Gelenkschonendes Laufen für die Kondition unter Wasser." .
 
-fitness:Mommyfit a schema:SportsEvent ;
-	schema:name "Mommyfit" ;
+fitness:MommyfitFortgeschritten a schema:SportsEvent ;
+	schema:name "Mommyfit Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:DirkKeller ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1114,8 +1114,8 @@ fitness:Mommyfit a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Für alle werdenden Mütter, die auch während der Schwangerschaft fit bleiben möchten." .
 
-fitness:BodyPump a schema:SportsEvent ;
-	schema:name "BodyPump" ;
+fitness:BodyPumpFortgeschritten a schema:SportsEvent ;
+	schema:name "BodyPump Fortgeschritten" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1124,8 +1124,8 @@ fitness:BodyPump a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Mit Langhanteln wird der gesamte Körper trainiert." .
 
-fitness:HotIron a schema:SportsEvent ;
-	schema:name "Hot Iron" ;
+fitness:HotIronFortgeschritten a schema:SportsEvent ;
+	schema:name "Hot Iron Fortgeschritten" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1134,18 +1134,18 @@ fitness:HotIron a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Hot Iron ist ein mitreißendes Kraftausdauertraining mit der Langhantel. Für Jeden als Trainingsmöglichkeit geeignet, wenn bei klassischen Kräftigungskursen nicht mehr die gewünschten Trainingseffekte erzielt werden." .
 
-fitness:BodyFight a schema:SportsEvent ;
+fitness:BodyFightFortgeschritten a schema:SportsEvent ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:organizer fitness:CristianCananau ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
-	schema:name "Body Fight" ;
+	schema:name "Body Fight Fortgeschritten" ;
 	schema:opens "08:00" ;
 	schema:closes "09:30" ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Als Sportkurs und als gezieltes Training für Selbstverteidigung." .
 
-fitness:LatinoDance a schema:SportsEvent ;
-	schema:name "Latino Dance" ;
+fitness:LatinoDanceFortgeschritten a schema:SportsEvent ;
+	schema:name "Latino Dance Fortgeschritten" ;
 	schema:opens "08:00" ;
 	schema:closes "09:30" ;
 	schema:dayOfWeek "Monday" ;
@@ -1154,8 +1154,8 @@ fitness:LatinoDance a schema:SportsEvent ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
 	rdfs:comment "Mit heißen Moves und coolen Beats wird den Kursteilnehmern eingeheizt." .
 
-fitness:TaiChi a schema:SportsEvent ;
-	schema:name "Tai Chi" ;
+fitness:TaiChiFortgeschritten a schema:SportsEvent ;
+	schema:name "Tai Chi Fortgeschritten" ;
 	schema:Place fitness:R104Gymnastikraum ;
 	schema:organizer fitness:MarkBlume ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1164,8 +1164,8 @@ fitness:TaiChi a schema:SportsEvent ;
 	schema:dayOfWeek "Thursday" ;
 	rdfs:comment "Mit Hilfe fernöstlicher Entspannungskunst und Meditation entfliehen Kurstteilnehmer ihrem Alltag." .
 
-fitness:Kettleball	a schema:SportsEvent ;
-	schema:name "Kettleball" ;
+fitness:KettleballFortgeschritten	a schema:SportsEvent ;
+	schema:name "Kettleball Fortgeschritten" ;
 	schema:Place fitness:R105Gymnastikraum2 ;
 	schema:organizer fitness:MaxMustermann ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1174,8 +1174,8 @@ fitness:Kettleball	a schema:SportsEvent ;
 	schema:dayOfWeek "Wednesday" ;
 	rdfs:comment "Bei dem Kettleball Kurs wird mit Hilfe von Kettleballs der gesamte Körper trainiert." .
 
-fitness:AthletiCore a schema:SportsEvent ;
-	schema:name "AthletiCore " ;
+fitness:AthletiCoreFortgeschritten a schema:SportsEvent ;
+	schema:name "AthletiCore Fortgeschritten" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:JuriShyshlin ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1184,8 +1184,8 @@ fitness:AthletiCore a schema:SportsEvent ;
 	schema:dayOfWeek "Friday" ;
 	rdfs:comment "Es wird eine Stärkung des Rumpfes durch verschiedene athletische Übungen erzielt." .
 
-fitness:FullBodyStretch	a schema:SportsEvent ;
-	schema:name "Full Body Stretch" ;
+fitness:FullBodyStretchFortgeschritten	a schema:SportsEvent ;
+	schema:name "Full Body Stretch Fortgeschritten" ;
 	schema:Place fitness:R102Rennbahnraum ;
 	schema:organizer fitness:MarkBlume ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
@@ -1195,8 +1195,8 @@ fitness:FullBodyStretch	a schema:SportsEvent ;
 	rdfs:comment "Für diejenigen, die gerne ihren Körper durch gezieltes Stretchen entspannen und dehnen wollen." .
 
 
-fitness:PowerCircle a schema:SportsEvent ;
-	schema:name "PowerCircle" ;
+fitness:PowerCircleFortgeschritten a schema:SportsEvent ;
+	schema:name "PowerCircle Fortgeschritten" ;
 	schema:Place fitness:R100Yogaraum ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
