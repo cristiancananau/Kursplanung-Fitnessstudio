@@ -1,0 +1,73 @@
+.card {
+    border: inherit;
+}
+
+.card-body{
+    padding: 0;
+}
+
+.card-body-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    background-color: #db325a;
+    padding: 24px 30px;
+    min-height: 112px;
+}
+
+.card-body-text > h3 > a {
+    color: #EEEEEE;
+}
+
+.classes-description .with-icon.date{
+    color: inherit;
+}
+
+.classes-description .with-icon.date:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f073";
+    padding-right: 10px;
+    font-style: normal;
+    color: #db325a;
+}
+.classes-description .with-icon.time {
+    color: #323232;
+}
+.classes-description .with-icon.time:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f017";
+    padding-right: 10px;
+    font-style: normal;
+    color: #db325a;
+}
+
+.classes-description .with-icon.person:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f007";
+    padding-right: 10px;
+    font-style: normal;
+    color: #db325a;
+}
+.classes-description .with-icon.location-arrow:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f124";
+    padding-right: 10px;
+    font-style: normal;
+    color: #db325a;
+}
+
+.classes-description .with-icon.genders:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f225";
+    padding-right: 10px;
+    font-style: normal;
+    color: #db325a;
+}

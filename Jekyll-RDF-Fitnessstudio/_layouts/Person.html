@@ -1,0 +1,125 @@
+---
+rdf_prefix_path: "_data/prefixes.sparql"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sport Event</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link href="/plugins/fontawesome-5.9.0/css/all.css" rel="stylesheet" type="text/css">
+	<link href="/styles/animations.css" rel="stylesheet" type="text/css">
+	<link href="/styles/main.css" rel="stylesheet" type="text/css">
+	<link href="/styles/trainer.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<!--Header Difinire-->
+<div id="header-sticky-wrapper" class="sticky-wrapper" style="height: 100px;">
+	<header id="header">
+		<div class="container">
+			<div class="row">
+				<a class="navbar-brand" href="/index.html">Fitnessstudio BRB</a>
+				<div class="col-sm-12 mainmenu_wrap">
+					<div class="main-menu-icon visible-xs">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<ul id="mainmenu" class="menu sf-menu responsive-menu superfish sf-js-enabled">
+						<li >
+							<a href="/index.html">Sport Events</a>
+						</li>
+						<li class="">
+							<a href="/trainers.html">Trainers</a>
+						</li>
+						<li >
+							<a href="/raum.html">Räume</a>
+						</li>
+						<li class="active">
+							<a href="#">Trainerprofil</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+
+
+	{% assign name = page.rdf | rdf_property: "schema:name", nil, true %}
+	{% if name %}
+    {% assign gender = page.rdf | rdf_property: "schema:gender", nil, true %}
+	{% assign areaOfExpertise = page.rdf | rdf_property: "fitness:areaOfExpertise", nil, true %}
+
+		<section class="ftco-section ftco-no-pb ftco-no-pt trainer-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 img img-2 order-md-last">
+						{% assign nameWithoutSpace = name | remove: " " %}
+						{% assign sliceNameUrl = nameWithoutSpace | slice: 36, 36 %}
+						{% assign nameImage = sliceNameUrl | split: ">]" %}
+						<img width="700" height="750" src="/images/Personal/{{nameImage}}.jpg">
+					</div>
+					<div class="col-md-6 py-5">
+						<div class="program d-flex ftco-animate fadeInUp ftco-animated flex-end">
+							<div class="icon d-flex mr-lg-3 justify-content-center align-items-center order-lg-last trainer-name-icon">
+								<span class="flaticon-user"></span>
+							</div>
+							<div class="text ml-5 mr-lg-4 text-lg-right">
+								<h1><strong>{{name}}</strong></h1>
+								<p>{{gender}}</p>
+							</div>
+						</div>
+						{% for result in areaOfExpertise %}
+						{% assign areaOfExpertisename = result | rdf_property: "rdfs:label", nil, true %}
+						{% assign areaOfExpertiseComment = result | rdf_property: "rdfs:comment", nil, true %}
+
+						{% assign areaOfExpertiseClassName = areaOfExpertisename | downcase %}
+						{% assign sliceClassName = areaOfExpertiseClassName | slice: 37, 37 %}
+						{% assign className = sliceClassName | split: ">]" %}
+
+						<div class="program d-flex ftco-animate fadeInUp ftco-animated flex-end">
+							<div class="icon d-flex mr-lg-3 justify-content-center align-items-center order-lg-last">
+								<span class="{{className}}"></span>
+							</div>
+							<div class="text ml-5 mr-lg-4 text-lg-right">
+								<h3>{{areaOfExpertisename}}</h3>
+								<p>{{areaOfExpertiseComment}}</p>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endif %}
+
+
+	{% assign trainingLevel = page.rdf | rdf_property: "fitness:trainingLevel", nil, true %}
+	{% if trainingLevel %}
+		<h1>{{ page.rdf | rdf_property: "fitness:trainingLevel" }}</h1>
+	    <dt>Trainings Level:</dt>
+		<dd>{{ page.rdf | rdf_property: "fitness:trainingLevel"}}</dd>
+	{% endif %}
+
+
+<footer>
+	<section id="copyright" class="light_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<i class="far fa-copyright"></i> - Fitnessstudio BRB
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+
+<script src="/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/styles/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
+<script src="/styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

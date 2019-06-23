@@ -1,0 +1,130 @@
+---
+rdf_prefix_path: "_data/prefixes.sparql"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sport Event</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.3.1/css/bootstrap.min.css">
+<link href="plugins/fontawesome-5.9.0/css/all.css" rel="stylesheet" type="text/css">
+<link href="styles/animations.css" rel="stylesheet" type="text/css">
+<link href="styles/main.css" rel="stylesheet" type="text/css">
+<link href="styles/trainer.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<!--Header Difinire-->
+<div id="header-sticky-wrapper" class="sticky-wrapper" style="height: 100px;">
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <a class="navbar-brand" href="/index.html">Fitnessstudio BRB</a>
+                <div class="col-sm-12 mainmenu_wrap">
+                    <div class="main-menu-icon visible-xs">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul id="mainmenu" class="menu sf-menu responsive-menu superfish sf-js-enabled">
+                        <li >
+                            <a href="/index.html">Sport Events</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">Trainers</a>
+                        </li>
+                        <li >
+                            <a href="/raum.html">Räume</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<section id="portfolio" class="darkgrey_section last_content_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="block-header animated fadeInUp"><strong>Trainers</strong></h2>
+            </div>
+        </div>
+        <div class="search-form">
+            <div class="search-form__child">
+                <input id="forSearch" class="form-control" placeholder="Suchen">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+
+            {% capture Trainer_query %}
+            SELECT ?genderTrainer ?nameTrainer ?areaOfExpertiseName ?nameTrainerUrl ?commentTrainer
+            WHERE{
+                ?Trainer a fitness:Trainer;
+                schema:gender ?genderTrainer;
+                schema:name ?nameTrainer;
+                rdfs:comment ?commentTrainer .
+            BIND(REPLACE(STR(?nameTrainer), "\\s", "") AS ?nameTrainerUrl)
+            }
+            {% endcapture %}
+
+            {% assign Trainer = page.rdf | sparql_query: Trainer_query %}
+            {% for row in Trainer %}
+
+            <div class="col-md-6 search">
+                <div class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative trainer-card">
+                    <div class="col-auto d-none d-lg-block">
+                        <img width="250" height="260" src="images/Personal/{{row.nameTrainerUrl}}.jpg" alt="">
+                    </div>
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <h3 class="mb-0"><a href="ns/kursplanung-fitnessstudio/{{row.nameTrainerUrl}}.html">{{row.nameTrainer}}</a></h3>
+                        <div class="mb-1 text-muted">{{row.genderTrainer}}</div>
+                        <p class="card-text mb-auto text-overflow-hidden">{{row.commentTrainer}}</p>
+                        <div>
+
+                            {% capture areaOfExpertise_Query %}
+                            SELECT ?areaOfExpertiseName
+                            WHERE{
+                            fitness:{{row.nameTrainerUrl}} a fitness:Trainer;
+                                fitness:areaOfExpertise [rdfs:label ?areaOfExpertiseName] .
+                            }
+                            {% endcapture %}
+
+                            {% assign areaOfExpertise = page.rdf | sparql_query: areaOfExpertise_Query %}
+
+                            {% for result in areaOfExpertise %}
+                                <a href="ns/kursplanung-fitnessstudio/{{row.nameTrainerUrl}}.html">{{result.areaOfExpertiseName}}</a>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <section id="copyright" class="light_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <i class="far fa-copyright"></i> - Fitnessstudio BRB
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="styles/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
+<script src="styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

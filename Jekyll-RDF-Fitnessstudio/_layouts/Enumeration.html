@@ -1,0 +1,11 @@
+---
+rdf_prefix_path: "_data/prefixes.sparql"
+---
+
+<h1>{{ page.rdf | rdf_property: "rdfs:label" }}</h1>
+{{ page.rdf }}
+
+<dl>
+    <dt>Enumeration Area of Expertise:</dt>
+    <dd>{{ page.rdf | rdf_property: "rdfs:label" }}</dd>
+</dl>

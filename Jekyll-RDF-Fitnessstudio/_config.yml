@@ -1,0 +1,14 @@
+baseurl: ""
+url: "http://th-brandenburg.de/ns/kursplanung-fitnessstudio/"
+
+plugins:
+  - jekyll-rdf
+
+jekyll_rdf:
+  path: "_data/Kursplanung-Fitnessstudio.ttl"
+  default_template: "default"
+  #restriction: "SELECT ?resourceUri WHERE {{ ?resourceUri a <https://schema.org/Place> . } UNION { ?resourceUri a <https://schema.org/Person> . } UNION { ?resourceUri a <https://schema.org/SportsEvent> . } UNION { ?resourceUri a <https://schema.org/Enumeration> . }}"
+  class_template_mappings:
+      "https://schema.org/Place": "Place"
+      "https://schema.org/Person": "Person"
+      "https://schema.org/SportsEvent": "SportsEvent"
