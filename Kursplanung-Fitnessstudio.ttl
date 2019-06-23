@@ -324,8 +324,8 @@ fitness:BauchBeinePoBeginner a schema:SportsEvent ;
 	schema:dayOfWeek "Monday" ;
 	rdfs:comment "Für einen guten Unterkörper." .
 
-fitness:AquaFitnessFortgeschritte a schema:SportsEvent ;
-	schema:name "Aqua Fitness Fortgeschritte" ;
+fitness:AquaFitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Aqua Fitness Fortgeschritten" ;
 	schema:Place fitness:Schwimmhalle ;
 	schema:organizer fitness:DennisSchulz ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
