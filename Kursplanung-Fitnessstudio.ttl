@@ -484,8 +484,8 @@ fitness:YogaFortgeschritten a schema:SportsEvent ;
 	schema:dayOfWeek "Tuesday" ;
 	rdfs:comment "Yoga bietet dir eine Möglichkeit, den Ausgleich für deinen Tag zu finden." .
 
-fitness:Tanzen a schema:SportsEvent ;
-	schema:name "Tanzen" ;
+fitness:TanzenFortgeschritten a schema:SportsEvent ;
+	schema:name "Tanzen Fortgeschritten" ;
 	schema:Place fitness:R101Fitnessraum ;
 	schema:organizer fitness:JenniferFerle ;
 	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
