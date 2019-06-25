@@ -1278,7 +1278,7 @@ a[class*="rounded"]:hover:before, a[class*="rounded"]:before {
 .arrow-right:before{
     display: inline-block;
     padding: 10px 10px 0 0;
-    content: url(/images/gym-equipament.svg);
+    content: url(/Kursplanung-Fitnessstudio/Fitnessstudio-Webseite/ns/kursplanung-fitnessstudio/images/gym-equipament.svg);
     height: 35px;
     width: 35px;
     vertical-align: -8px;
