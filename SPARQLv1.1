@@ -1,0 +1,247 @@
+------------------------------------- Welcher Kurs findet wann und wo statt?------------------------------------------------------------------------
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT ?WoIstKurs ?Standort ?WannFindetKurs ?KursIstAm
+WHERE{
+?ObjectProperty a owl:ObjectProperty;
+ 	rdfs:label ?WoIstKurs;
+    rdfs:range ?Range.
+  FILTER regex (?Standort, "Place")
+    ?Range rdfs:label ?Standort.
+
+ ?DatatypeProperty a owl:DatatypeProperty ;
+    rdfs:label ?WannFindetKurs;
+    rdfs:range ?Date.
+  FILTER regex(?WannFindetKurs, "startDate")
+    
+  ?Date rdfs:label ?KursIstAm.   
+    
+    
+  
+}
+
+LIMIT 25
+
+
+------------------------- 	Wie lange dauert der Kurs?  ------------------------------
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT  ?WieLangeDauertKurs ?KursDauert
+WHERE {
+  ?DatatypeProperty a owl:DatatypeProperty ;
+    rdfs:label ?WieLangeDauertKurs;
+    rdfs:range ?Range;
+ 
+  FILTER regex (?WieLangeDauertKurs, "duration")
+    
+  ?Range rdfs:label ?KursDauert.
+    
+}
+
+
+------------------------- 	Welche Sportausrüstung wird dafür benötigt? ------------------------------
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT  ?WasBenoetigt ?Beneotigt
+WHERE {
+  ?DatatypeProperty a owl:DatatypeProperty ;
+    rdfs:label ?WasBenoetigt;
+    rdfs:range ?Needs.
+  FILTER regex(?WasBenoetigt, "gymEquipment")
+    
+  ?Needs rdfs:label ?Beneotigt.
+}
+LIMIT 25
+
+
+
+------------ Durch wen wird der Kurs organisiert und durchgeführt? Warum ist diese Person fachlich dafür geeignet? ------------------------------------------------------------------------
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT ?WerOrganisiertKurs ?KursOrganisiert ?WarumFachlich ?Begruendung
+WHERE{
+
+ 
+{ ?ObjectProperty a owl:ObjectProperty;
+ 	rdfs:label ?WarumFachlich;
+    rdfs:range ?Expertise.
+  FILTER regex (?WarumFachlich, "area of expertise")
+    ?Expertise rdfs:label ?Begruendung. }
+  UNION {
+   ?ObjectProperty a owl:ObjectProperty;
+ 	rdfs:label ?WerOrganisiertKurs;
+    rdfs:range ?Range.
+  FILTER regex (?WerOrganisiertKurs, "organizer")
+    ?Range rdfs:label ?KursOrganisiert.
+}
+}
+
+LIMIT 25
+
+
+------------------------------------- An welchen Teilnehmerkreis richtet sich der Kurs? -------------------------------------
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT  ?Teilnehmer ?Anforderungen ?AnforderungInfo 
+WHERE {
+  {?DatatypeProperty a owl:DatatypeProperty ;
+    rdfs:label ?Anforderungen;
+    rdfs:range ?Range;
+    rdfs:domain ?Domain.
+  FILTER regex (?Teilnehmer, "Participant")
+    
+  ?Range rdfs:label ?AnforderungInfo.
+    ?Domain rdfs:label ?Teilnehmer.}
+
+UNION {
+  ?DatatypeProperty a owl:DatatypeProperty ;
+    rdfs:label ?Anforderungen;
+    rdfs:range ?Range;
+    
+  FILTER regex (?Anforderungen, "gender")
+    
+  ?Range rdfs:label ?AnforderungInfo.
+   
+}
+
+}
+
+  
+LIMIT 25
+
+
+
+
+http://fbwsvcdev.th-brandenburg.de:8080/fuseki/dataset.html   ###bitte "TestImport" benutzen###
+
+
+
+
+--------- Beispiel eines SportEventes ------
+PREFIX schema: <https://schema.org/>
+PREFIX fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio#>
+
+SELECT ?sportEventName ?locationName ?startDate ?participantGender ?organizerName ?organizerAreaOfExpertise ?endDate ?duration
+WHERE{
+  		?SportsEvent a schema:SportsEvent;
+    		schema:name ?sportEventName ;
+    		schema:Place [schema:name ?locationName] ;
+    		schema:startDate ?startDate;
+    		schema:participant [schema:gender ?participantGender] ;
+    		schema:organizer [schema:name ?organizerName; fitness:areaOfExpertise ?organizerAreaOfExpertise] ;
+			schema:endDate ?endDate ;
+			schema:duration ?duration .
+}
+ Limit 50
+
+
+
+------------------------------------- Welcher Kurs findet wann und wo statt?------------------------------------------------------------------------
+
+PREFIX schema: <https://schema.org/>
+PREFIX fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio#>
+
+SELECT ?sportEventName ?locationName ?startDate ?endDate
+WHERE{
+  		?SportsEvent a schema:SportsEvent;
+    		schema:name ?sportEventName ;
+    		schema:Place [schema:name ?locationName] ;
+    		schema:startDate ?startDate;
+		schema:endDate ?endDate .
+}
+
+------------------------- 	Wie lange dauert der Kurs?  ------------------------------
+
+PREFIX schema: <https://schema.org/>
+PREFIX fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio#>
+
+SELECT ?sportEventName ?locationName ?startDate ?endDate ?duration
+WHERE{
+  		?SportsEvent a schema:SportsEvent;
+    		schema:name ?sportEventName ;
+    		schema:Place [schema:name ?locationName] ;
+    		schema:startDate ?startDate;
+		schema:endDate ?endDate ;
+		schema:duration ?duration .
+}
+
+------------------------- 	Welche Sportausrüstung wird dafür benötigt? ------------------------------
+
+PREFIX schema: <https://schema.org/>
+PREFIX fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio#>
+
+SELECT ?sportEventName ?locationName ?gymEquipment
+WHERE{
+  		?SportsEvent a schema:SportsEvent;
+    		schema:name ?sportEventName ;
+    		schema:Place [schema:name ?locationName; fitness:gymEquipment ?gymEquipment] .
+}
+
+------------ Durch wen wird der Kurs organisiert und durchgeführt? Warum ist diese Person fachlich dafür geeignet? ------------------------------------------------------------------------
+
+
+PREFIX schema: <https://schema.org/>
+PREFIX fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?sportEventName ?locationName ?organizerName ?organizerAreaOfExpertiseName
+WHERE{
+  		?SportsEvent a schema:SportsEvent;
+    		schema:name ?sportEventName ;
+    		schema:Place [schema:name ?locationName] ;
+    		schema:organizer [schema:name ?organizerName; fitness:areaOfExpertise [rdfs:label ?organizerAreaOfExpertiseName]] .
+}
+
+
+------------------------------------- An welchen Teilnehmerkreis richtet sich der Kurs? -------------------------------------
+
+PREFIX schema: <https://schema.org/>
+PREFIX fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio#>
+
+SELECT ?sportEventName ?participantTrainingLevel ?participantGender
+WHERE{
+  		?SportsEvent a schema:SportsEvent;
+    		schema:name ?sportEventName ;
+    		schema:Place [schema:name ?locationName] ;
+    		schema:participant [fitness:trainingLevel ?participantTrainingLevel; schema:gender ?participantGender] .
+}
+

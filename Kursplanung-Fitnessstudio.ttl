@@ -1,0 +1,2535 @@
+<<<<<<< HEAD
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix vidp: <https://bmake.th-brandenburg.de/vidp#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio/> .
+	
+
+### Definition of Re-Used Classes ### 
+schema:Event a owl:Class ;
+			rdfs:label "Event"@en .
+			
+			
+schema:SportsEvent a owl:Class ;
+			rdfs:label "SportsEvent"@en ;
+			rdfs:subClassOf schema:Event .
+			
+								
+schema:Person a owl:Class ;
+			rdfs:label "Person"@en .
+			
+
+schema:Place a owl:Class ;
+			rdfs:label "Place"@en .
+			
+			
+schema:Enumeration a owl:Class ;
+			rdfs:label "Enumeration"@en .			
+			
+schema:Text a rdfs:Class ;
+			rdfs:label "Text"@en .
+
+schema:DayOfWeek a rdfs:Class ;
+			rdfs:label "DayOfWeek"@en .
+
+schema:Time a rdfs:Class ;
+			rdfs:label "Time"@en .
+
+
+### Definition of specific Classes ### 
+fitness:Participant a owl:Class ;
+			rdfs:label "Participant"@en ;
+			rdfs:subClassOf schema:Person .
+
+fitness:Trainer a owl:Class ;
+			rdfs:label "Trainer"@en ;
+			rdfs:subClassOf schema:Person .
+			
+fitness:Expertise a owl:Class ;
+			rdfs:label "Expertise"@en ;
+			rdfs:subClassOf schema:Enumeration .
+			
+
+### Definition of Expertise ###
+fitness:Kampfsport rdf:type owl:NamedIndividual ,
+			fitness:Expertise;
+			rdfs:comment "Kenntnisse über umfängliche Techniken verschiedener Kampfsportarten und -künste.";
+			rdfs:label "Kampfsport"@de .
+			
+fitness:MMA rdf:type owl:NamedIndividual ,
+			fitness:Expertise;
+			rdfs:comment "Kenntnisse sowohl über Bodenkampf, als auch Boxen, Kickboxen und Thaiboxen.";
+			rdfs:label "MMA-Trainer"@en .
+
+fitness:Frauen-Yoga rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über die philosophische Lehre und über zugehörige passende Übungen.";
+			rdfs:label "Frauen-Yoga"@de .
+
+
+fitness:Muskelaufbau rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über die Anatomie des meschlichen Körpers sowie den gezielten Muskelaufbau durch Schaffung entsprechender Reize.";
+			rdfs:label "Muskelaufbau"@de .
+
+fitness:Tanz rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über bekannte Techniken, sowie deren Anwendung anhand von Beispielchoreographien.";
+			rdfs:label "Tanz"@de .
+			
+fitness:Gymnastik rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über gängige Gynastikübungen inklusive zugehöriger Warmup- und Cooldownübungen.";
+			rdfs:label "Gymnastik"@de .
+			
+fitness:Kondition rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse verschiedener Methoden zur Steigerung der Kondition, sowohl mit dem eigenen Körper und mit zugelassenen Geräten.";
+			rdfs:label "Kondition"@de .
+
+fitness:Schwimminstruktor rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Ausbildung als Rettungsschwimmer, sowie Kenntnisse über Übungen im Wasser.";
+			rdfs:label "Schwimminstruktor"@de .
+			
+fitness:Biking rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über den sicheren Einsatz verschiedener Zweirad-/ Fahrradmodelle für Trainingszwecke.";
+			rdfs:label "Biking"@en .
+			
+fitness:Ballsport rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über Techniken und Regeln über in Deutschland populäre Ballsportarten.";
+			rdfs:label "Ballsport"@de .
+			
+fitness:Entspannung rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über Entspannungstechniken mit zugelassenen Hilfsmitteln.";
+			rdfs:label "Entspannung"@de .
+			
+fitness:Stretching rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über verschiedenste Dehnübung zur begleitung verschiedenster Primärsportarten.";
+			rdfs:label "Stretching"@en .
+
+			
+### FITNESS TRAINER ###
+fitness:CristianCananau a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Cristian Cananau" ;
+	rdfs:comment "Cristian hat bereits in der Vergangenheit berufs- und studiumsbegleitend Erfahrung im Sportbereich machen können und ist seit 2016 zugelassener Trainer auf den jeweiligen Fachgebieten.";
+	fitness:areaOfExpertise  fitness:Kampfsport, fitness:Frauen-Yoga,  fitness:Muskelaufbau .
+
+fitness:JenniferFerle a fitness:Trainer ;
+	schema:gender "female" ;
+	schema:name "Jennifer Ferle" ;
+	rdfs:comment "Jennifer tanzt bereits seit ihrer Kindheit und übt ihre sportliche Leidenschaft seit letztem Jahr als vollausgebildete Trainerin aus.";
+	fitness:areaOfExpertise  fitness:Tanz, fitness:Gymnastik,  fitness:Kondition .
+	
+fitness:JuriShyshlin a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Juri Shyshlin" ;
+	rdfs:comment "Juri hat seinen sportlichen Einstieg klassisch durch das morgentliche Joggen gefunden und über die Jahre eine Menge Kondition aufbauen können. Seit 2015 ist er befähigt, Fitnesskurse geben zu dürfen.";
+	fitness:areaOfExpertise fitness:Kondition, fitness:Muskelaufbau .
+	
+fitness:DennisSchulz a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Dennis Schulz" ;
+	rdfs:comment "Dennis war schon immer ein Wasserkind und ist vom Rettungsschwimmer zum Fitnesstrainer auf seinen jeweiligen Fachbereichen gewechselt.";
+	fitness:areaOfExpertise fitness:Schwimminstruktor, fitness:Muskelaufbau .
+	
+fitness:MaxMustermann a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Max Mustermann" ;
+	rdfs:comment "Max fährt gerne Fahrrad und hat sich aufgrund der Liebe zu seinem Hobby vor vier Jahren zum Fitnesstrainer ausbilden lassen.";
+	fitness:areaOfExpertise fitness:Biking, fitness:Kondition, fitness:Muskelaufbau .
+
+fitness:DirkKeller a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Dirk Keller" ;
+	rdfs:comment "Dirk liebt Ballsport, hat eine Amateurkarriere im Basketball hinter sich und gibt seit sieben Jahren entsprechende Fitnesskurse.";
+	fitness:areaOfExpertise fitness:Ballsport, fitness:Muskelaufbau, fitness:Kondition .
+
+fitness:MarkBlume a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Mark Blume" ;
+	rdfs:comment "Mark hält gerne seinen Körper gesund und setzt auf das Motto #KlasseStattMasse. Deshalb ist er primär für die Entspannung nach dem Training und das Stretching zuständig.";
+	fitness:areaOfExpertise fitness:Entspannung, fitness:Stretching, fitness:Muskelaufbau .
+	
+
+###FITNESS PARTICIPANT###
+	
+fitness:BeginnerMale a fitness:Participant ;
+	schema:gender "male";
+	rdfs:comment "Männliche Einsteiger im Fitnessbereich.";
+	fitness:trainingLevel "Beginner" .
+	
+fitness:BeginnerFemale a fitness:Participant ;
+	schema:gender "female" ;
+	rdfs:comment "Weibliche Einsteiger im Fitnessbereich.";
+	fitness:trainingLevel "Beginner" .
+	
+fitness:BeginnerDivers a fitness:Participant ;
+	schema:gender "divers" ;
+	rdfs:comment "Einsteiger im Fitnessbereich, die sich als divers bezeichnen.";
+	fitness:trainingLevel "Beginner" .
+	
+fitness:FortgeschrittenMale a fitness:Participant ;
+	schema:gender "male";
+	rdfs:comment "Männliche Fortgeschrittene im Fitnessbereich.";
+	fitness:trainingLevel "Fortgeschritten" .
+	
+fitness:FortgeschrittenFemale a fitness:Participant ;
+	schema:gender "female" ;
+	rdfs:comment "Weibliche Fortgeschrittene im Fitnessbereich.";
+	fitness:trainingLevel "Fortgeschritten" .
+	
+fitness:FortgeschrittenDivers a fitness:Participant ;
+	schema:gender "divers" ;
+	rdfs:comment "Fortgeschrittene im Fitnessbereich, die sich als divers bezeichnen.";
+	fitness:trainingLevel "Fortgeschritten" .
+
+	
+###PLACE###
+
+fitness:R100Yogaraum a schema:Place ;
+	schema:name "R100 Yogaraum" ;
+	rdfs:comment "Dieser Raum dient vor allem für Yoga-Übungen.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Hanteln", "Langhanteln" .
+	
+fitness:R101Fitnessraum a schema:Place ;
+	schema:name "R101 Fitnessraum" ;
+	rdfs:comment "Dieser Raum wird für verschiedene Fitness-Übungen genutzt.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Hanteln", "Holz-Schwerter", "TRX-Equipment", "Ballett-Stange" .
+	
+fitness:R102Rennbahnraum a schema:Place ;
+	schema:name "R102 Rennbahnraum" ;
+	rdfs:comment "Dieser Raum wird für Racing-Übungen genutzt.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Boxhandschuhe", "Schutzkleidung", "Sportfahrräder", "Hanteln" .
+	
+fitness:R103Springraum a schema:Place ;
+	schema:name "R103 Springraum" ;
+	rdfs:comment "Dieser Raum dient vor allem zum Training des Sprunggelenkes.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Springseile", "Stepper", "Hanteln" .
+	
+fitness:R104Gymnastikraum a schema:Place ;
+	schema:name "R104 Gymnastikraum" ;
+	rdfs:comment "Dieser Raum dient primär zur Ausübung von Gymnastik.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Stepper", "Gummibänder", "Gymnastikbälle", "Langhanteln", "Gewichte" .
+	
+fitness:R105Gymnastikraum2 a schema:Place ;
+	schema:name "R105 Gymnastikraum2" ;
+	rdfs:comment "Dieser Raum dient primär zur Ausübung von Gymnastik.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Kettle-Bälle", "Gewichte", "Hanteln", "Langhanteln", "Gymnastik-Bälle" .
+
+fitness:Schwimmhalle a schema:Place ;
+	schema:name "Schwimmhalle" ;
+	rdfs:comment "Diese Halle wird für Schwimmübungen genutzt.";
+	fitness:gymEquipment "Schwimmnudeln", "Tauchringe", "Gewichte" .
+
+fitness:Outdoor a schema:Place ;
+	schema:name "Outdoor" ;
+	rdfs:comment "Auch draußen kann man Sport treiben :-) .";
+	fitness:gymEquipment "Badminton-Schläger", "Volleybälle", "Outdoor-Hanteln" .
+	
+
+	
+###SPORTEVENT###
+	
+fitness:BodyFitBeginner a schema:SportsEvent ;	
+	schema:name "Body Fit Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Halte deinen Körper fit und spüre das Brennen in jedem Muskel." .
+
+fitness:FunctionalTrainingBeginner a schema:SportsEvent ;
+	schema:name "Functional Training Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Nicht nur pure Muselmasse ist wichtig, man muss auch mit ihr umgehen können." .
+
+fitness:KickboxenFortgeschritten a schema:SportsEvent ;
+	schema:name "Kickboxen Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Kickboxen eignet sich hervorragend, um seine allgemeine Fitness, Kraft und Kondition zu steigern." .
+
+fitness:PilatesBeginner a schema:SportsEvent ;
+	schema:name "Pilates Beginner" ; 
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Dieser Kurs bietet eine sanfte, aber trotzdem sehr wirkungsvolle Trainingsmethode für Körper und Geist." .
+
+fitness:StepAerobicBeginner a schema:SportsEvent ;
+	schema:name "Step Aerobic Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Pepp dich und stepp dich." .
+
+fitness:YogaBeginner a schema:SportsEvent ;
+	schema:name "Yoga Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Yoga bietet dir eine Möglichkeit, den Ausgleich für deinen Tag zu finden." .
+
+fitness:TanzenBeginner a schema:SportsEvent ;
+	schema:name "Tanzen Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Tanzen kann nicht nur toll aussehen, sondern fördert den Körper auf verschiedene Weise." .
+
+fitness:BauchBeinePoBeginner a schema:SportsEvent ;
+	schema:name "Bauch Beine Po Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Für einen guten Unterkörper." .
+
+fitness:AquaFitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Aqua Fitness Fortgeschritten" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Durch gezielte Übungen im Wasser können Museln aufgebaut und die Kondition gesteigert werden." .
+
+fitness:SixpackFortgeschritten a schema:SportsEvent ;
+	schema:name "Sixpack Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Für den Waschbrettbauch." .
+
+fitness:CircleTrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Circle Training Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Verschiedene Übungen für den ganzen Körper." .
+
+fitness:FunktionsgymnastikBeginner a schema:SportsEvent ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:name "Funktionsgymnastik Beginner" ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Funktionsgymnastik bietet eine gute Ergänzung zum Alltag; vor allem wenn man einen Bürojob ausübt." .
+
+fitness:JiuJitsuFortgeschritten a schema:SportsEvent ;
+	schema:name "Jiu Jitsu Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Diese japanische Kampfkunst ist anstregend und erfordert viel Disziplin." .
+
+fitness:SchwimmenFortgeschritten a schema:SportsEvent ;
+	schema:name "Schwimmen Fortgeschritten" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Der klassische Schwimmkurs." .
+
+fitness:ZumbaBeginner a schema:SportsEvent ;
+	schema:name "Zumba Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Verschiedene Koreographien die deinen Köper födern." .
+
+fitness:FatburnerWorkoutBeginner a schema:SportsEvent ;
+	schema:name "Fatburner Workout Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Ideal zum Abnehmen und zum Definieren." .
+
+fitness:PowerfitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Powerfitness Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Intensive Fitnessübungen." .
+
+fitness:BodyshapeBeginner a schema:SportsEvent ;
+	schema:name "Bodyshape Beginner" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Kombination aus effektiven Fitnessübungen für deinen Körper." .
+
+fitness:BodyFitFortgeschritten a schema:SportsEvent ;
+	schema:name "Body Fit Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Halte deinen Körper fit und spüre das Brennen in jedem Muskel." .
+
+fitness:FunctionalTrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Functional Training Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Nicht nur pure Muselmasse ist wichtig, man muss auch mit ihr umgehen können." .
+
+fitness:KickboxenBeginner a schema:SportsEvent ;
+	schema:name "Kickboxen Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Kickboxen eignet sich hervorragend, um seine allgemeine Fitness, Kraft und Kondition zu steigern." .
+
+fitness:PilatesFortgeschritten a schema:SportsEvent ;
+	schema:name "Pilates Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Dieser Kurs bietet eine sanfte, aber trotzdem sehr wirkungsvolle Trainingsmethode für Körper und Geist." .
+
+fitness:StepAerobicFortgeschritten a schema:SportsEvent ;
+	schema:name "Step Aerobic Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Pepp dich und stepp dich." .
+
+fitness:YogaFortgeschritten a schema:SportsEvent ;
+	schema:name "Yoga Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Yoga bietet dir eine Möglichkeit, den Ausgleich für deinen Tag zu finden." .
+
+fitness:TanzenFortgeschritten a schema:SportsEvent ;
+	schema:name "Tanzen Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Tanzen kann nicht nur toll aussehen, sondern fördert den Körper auf verschiedene Weise." .
+
+fitness:BauchBeinePoFortgeschritten a schema:SportsEvent ;
+	schema:name "Bauch Beine Po Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Für einen guten Unterkörper." .
+
+fitness:AquaFitnessBeginner a schema:SportsEvent ;
+	schema:name "Aqua Fitness Beginner" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Durch gezielte Übungen im Wasser können Museln aufgebaut und die Kondition gesteigert werden." .
+
+fitness:SixpackBeginner a schema:SportsEvent ;
+	schema:name "Sixpack Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Für den Waschbrettbauch." .
+
+fitness:CircleTrainingBeginner a schema:SportsEvent ;
+	schema:name "Circle Training Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Verschiedene Übungen für den ganzen Körper." .
+
+fitness:FunktionsgymnastikFortgeschritten a schema:SportsEvent ;
+	schema:name "Funktionsgymnastik Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Funktionsgymnastik bietet eine gute Ergänzung zum Alltag; vor allem wenn man einen Bürojob ausübt." .
+
+fitness:JiuJitsuBeginner a schema:SportsEvent ;
+	schema:name "Jiu Jitsu Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Diese japanische Kampfkunst ist anstregend und erfordert viel Disziplin." .
+
+fitness:SchwimmenBeginner a schema:SportsEvent ;
+	schema:name "Schwimmen Beginner" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Der klassische Schwimmkurs." .
+
+fitness:ZumbaFortgeschritten a schema:SportsEvent ;
+	schema:name "Zumba Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Verschiedene Koreographien die deinen Köper födern." .
+
+fitness:FatburnerWorkoutFortgeschritten a schema:SportsEvent ;
+	schema:name "Fatburner Workout Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Ideal zum Abnehmen und zum Definieren." .
+
+fitness:PowerfitnessBeginner a schema:SportsEvent ;
+	schema:name "Powerfitness Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Intensive Fitnessübungen." .
+
+fitness:BodyshapeFortgeschritten a schema:SportsEvent ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:name "Bodyshape Fortgeschritten" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Kombination aus effektiven Fitnessübungen für deinen Körper." .
+
+fitness:AikidoBeginner a schema:SportsEvent ;
+	schema:name "Aikido Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Diese defensive japanische Kampfkunst eignet sich auch, um Technik und Kondition zu verbessern." .
+
+fitness:BadmintonBeginner a schema:SportsEvent ;
+	schema:name "Badminton Beginner" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Spaß und Spiel kombiniert mit hervorragenden Übungen." .
+
+fitness:BallettBeginner a schema:SportsEvent ;
+	schema:name "Ballett Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Nicht nur zum Spaß. Auch der Gleichgewichtssinn und die Kontrolle über den eigenen Körper werden gefödert." .
+
+fitness:BeachVolleyballBeginner a schema:SportsEvent ;
+	schema:name "Beach Volleyball Beginner" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Beachen im Freien, was will man mehr." .
+
+fitness:DanceAerobicBeginner a schema:SportsEvent ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:name "Dance Aerobic Beginner" ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Kontrolliertes Tanzen, welches den Körper fördert." .
+
+fitness:FigurPurBeginner a schema:SportsEvent ;
+	schema:name "Figur Pur Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Diese Kurs wird von den Teilnehmern mitgestaltet um individuelle Schwachstellen auszugleichen." .
+
+fitness:TRXBeginner a schema:SportsEvent ;
+	schema:name "TRX Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Ganzkörpertraining in Schlingen zur Förderung aller Muselgruppen." .
+
+fitness:BikeIntenseBeginner a schema:SportsEvent ;
+	schema:name "Bike Intense Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Gemeinsamen Fahrradtraining mit HIIT-Ansatz bringt jeden Teilnehmer zum Schwitzen." .
+
+fitness:BikeandClimbBeginner a schema:SportsEvent ;
+	schema:name "Bike & Climb Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Simulationen unterschiedlicher Bergfahrten bringen euch zum Schwitzen." .
+
+fitness:PowercoreBeginner a schema:SportsEvent ;
+	schema:name "Powercore Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Intensives Training der Körpermitte." .
+
+fitness:BikeBasicsBeginner a schema:SportsEvent ;
+	schema:name "BikeBasics Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Fahrradtraining zur Steiegerung der Kondition und der richtigen Körperhaltung." .
+
+fitness:FitnessRunningBeginner a schema:SportsEvent ;
+	schema:name "Fitness Running Beginner" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Neben dem Konditionsaufbau, wird beim FitnessRunning auch die Muskulatur weiterhin stark beansprucht." .
+
+fitness:OutdoorCircuitBeginner a schema:SportsEvent ;
+	schema:name "Outdoor Circuit Beginner" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Das Workout findet als Circletraining im Freien statt und bietet den Teilnehmern abwechslungsreiche Übungen." .
+
+fitness:StrongBackBeginner a schema:SportsEvent ;
+	schema:name "Strong Back Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken" .
+
+fitness:BodyCombatBeginner a schema:SportsEvent ;
+	schema:name "BodyCombat Beginner" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Bodycombat beansprucht die Beine, definiert Arme, Rücken und Schultern und ist ein großartiges Core-Training." .
+
+fitness:CrosstrainingBeginner a schema:SportsEvent ;
+	schema:name "Crosstraining Beginner" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Gleichmäßige Kräftigung möglichst vieler Muskelgruppen, sowie der Aufbau und Stärkung der Kondition aller Kursteilnehmer." .
+
+fitness:GymnasticBeginner a schema:SportsEvent ;
+	schema:name "Gymnastic Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Gymnastik-Übungen trainieren Kraft, Beweglichkeit und Koordination zur Musik." .
+
+fitness:FloatYogaBeginner a schema:SportsEvent ;
+	schema:name "Float Yoga Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Yoga auf dem Wasser stärkt die Körpermitte, deinen Gleichgewichtssinn und die Konzentration." .
+
+fitness:JumpingFitnessBeginner a schema:SportsEvent ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:name "Jumping Fitness Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Mit cooler Musik und Springseilen setzen sich die Kursteilnehmer in Bewegung und stärken ihre Kondition." .
+
+fitness:AquaRunningBeginner a schema:SportsEvent ;
+	schema:name "Aqua Running Beginner" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Gelenkschonendes Laufen für die Kondition unter Wasser." .
+
+fitness:MommyfitBeginner a schema:SportsEvent ;
+	schema:name "Mommyfit Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Für alle werdenden Mütter, die auch während der Schwangerschaft fit bleiben möchten." .
+
+fitness:BodyPumpBeginner a schema:SportsEvent ;
+	schema:name "BodyPump Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Mit Langhanteln wird der gesamte Körper trainiert." .
+
+fitness:HotIronBeginner a schema:SportsEvent ;
+	schema:name "Hot Iron Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Hot Iron ist ein mitreißendes Kraftausdauertraining mit der Langhantel. Für Jeden als Trainingsmöglichkeit geeignet, wenn bei klassischen Kräftigungskursen nicht mehr die gewünschten Trainingseffekte erzielt werden." .
+
+fitness:BodyFightBeginner a schema:SportsEvent ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:name "Body Fight Beginner" ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Als Sportkurs und als gezieltes Training für Selbstverteidigung." .
+
+fitness:LatinoDanceBeginner a schema:SportsEvent ;
+	schema:name "Latino Dance Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Mit heißen Moves und coolen Beats wird den Kursteilnehmern eingeheizt." .
+
+fitness:TaiChiBeginner a schema:SportsEvent ;
+	schema:name "Tai Chi Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Mit Hilfe fernöstlicher Entspannungskunst und Meditation entfliehen Kurstteilnehmer ihrem Alltag." .
+
+fitness:KettleballBeginner a schema:SportsEvent ;
+	schema:name "Kettleball Beginner" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Bei dem Kettleball Kurs wird mit Hilfe von Kettleballs der gesamte Körper trainiert." .
+
+fitness:AthletiCoreBeginner a schema:SportsEvent ;
+	schema:name "AthletiCore Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Es wird eine Stärkung des Rumpfes durch verschiedene athletische Übungen erzielt." .
+
+fitness:FullBodyStretchBeginner a schema:SportsEvent ;
+	schema:name "Full Body Stretch Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Für diejenigen, die gerne ihren Körper durch gezieltes Stretchen entspannen und dehnen wollen." .
+
+fitness:PowerCircleBeginner a schema:SportsEvent ;
+	schema:name "PowerCircle Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Der Kurs richtet sich an alle sportbegeisterten, die ihre Muskulatur stärken und weiter ausbauen wollen" .
+
+fitness:AikidoFortgeschritten a schema:SportsEvent ;
+	schema:name "Aikido Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Diese defensive japanische Kampfkunst eignet sich auch, um Technik und Kondition zu verbessern." .
+
+fitness:BadmintonFortgeschritten a schema:SportsEvent ;
+	schema:name "Badminton Fortgeschritten" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Spaß und Spiel kombiniert mit hervorragenden Übungen." .
+
+fitness:BallettFortgeschritten a schema:SportsEvent ;
+	schema:name "Ballett Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Nicht nur zum Spaß. Auch der Gleichgewichtssinn und die Kontrolle über den eigenen Körper werden gefödert." .
+
+fitness:BeachVolleyballFortgeschritten a schema:SportsEvent ;
+	schema:name "Beach Volleyball Fortgeschritten" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Beachen im Freien, was will man mehr." .
+
+fitness:DanceAerobicFortgeschritten a schema:SportsEvent ;
+	schema:name "Dance Aerobic Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Kontrolliertes Tanzen, welches den Körper fördert." .
+
+fitness:FigurPurFortgeschritten a schema:SportsEvent ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:name "Figur Pur Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Diese Kurs wird von den Teilnehmern mitgestaltet um individuelle Schwachstellen auszugleichen." .
+
+fitness:TRXFortgeschritten a schema:SportsEvent ;
+	schema:name "TRX Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Ganzkörpertraining in Schlingen zur Förderung aller Muselgruppen." .
+
+fitness:BikeIntenseFortgeschritten a schema:SportsEvent ;
+	schema:name "Bike Intense Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Gemeinsamen Fahrradtraining mit HIIT-Ansatz bringt jeden Teilnehmer zum Schwitzen." .
+
+fitness:BikeandClimbFortgeschritten a schema:SportsEvent ;
+	schema:name "Bike & Climb Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Simulationen unterschiedlicher Bergfahrten bringen euch zum Schwitzen." .
+
+fitness:PowercoreFortgeschritten a schema:SportsEvent ;
+	schema:name "Powercore Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Intensives Training der Körpermitte." .
+
+fitness:BikeBasicsFortgeschritten a schema:SportsEvent ;
+	schema:name "BikeBasics Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Fahrradtraining zur Steiegerung der Kondition und der richtigen Körperhaltung." .
+
+fitness:FitnessRunningFortgeschritten a schema:SportsEvent ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Neben dem Konditionsaufbau, wird beim FitnessRunning auch die Muskulatur weiterhin stark beansprucht.";
+	schema:name "Fitness Running Fortgeschritten" .
+
+fitness:OutdoorCircuitFortgeschritten a schema:SportsEvent ;
+	schema:name "Outdoor Circuit Fortgeschritten" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Das Workout findet als Circletraining im Freien statt und bietet den Teilnehmern abwechslungsreiche Übungen." .
+
+fitness:StrongBackFortgeschritten a schema:SportsEvent ;
+	schema:name "Strong Back Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken" .
+
+fitness:BodyCombatFortgeschritten a schema:SportsEvent ;
+	schema:name "BodyCombat Fortgeschritten" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Bodycombat beansprucht die Beine, definiert Arme, Rücken und Schultern und ist ein großartiges Core-Training." .
+
+fitness:CrosstrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Crosstraining Fortgeschritten" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Gleichmäßige Kräftigung möglichst vieler Muskelgruppen, sowie der Aufbau und Stärkung der Kondition aller Kursteilnehmer." .
+
+fitness:GymnasticFortgeschritten a schema:SportsEvent ; 
+	schema:name "Gymnastic Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Gymnastik-Übungen trainieren Kraft, Beweglichkeit und Koordination zur Musik." .
+
+fitness:FloatYogaFortgeschritten a schema:SportsEvent ;
+	schema:name "Float Yoga Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Yoga auf dem Wasser stärkt die Körpermitte, deinen Gleichgewichtssinn und die Konzentration." .
+
+fitness:JumpingFitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Jumping Fitness Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Mit cooler Musik und Springseilen setzen sich die Kursteilnehmer in Bewegung und stärken ihre Kondition." .
+
+fitness:AquaRunningFortgeschritten a schema:SportsEvent ;
+	schema:name "Aqua Running Fortgeschritten" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Gelenkschonendes Laufen für die Kondition unter Wasser." .
+
+fitness:MommyfitFortgeschritten a schema:SportsEvent ;
+	schema:name "Mommyfit Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Für alle werdenden Mütter, die auch während der Schwangerschaft fit bleiben möchten." .
+
+fitness:BodyPumpFortgeschritten a schema:SportsEvent ;
+	schema:name "BodyPump Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Mit Langhanteln wird der gesamte Körper trainiert." .
+
+fitness:HotIronFortgeschritten a schema:SportsEvent ;
+	schema:name "Hot Iron Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Hot Iron ist ein mitreißendes Kraftausdauertraining mit der Langhantel. Für Jeden als Trainingsmöglichkeit geeignet, wenn bei klassischen Kräftigungskursen nicht mehr die gewünschten Trainingseffekte erzielt werden." .
+
+fitness:BodyFightFortgeschritten a schema:SportsEvent ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:name "Body Fight Fortgeschritten" ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Als Sportkurs und als gezieltes Training für Selbstverteidigung." .
+
+fitness:LatinoDanceFortgeschritten a schema:SportsEvent ;
+	schema:name "Latino Dance Fortgeschritten" ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Monday" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	rdfs:comment "Mit heißen Moves und coolen Beats wird den Kursteilnehmern eingeheizt." .
+
+fitness:TaiChiFortgeschritten a schema:SportsEvent ;
+	schema:name "Tai Chi Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Mit Hilfe fernöstlicher Entspannungskunst und Meditation entfliehen Kurstteilnehmer ihrem Alltag." .
+
+fitness:KettleballFortgeschritten	a schema:SportsEvent ;
+	schema:name "Kettleball Fortgeschritten" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Bei dem Kettleball Kurs wird mit Hilfe von Kettleballs der gesamte Körper trainiert." .
+
+fitness:AthletiCoreFortgeschritten a schema:SportsEvent ;
+	schema:name "AthletiCore Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "14:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Es wird eine Stärkung des Rumpfes durch verschiedene athletische Übungen erzielt." .
+
+fitness:FullBodyStretchFortgeschritten	a schema:SportsEvent ;
+	schema:name "Full Body Stretch Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Für diejenigen, die gerne ihren Körper durch gezieltes Stretchen entspannen und dehnen wollen." .
+
+
+fitness:PowerCircleFortgeschritten a schema:SportsEvent ;
+	schema:name "PowerCircle Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Der Kurs richtet sich an alle sportbegeisterten, die ihre Muskulatur stärken und weiter ausbauen wollen" .
+	
+
+	
+### Object properties ###
+schema:participant a owl:ObjectProperty ;
+			rdfs:label "participant"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range fitness:Participant .
+
+schema:organizer a owl:ObjectProperty ;
+			rdfs:label "organizer"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range fitness:Trainer .
+
+
+schema:location a owl:ObjectProperty ;
+			rdfs:label "location"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Place .
+
+fitness:areaOfExpertise a owl:ObjectProperty ;
+			rdfs:label "area of expertise"@en ;
+			rdfs:domain fitness:Trainer ;
+			rdfs:range fitness:Expertise .
+						
+### Datatype Properties ###
+schema:name a owl:DatatypeProperty ;
+			rdfs:label "name"@en ;
+			rdfs:domain [owl:unionOf (schema:Place schema:SportsEvent fitness:Trainer)];
+			rdfs:range schema:Text .
+
+fitness:gymEquipment a owl:DatatypeProperty ;
+			rdfs:label "gymEquipment"@en ;
+			rdfs:domain schema:Place ;
+			rdfs:range schema:Text .
+
+schema:gender a owl:DatatypeProperty ;
+			rdfs:label "gender"@en ;
+			rdfs:domain schema:Person ;
+			rdfs:range schema:Text .
+
+fitness:trainingLevel a owl:DatatypeProperty ;
+			rdfs:label "trainingLevel"@en ;
+			rdfs:domain fitness:Participant ;
+			rdfs:range schema:Text .
+
+schema:dayOfWeek a owl:DatatypeProperty ;
+			rdfs:label "dayOfWeek"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:DayOfWeek .
+
+schema:opens a owl:DatatypeProperty ;
+			rdfs:label "opens"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Time .
+
+schema:closes a owl:DatatypeProperty ;
+			rdfs:label "closes"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Time .
+=======
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix vidp: <https://bmake.th-brandenburg.de/vidp#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix fitness: <http://th-brandenburg.de/ns/kursplanung-fitnessstudio/> .
+	
+
+### Definition of Re-Used Classes ### 
+schema:Event a owl:Class ;
+			rdfs:label "Event"@en .
+			
+			
+schema:SportsEvent a owl:Class ;
+			rdfs:label "SportsEvent"@en ;
+			rdfs:subClassOf schema:Event .
+			
+								
+schema:Person a owl:Class ;
+			rdfs:label "Person"@en .
+			
+
+schema:Place a owl:Class ;
+			rdfs:label "Place"@en .
+			
+			
+schema:Enumeration a owl:Class ;
+			rdfs:label "Enumeration"@en .			
+			
+schema:Text a rdfs:Class ;
+			rdfs:label "Text"@en .
+
+schema:DayOfWeek a rdfs:Class ;
+			rdfs:label "DayOfWeek"@en .
+
+schema:Time a rdfs:Class ;
+			rdfs:label "Time"@en .
+
+
+### Definition of specific Classes ### 
+fitness:Participant a owl:Class ;
+			rdfs:label "Participant"@en ;
+			rdfs:subClassOf schema:Person .
+
+fitness:Trainer a owl:Class ;
+			rdfs:label "Trainer"@en ;
+			rdfs:subClassOf schema:Person .
+			
+fitness:Expertise a owl:Class ;
+			rdfs:label "Expertise"@en ;
+			rdfs:subClassOf schema:Enumeration .
+			
+
+### Definition of Expertise ###
+fitness:Kampfsport rdf:type owl:NamedIndividual ,
+			fitness:Expertise;
+			rdfs:comment "Kenntnisse über umfängliche Techniken verschiedener Kampfsportarten und -künste.";
+			rdfs:label "Kampfsport"@de .
+			
+fitness:MMA rdf:type owl:NamedIndividual ,
+			fitness:Expertise;
+			rdfs:comment "Kenntnisse sowohl über Bodenkampf, als auch Boxen, Kickboxen und Thaiboxen.";
+			rdfs:label "MMA-Trainer"@en .
+
+fitness:Frauen-Yoga rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über die philosophische Lehre und über zugehörige passende Übungen.";
+			rdfs:label "Frauen-Yoga"@de .
+
+
+fitness:Muskelaufbau rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über die Anatomie des meschlichen Körpers sowie den gezielten Muskelaufbau durch Schaffung entsprechender Reize.";
+			rdfs:label "Muskelaufbau"@de .
+
+fitness:Tanz rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über bekannte Techniken, sowie deren Anwendung anhand von Beispielchoreographien.";
+			rdfs:label "Tanz"@de .
+			
+fitness:Gymnastik rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über gängige Gynastikübungen inklusive zugehöriger Warmup- und Cooldownübungen.";
+			rdfs:label "Gymnastik"@de .
+			
+fitness:Kondition rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse verschiedener Methoden zur Steigerung der Kondition, sowohl mit dem eigenen Körper und mit zugelassenen Geräten.";
+			rdfs:label "Kondition"@de .
+
+fitness:Schwimminstruktor rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Ausbildung als Rettungsschwimmer, sowie Kenntnisse über Übungen im Wasser.";
+			rdfs:label "Schwimminstruktor"@de .
+			
+fitness:Biking rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über den sicheren Einsatz verschiedener Zweirad-/ Fahrradmodelle für Trainingszwecke.";
+			rdfs:label "Biking"@en .
+			
+fitness:Ballsport rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über Techniken und Regeln über in Deutschland populäre Ballsportarten.";
+			rdfs:label "Ballsport"@de .
+			
+fitness:Entspannung rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über Entspannungstechniken mit zugelassenen Hilfsmitteln.";
+			rdfs:label "Entspannung"@de .
+			
+fitness:Stretching rdf:type owl:NamedIndividual ,
+			fitness:Expertise ;
+			rdfs:comment "Kenntnisse über verschiedenste Dehnübung zur begleitung verschiedenster Primärsportarten.";
+			rdfs:label "Stretching"@en .
+
+			
+### FITNESS TRAINER ###
+fitness:CristianCananau a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Cristian Cananau" ;
+	rdfs:comment "Cristian hat bereits in der Vergangenheit berufs- und studiumsbegleitend Erfahrung im Sportbereich machen können und ist seit 2016 zugelassener Trainer auf den jeweiligen Fachgebieten.";
+	fitness:areaOfExpertise  fitness:Kampfsport, fitness:Frauen-Yoga,  fitness:Muskelaufbau .
+
+fitness:JenniferFerle a fitness:Trainer ;
+	schema:gender "female" ;
+	schema:name "Jennifer Ferle" ;
+	rdfs:comment "Jennifer tanzt bereits seit ihrer Kindheit und übt ihre sportliche Leidenschaft seit letztem Jahr als vollausgebildete Trainerin aus.";
+	fitness:areaOfExpertise  fitness:Tanz, fitness:Gymnastik,  fitness:Kondition .
+	
+fitness:JuriShyshlin a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Juri Shyshlin" ;
+	rdfs:comment "Juri hat seinen sportlichen Einstieg klassisch durch das morgentliche Joggen gefunden und über die Jahre eine Menge Kondition aufbauen können. Seit 2015 ist er befähigt, Fitnesskurse geben zu dürfen.";
+	fitness:areaOfExpertise fitness:Kondition, fitness:Muskelaufbau .
+	
+fitness:DennisSchulz a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Dennis Schulz" ;
+	rdfs:comment "Dennis war schon immer ein Wasserkind und ist vom Rettungsschwimmer zum Fitnesstrainer auf seinen jeweiligen Fachbereichen gewechselt.";
+	fitness:areaOfExpertise fitness:Schwimminstruktor, fitness:Muskelaufbau .
+	
+fitness:MaxMustermann a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Max Mustermann" ;
+	rdfs:comment "Max fährt gerne Fahrrad und hat sich aufgrund der Liebe zu seinem Hobby vor vier Jahren zum Fitnesstrainer ausbilden lassen.";
+	fitness:areaOfExpertise fitness:Biking, fitness:Kondition, fitness:Muskelaufbau .
+
+fitness:DirkKeller a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Dirk Keller" ;
+	rdfs:comment "Dirk liebt Ballsport, hat eine Amateurkarriere im Basketball hinter sich und gibt seit sieben Jahren entsprechende Fitnesskurse.";
+	fitness:areaOfExpertise fitness:Ballsport, fitness:Muskelaufbau, fitness:Kondition .
+
+fitness:MarkBlume a fitness:Trainer ;
+	schema:gender "male" ;
+	schema:name "Mark Blume" ;
+	rdfs:comment "Mark hält gerne seinen Körper gesund und setzt auf das Motto #KlasseStattMasse. Deshalb ist er primär für die Entspannung nach dem Training und das Stretching zuständig.";
+	fitness:areaOfExpertise fitness:Entspannung, fitness:Stretching, fitness:Muskelaufbau .
+	
+
+###FITNESS PARTICIPANT###
+	
+fitness:BeginnerMale a fitness:Participant ;
+	schema:gender "male";
+	rdfs:comment "Männliche Einsteiger im Fitnessbereich.";
+	fitness:trainingLevel "Beginner" .
+	
+fitness:BeginnerFemale a fitness:Participant ;
+	schema:gender "female" ;
+	rdfs:comment "Weibliche Einsteiger im Fitnessbereich.";
+	fitness:trainingLevel "Beginner" .
+	
+fitness:BeginnerDivers a fitness:Participant ;
+	schema:gender "divers" ;
+	rdfs:comment "Einsteiger im Fitnessbereich, die sich als divers bezeichnen.";
+	fitness:trainingLevel "Beginner" .
+	
+fitness:FortgeschrittenMale a fitness:Participant ;
+	schema:gender "male";
+	rdfs:comment "Männliche Fortgeschrittene im Fitnessbereich.";
+	fitness:trainingLevel "Fortgeschritten" .
+	
+fitness:FortgeschrittenFemale a fitness:Participant ;
+	schema:gender "female" ;
+	rdfs:comment "Weibliche Fortgeschrittene im Fitnessbereich.";
+	fitness:trainingLevel "Fortgeschritten" .
+	
+fitness:FortgeschrittenDivers a fitness:Participant ;
+	schema:gender "divers" ;
+	rdfs:comment "Fortgeschrittene im Fitnessbereich, die sich als divers bezeichnen.";
+	fitness:trainingLevel "Fortgeschritten" .
+
+	
+###PLACE###
+
+fitness:R100Yogaraum a schema:Place ;
+	schema:name "R100 Yogaraum" ;
+	rdfs:comment "Dieser Raum dient vor allem für Yoga-Übungen.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Hanteln", "Langhanteln" .
+	
+fitness:R101Fitnessraum a schema:Place ;
+	schema:name "R101 Fitnessraum" ;
+	rdfs:comment "Dieser Raum wird für verschiedene Fitness-Übungen genutzt.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Hanteln", "Holz-Schwerter", "TRX-Equipment", "Ballett-Stange" .
+	
+fitness:R102Rennbahnraum a schema:Place ;
+	schema:name "R102 Rennbahnraum" ;
+	rdfs:comment "Dieser Raum wird für Racing-Übungen genutzt.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Boxhandschuhe", "Schutzkleidung", "Sportfahrräder", "Hanteln" .
+	
+fitness:R103Springraum a schema:Place ;
+	schema:name "R103 Springraum" ;
+	rdfs:comment "Dieser Raum dient vor allem zum Training des Sprunggelenkes.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Springseile", "Stepper", "Hanteln" .
+	
+fitness:R104Gymnastikraum a schema:Place ;
+	schema:name "R104 Gymnastikraum" ;
+	rdfs:comment "Dieser Raum dient primär zur Ausübung von Gymnastik.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Stepper", "Gummibänder", "Gymnastikbälle", "Langhanteln", "Gewichte" .
+	
+fitness:R105Gymnastikraum2 a schema:Place ;
+	schema:name "R105 Gymnastikraum2" ;
+	rdfs:comment "Dieser Raum dient primär zur Ausübung von Gymnastik.";
+	fitness:gymEquipment "Yoga-Matten", "Musikanlage", "Kettle-Bälle", "Gewichte", "Hanteln", "Langhanteln", "Gymnastik-Bälle" .
+
+fitness:Schwimmhalle a schema:Place ;
+	schema:name "Schwimmhalle" ;
+	rdfs:comment "Diese Halle wird für Schwimmübungen genutzt.";
+	fitness:gymEquipment "Schwimmnudeln", "Tauchringe", "Gewichte" .
+
+fitness:Outdoor a schema:Place ;
+	schema:name "Outdoor" ;
+	rdfs:comment "Auch draußen kann man Sport treiben :-) .";
+	fitness:gymEquipment "Badminton-Schläger", "Volleybälle", "Outdoor-Hanteln" .
+	
+
+	
+###SPORTEVENT###
+	
+fitness:BodyFitBeginner a schema:SportsEvent ;	
+	schema:name "Body Fit Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Halte deinen Körper fit und spüre das Brennen in jedem Muskel." .
+
+fitness:FunctionalTrainingBeginner a schema:SportsEvent ;
+	schema:name "Functional Training Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Nicht nur pure Muselmasse ist wichtig, man muss auch mit ihr umgehen können." .
+
+fitness:KickboxenFortgeschritten a schema:SportsEvent ;
+	schema:name "Kickboxen Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Kickboxen eignet sich hervorragend, um seine allgemeine Fitness, Kraft und Kondition zu steigern." .
+
+fitness:PilatesBeginner a schema:SportsEvent ;
+	schema:name "Pilates Beginner" ; 
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Dieser Kurs bietet eine sanfte, aber trotzdem sehr wirkungsvolle Trainingsmethode für Körper und Geist." .
+
+fitness:StepAerobicBeginner a schema:SportsEvent ;
+	schema:name "Step Aerobic Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Pepp dich und stepp dich." .
+
+fitness:YogaBeginner a schema:SportsEvent ;
+	schema:name "Yoga Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Yoga bietet dir eine Möglichkeit, den Ausgleich für deinen Tag zu finden." .
+
+fitness:TanzenBeginner a schema:SportsEvent ;
+	schema:name "Tanzen Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Tanzen kann nicht nur toll aussehen, sondern fördert den Körper auf verschiedene Weise." .
+
+fitness:BauchBeinePoBeginner a schema:SportsEvent ;
+	schema:name "Bauch Beine Po Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Für einen guten Unterkörper." .
+
+fitness:AquaFitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Aqua Fitness Fortgeschritten" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Durch gezielte Übungen im Wasser können Museln aufgebaut und die Kondition gesteigert werden." .
+
+fitness:SixpackFortgeschritten a schema:SportsEvent ;
+	schema:name "Sixpack Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Für den Waschbrettbauch." .
+
+fitness:CircleTrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Circle Training Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Verschiedene Übungen für den ganzen Körper." .
+
+fitness:FunktionsgymnastikBeginner a schema:SportsEvent ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:name "Funktionsgymnastik Beginner" ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Funktionsgymnastik bietet eine gute Ergänzung zum Alltag; vor allem wenn man einen Bürojob ausübt." .
+
+fitness:JiuJitsuFortgeschritten a schema:SportsEvent ;
+	schema:name "Jiu Jitsu Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Diese japanische Kampfkunst ist anstregend und erfordert viel Disziplin." .
+
+fitness:SchwimmenFortgeschritten a schema:SportsEvent ;
+	schema:name "Schwimmen Fortgeschritten" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Der klassische Schwimmkurs." .
+
+fitness:ZumbaBeginner a schema:SportsEvent ;
+	schema:name "Zumba Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Verschiedene Koreographien die deinen Köper födern." .
+
+fitness:FatburnerWorkoutBeginner a schema:SportsEvent ;
+	schema:name "Fatburner Workout Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Ideal zum Abnehmen und zum Definieren." .
+
+fitness:PowerfitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Powerfitness Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Intensive Fitnessübungen." .
+
+fitness:BodyshapeBeginner a schema:SportsEvent ;
+	schema:name "Bodyshape Beginner" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Kombination aus effektiven Fitnessübungen für deinen Körper." .
+
+fitness:BodyFitFortgeschritten a schema:SportsEvent ;
+	schema:name "Body Fit Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Halte deinen Körper fit und spüre das Brennen in jedem Muskel." .
+
+fitness:FunctionalTrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Functional Training Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Nicht nur pure Muselmasse ist wichtig, man muss auch mit ihr umgehen können." .
+
+fitness:KickboxenBeginner a schema:SportsEvent ;
+	schema:name "Kickboxen Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Kickboxen eignet sich hervorragend, um seine allgemeine Fitness, Kraft und Kondition zu steigern." .
+
+fitness:PilatesFortgeschritten a schema:SportsEvent ;
+	schema:name "Pilates Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Dieser Kurs bietet eine sanfte, aber trotzdem sehr wirkungsvolle Trainingsmethode für Körper und Geist." .
+
+fitness:StepAerobicFortgeschritten a schema:SportsEvent ;
+	schema:name "Step Aerobic Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Pepp dich und stepp dich." .
+
+fitness:YogaFortgeschritten a schema:SportsEvent ;
+	schema:name "Yoga Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Yoga bietet dir eine Möglichkeit, den Ausgleich für deinen Tag zu finden." .
+
+fitness:TanzenFortgeschritten a schema:SportsEvent ;
+	schema:name "Tanzen Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Tanzen kann nicht nur toll aussehen, sondern fördert den Körper auf verschiedene Weise." .
+
+fitness:BauchBeinePoFortgeschritten a schema:SportsEvent ;
+	schema:name "Bauch Beine Po Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Für einen guten Unterkörper." .
+
+fitness:AquaFitnessBeginner a schema:SportsEvent ;
+	schema:name "Aqua Fitness Beginner" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Durch gezielte Übungen im Wasser können Museln aufgebaut und die Kondition gesteigert werden." .
+
+fitness:SixpackBeginner a schema:SportsEvent ;
+	schema:name "Sixpack Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Für den Waschbrettbauch." .
+
+fitness:CircleTrainingBeginner a schema:SportsEvent ;
+	schema:name "Circle Training Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Verschiedene Übungen für den ganzen Körper." .
+
+fitness:FunktionsgymnastikFortgeschritten a schema:SportsEvent ;
+	schema:name "Funktionsgymnastik Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Funktionsgymnastik bietet eine gute Ergänzung zum Alltag; vor allem wenn man einen Bürojob ausübt." .
+
+fitness:JiuJitsuBeginner a schema:SportsEvent ;
+	schema:name "Jiu Jitsu Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Diese japanische Kampfkunst ist anstregend und erfordert viel Disziplin." .
+
+fitness:SchwimmenBeginner a schema:SportsEvent ;
+	schema:name "Schwimmen Beginner" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Der klassische Schwimmkurs." .
+
+fitness:ZumbaFortgeschritten a schema:SportsEvent ;
+	schema:name "Zumba Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Verschiedene Koreographien die deinen Köper födern." .
+
+fitness:FatburnerWorkoutFortgeschritten a schema:SportsEvent ;
+	schema:name "Fatburner Workout Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Ideal zum Abnehmen und zum Definieren." .
+
+fitness:PowerfitnessBeginner a schema:SportsEvent ;
+	schema:name "Powerfitness Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Intensive Fitnessübungen." .
+
+fitness:BodyshapeFortgeschritten a schema:SportsEvent ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:name "Bodyshape Fortgeschritten" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Kombination aus effektiven Fitnessübungen für deinen Körper." .
+
+fitness:AikidoBeginner a schema:SportsEvent ;
+	schema:name "Aikido Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Diese defensive japanische Kampfkunst eignet sich auch, um Technik und Kondition zu verbessern." .
+
+fitness:BadmintonBeginner a schema:SportsEvent ;
+	schema:name "Badminton Beginner" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Spaß und Spiel kombiniert mit hervorragenden Übungen." .
+
+fitness:BallettBeginner a schema:SportsEvent ;
+	schema:name "Ballett Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Nicht nur zum Spaß. Auch der Gleichgewichtssinn und die Kontrolle über den eigenen Körper werden gefödert." .
+
+fitness:BeachVolleyballBeginner a schema:SportsEvent ;
+	schema:name "Beach Volleyball Beginner" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Beachen im Freien, was will man mehr." .
+
+fitness:DanceAerobicBeginner a schema:SportsEvent ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:name "Dance Aerobic Beginner" ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Kontrolliertes Tanzen, welches den Körper fördert." .
+
+fitness:FigurPurBeginner a schema:SportsEvent ;
+	schema:name "Figur Pur Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Diese Kurs wird von den Teilnehmern mitgestaltet um individuelle Schwachstellen auszugleichen." .
+
+fitness:TRXBeginner a schema:SportsEvent ;
+	schema:name "TRX Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Ganzkörpertraining in Schlingen zur Förderung aller Muselgruppen." .
+
+fitness:BikeIntenseBeginner a schema:SportsEvent ;
+	schema:name "Bike Intense Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Gemeinsamen Fahrradtraining mit HIIT-Ansatz bringt jeden Teilnehmer zum Schwitzen." .
+
+fitness:BikeandClimbBeginner a schema:SportsEvent ;
+	schema:name "Bike & Climb Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Simulationen unterschiedlicher Bergfahrten bringen euch zum Schwitzen." .
+
+fitness:PowercoreBeginner a schema:SportsEvent ;
+	schema:name "Powercore Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Intensives Training der Körpermitte." .
+
+fitness:BikeBasicsBeginner a schema:SportsEvent ;
+	schema:name "BikeBasics Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Fahrradtraining zur Steiegerung der Kondition und der richtigen Körperhaltung." .
+
+fitness:FitnessRunningBeginner a schema:SportsEvent ;
+	schema:name "Fitness Running Beginner" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Neben dem Konditionsaufbau, wird beim FitnessRunning auch die Muskulatur weiterhin stark beansprucht." .
+
+fitness:OutdoorCircuitBeginner a schema:SportsEvent ;
+	schema:name "Outdoor Circuit Beginner" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Das Workout findet als Circletraining im Freien statt und bietet den Teilnehmern abwechslungsreiche Übungen." .
+
+fitness:StrongBackBeginner a schema:SportsEvent ;
+	schema:name "Strong Back Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken" .
+
+fitness:BodyCombatBeginner a schema:SportsEvent ;
+	schema:name "BodyCombat Beginner" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Bodycombat beansprucht die Beine, definiert Arme, Rücken und Schultern und ist ein großartiges Core-Training." .
+
+fitness:CrosstrainingBeginner a schema:SportsEvent ;
+	schema:name "Crosstraining Beginner" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Gleichmäßige Kräftigung möglichst vieler Muskelgruppen, sowie der Aufbau und Stärkung der Kondition aller Kursteilnehmer." .
+
+fitness:GymnasticBeginner a schema:SportsEvent ;
+	schema:name "Gymnastic Beginner" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Gymnastik-Übungen trainieren Kraft, Beweglichkeit und Koordination zur Musik." .
+
+fitness:FloatYogaBeginner a schema:SportsEvent ;
+	schema:name "Float Yoga Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Yoga auf dem Wasser stärkt die Körpermitte, deinen Gleichgewichtssinn und die Konzentration." .
+
+fitness:JumpingFitnessBeginner a schema:SportsEvent ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:name "Jumping Fitness Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Mit cooler Musik und Springseilen setzen sich die Kursteilnehmer in Bewegung und stärken ihre Kondition." .
+
+fitness:AquaRunningBeginner a schema:SportsEvent ;
+	schema:name "Aqua Running Beginner" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Gelenkschonendes Laufen für die Kondition unter Wasser." .
+
+fitness:MommyfitBeginner a schema:SportsEvent ;
+	schema:name "Mommyfit Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Für alle werdenden Mütter, die auch während der Schwangerschaft fit bleiben möchten." .
+
+fitness:BodyPumpBeginner a schema:SportsEvent ;
+	schema:name "BodyPump Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Mit Langhanteln wird der gesamte Körper trainiert." .
+
+fitness:HotIronBeginner a schema:SportsEvent ;
+	schema:name "Hot Iron Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Hot Iron ist ein mitreißendes Kraftausdauertraining mit der Langhantel. Für Jeden als Trainingsmöglichkeit geeignet, wenn bei klassischen Kräftigungskursen nicht mehr die gewünschten Trainingseffekte erzielt werden." .
+
+fitness:BodyFightBeginner a schema:SportsEvent ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:name "Body Fight Beginner" ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Als Sportkurs und als gezieltes Training für Selbstverteidigung." .
+
+fitness:LatinoDanceBeginner a schema:SportsEvent ;
+	schema:name "Latino Dance Beginner" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Mit heißen Moves und coolen Beats wird den Kursteilnehmern eingeheizt." .
+
+fitness:TaiChiBeginner a schema:SportsEvent ;
+	schema:name "Tai Chi Beginner" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Mit Hilfe fernöstlicher Entspannungskunst und Meditation entfliehen Kurstteilnehmer ihrem Alltag." .
+
+fitness:KettleballBeginner a schema:SportsEvent ;
+	schema:name "Kettleball Beginner" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Bei dem Kettleball Kurs wird mit Hilfe von Kettleballs der gesamte Körper trainiert." .
+
+fitness:AthletiCoreBeginner a schema:SportsEvent ;
+	schema:name "AthletiCore Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Es wird eine Stärkung des Rumpfes durch verschiedene athletische Übungen erzielt." .
+
+fitness:FullBodyStretchBeginner a schema:SportsEvent ;
+	schema:name "Full Body Stretch Beginner" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Für diejenigen, die gerne ihren Körper durch gezieltes Stretchen entspannen und dehnen wollen." .
+
+fitness:PowerCircleBeginner a schema:SportsEvent ;
+	schema:name "PowerCircle Beginner" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:BeginnerMale, fitness:BeginnerFemale, fitness:BeginnerDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Der Kurs richtet sich an alle sportbegeisterten, die ihre Muskulatur stärken und weiter ausbauen wollen" .
+
+fitness:AikidoFortgeschritten a schema:SportsEvent ;
+	schema:name "Aikido Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Diese defensive japanische Kampfkunst eignet sich auch, um Technik und Kondition zu verbessern." .
+
+fitness:BadmintonFortgeschritten a schema:SportsEvent ;
+	schema:name "Badminton Fortgeschritten" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Monday" ;
+	rdfs:comment "Spaß und Spiel kombiniert mit hervorragenden Übungen." .
+
+fitness:BallettFortgeschritten a schema:SportsEvent ;
+	schema:name "Ballett Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Nicht nur zum Spaß. Auch der Gleichgewichtssinn und die Kontrolle über den eigenen Körper werden gefödert." .
+
+fitness:BeachVolleyballFortgeschritten a schema:SportsEvent ;
+	schema:name "Beach Volleyball Fortgeschritten" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Beachen im Freien, was will man mehr." .
+
+fitness:DanceAerobicFortgeschritten a schema:SportsEvent ;
+	schema:name "Dance Aerobic Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Kontrolliertes Tanzen, welches den Körper fördert." .
+
+fitness:FigurPurFortgeschritten a schema:SportsEvent ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:name "Figur Pur Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Diese Kurs wird von den Teilnehmern mitgestaltet um individuelle Schwachstellen auszugleichen." .
+
+fitness:TRXFortgeschritten a schema:SportsEvent ;
+	schema:name "TRX Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Ganzkörpertraining in Schlingen zur Förderung aller Muselgruppen." .
+
+fitness:BikeIntenseFortgeschritten a schema:SportsEvent ;
+	schema:name "Bike Intense Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Gemeinsamen Fahrradtraining mit HIIT-Ansatz bringt jeden Teilnehmer zum Schwitzen." .
+
+fitness:BikeandClimbFortgeschritten a schema:SportsEvent ;
+	schema:name "Bike & Climb Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Simulationen unterschiedlicher Bergfahrten bringen euch zum Schwitzen." .
+
+fitness:PowercoreFortgeschritten a schema:SportsEvent ;
+	schema:name "Powercore Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Intensives Training der Körpermitte." .
+
+fitness:BikeBasicsFortgeschritten a schema:SportsEvent ;
+	schema:name "BikeBasics Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Fahrradtraining zur Steiegerung der Kondition und der richtigen Körperhaltung." .
+
+fitness:FitnessRunningFortgeschritten a schema:SportsEvent ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Neben dem Konditionsaufbau, wird beim FitnessRunning auch die Muskulatur weiterhin stark beansprucht.";
+	schema:name "Fitness Running Fortgeschritten" .
+
+fitness:OutdoorCircuitFortgeschritten a schema:SportsEvent ;
+	schema:name "Outdoor Circuit Fortgeschritten" ;
+	schema:Place fitness:Outdoor ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Das Workout findet als Circletraining im Freien statt und bietet den Teilnehmern abwechslungsreiche Übungen." .
+
+fitness:StrongBackFortgeschritten a schema:SportsEvent ;
+	schema:name "Strong Back Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Ein funktionales Training, um die Muskulatur des Rückens für den Alltag zu stärken" .
+
+fitness:BodyCombatFortgeschritten a schema:SportsEvent ;
+	schema:name "BodyCombat Fortgeschritten" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Bodycombat beansprucht die Beine, definiert Arme, Rücken und Schultern und ist ein großartiges Core-Training." .
+
+fitness:CrosstrainingFortgeschritten a schema:SportsEvent ;
+	schema:name "Crosstraining Fortgeschritten" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Gleichmäßige Kräftigung möglichst vieler Muskelgruppen, sowie der Aufbau und Stärkung der Kondition aller Kursteilnehmer." .
+
+fitness:GymnasticFortgeschritten a schema:SportsEvent ; 
+	schema:name "Gymnastic Fortgeschritten" ;
+	schema:Place fitness:R101Fitnessraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Gymnastik-Übungen trainieren Kraft, Beweglichkeit und Koordination zur Musik." .
+
+fitness:FloatYogaFortgeschritten a schema:SportsEvent ;
+	schema:name "Float Yoga Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Yoga auf dem Wasser stärkt die Körpermitte, deinen Gleichgewichtssinn und die Konzentration." .
+
+fitness:JumpingFitnessFortgeschritten a schema:SportsEvent ;
+	schema:name "Jumping Fitness Fortgeschritten" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "10:00" ;
+	schema:closes "11:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Mit cooler Musik und Springseilen setzen sich die Kursteilnehmer in Bewegung und stärken ihre Kondition." .
+
+fitness:AquaRunningFortgeschritten a schema:SportsEvent ;
+	schema:name "Aqua Running Fortgeschritten" ;
+	schema:Place fitness:Schwimmhalle ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Gelenkschonendes Laufen für die Kondition unter Wasser." .
+
+fitness:MommyfitFortgeschritten a schema:SportsEvent ;
+	schema:name "Mommyfit Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:DirkKeller ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "13:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Für alle werdenden Mütter, die auch während der Schwangerschaft fit bleiben möchten." .
+
+fitness:BodyPumpFortgeschritten a schema:SportsEvent ;
+	schema:name "BodyPump Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Mit Langhanteln wird der gesamte Körper trainiert." .
+
+fitness:HotIronFortgeschritten a schema:SportsEvent ;
+	schema:name "Hot Iron Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "14:00" ;
+	schema:closes "15:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Hot Iron ist ein mitreißendes Kraftausdauertraining mit der Langhantel. Für Jeden als Trainingsmöglichkeit geeignet, wenn bei klassischen Kräftigungskursen nicht mehr die gewünschten Trainingseffekte erzielt werden." .
+
+fitness:BodyFightFortgeschritten a schema:SportsEvent ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:CristianCananau ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:name "Body Fight Fortgeschritten" ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Als Sportkurs und als gezieltes Training für Selbstverteidigung." .
+
+fitness:LatinoDanceFortgeschritten a schema:SportsEvent ;
+	schema:name "Latino Dance Fortgeschritten" ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Monday" ;
+	schema:Place fitness:R103Springraum ;
+	schema:organizer fitness:JenniferFerle ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	rdfs:comment "Mit heißen Moves und coolen Beats wird den Kursteilnehmern eingeheizt." .
+
+fitness:TaiChiFortgeschritten a schema:SportsEvent ;
+	schema:name "Tai Chi Fortgeschritten" ;
+	schema:Place fitness:R104Gymnastikraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Thursday" ;
+	rdfs:comment "Mit Hilfe fernöstlicher Entspannungskunst und Meditation entfliehen Kurstteilnehmer ihrem Alltag." .
+
+fitness:KettleballFortgeschritten	a schema:SportsEvent ;
+	schema:name "Kettleball Fortgeschritten" ;
+	schema:Place fitness:R105Gymnastikraum2 ;
+	schema:organizer fitness:MaxMustermann ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Bei dem Kettleball Kurs wird mit Hilfe von Kettleballs der gesamte Körper trainiert." .
+
+fitness:AthletiCoreFortgeschritten a schema:SportsEvent ;
+	schema:name "AthletiCore Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:JuriShyshlin ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "12:00" ;
+	schema:closes "14:30" ;
+	schema:dayOfWeek "Friday" ;
+	rdfs:comment "Es wird eine Stärkung des Rumpfes durch verschiedene athletische Übungen erzielt." .
+
+fitness:FullBodyStretchFortgeschritten	a schema:SportsEvent ;
+	schema:name "Full Body Stretch Fortgeschritten" ;
+	schema:Place fitness:R102Rennbahnraum ;
+	schema:organizer fitness:MarkBlume ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "08:00" ;
+	schema:closes "09:30" ;
+	schema:dayOfWeek "Wednesday" ;
+	rdfs:comment "Für diejenigen, die gerne ihren Körper durch gezieltes Stretchen entspannen und dehnen wollen." .
+
+
+fitness:PowerCircleFortgeschritten a schema:SportsEvent ;
+	schema:name "PowerCircle Fortgeschritten" ;
+	schema:Place fitness:R100Yogaraum ;
+	schema:organizer fitness:DennisSchulz ;
+	schema:participant fitness:FortgeschrittenMale, fitness:FortgeschrittenFemale, fitness:FortgeschrittenDivers ;
+	schema:opens "16:00" ;
+	schema:closes "17:30" ;
+	schema:dayOfWeek "Tuesday" ;
+	rdfs:comment "Der Kurs richtet sich an alle sportbegeisterten, die ihre Muskulatur stärken und weiter ausbauen wollen" .
+	
+
+	
+### Object properties ###
+schema:participant a owl:ObjectProperty ;
+			rdfs:label "participant"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range fitness:Participant .
+
+schema:organizer a owl:ObjectProperty ;
+			rdfs:label "organizer"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range fitness:Trainer .
+
+
+schema:location a owl:ObjectProperty ;
+			rdfs:label "location"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Place .
+
+fitness:areaOfExpertise a owl:ObjectProperty ;
+			rdfs:label "area of expertise"@en ;
+			rdfs:domain fitness:Trainer ;
+			rdfs:range fitness:Expertise .
+						
+### Datatype Properties ###
+schema:name a owl:DatatypeProperty ;
+			rdfs:label "name"@en ;
+			rdfs:domain [owl:unionOf (schema:Place schema:SportsEvent fitness:Trainer)];
+			rdfs:range schema:Text .
+
+fitness:gymEquipment a owl:DatatypeProperty ;
+			rdfs:label "gymEquipment"@en ;
+			rdfs:domain schema:Place ;
+			rdfs:range schema:Text .
+
+schema:gender a owl:DatatypeProperty ;
+			rdfs:label "gender"@en ;
+			rdfs:domain schema:Person ;
+			rdfs:range schema:Text .
+
+fitness:trainingLevel a owl:DatatypeProperty ;
+			rdfs:label "trainingLevel"@en ;
+			rdfs:domain fitness:Participant ;
+			rdfs:range schema:Text .
+
+schema:dayOfWeek a owl:DatatypeProperty ;
+			rdfs:label "dayOfWeek"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:DayOfWeek .
+
+schema:opens a owl:DatatypeProperty ;
+			rdfs:label "opens"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Time .
+
+schema:closes a owl:DatatypeProperty ;
+			rdfs:label "closes"@en ;
+			rdfs:domain schema:SportsEvent ;
+			rdfs:range schema:Time .
+>>>>>>> 6119de1ffd1d1bac21c586b1a01c41be3259626f
