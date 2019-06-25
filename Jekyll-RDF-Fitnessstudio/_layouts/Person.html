@@ -8,11 +8,11 @@ rdf_prefix_path: "_data/prefixes.sparql"
 	<title>Trainer</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="ns/kursplanung-fitnessstudio/styles/bootstrap-4.3.1/css/bootstrap.min.css">
-	<link href="ns/kursplanung-fitnessstudio/plugins/fontawesome-5.9.0/css/all.css" rel="stylesheet" type="text/css">
-	<link href="ns/kursplanung-fitnessstudio/styles/animations.css" rel="stylesheet" type="text/css">
-	<link href="ns/kursplanung-fitnessstudio/styles/main.css" rel="stylesheet" type="text/css">
-	<link href="ns/kursplanung-fitnessstudio/styles/trainer.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link href="plugins/fontawesome-5.9.0/css/all.css" rel="stylesheet" type="text/css">
+	<link href="styles/animations.css" rel="stylesheet" type="text/css">
+	<link href="styles/main.css" rel="stylesheet" type="text/css">
+	<link href="styles/trainer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -61,7 +61,7 @@ rdf_prefix_path: "_data/prefixes.sparql"
 						{% assign nameWithoutSpace = name | remove: " " %}
 						{% assign sliceNameUrl = nameWithoutSpace | slice: 36, 36 %}
 						{% assign nameImage = sliceNameUrl | split: ">]" %}
-						<img width="700" height="750" src="ns/kursplanung-fitnessstudio/images/Personal/{{nameImage}}.jpg">
+						<img width="700" height="750" src="images/Personal/{{nameImage}}.jpg">
 					</div>
 					<div class="col-md-6 py-5">
 						<div class="program d-flex ftco-animate fadeInUp ftco-animated flex-end">
@@ -118,9 +118,8 @@ rdf_prefix_path: "_data/prefixes.sparql"
 	</section>
 </footer>
 
-<script src="ns/kursplanung-fitnessstudio/js/jquery-3.3.1.slim.min.js"></script>
-<script src="ns/kursplanung-fitnessstudio/styles/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
-<script src="ns/kursplanung-fitnessstudio/styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
-<script src="ns/kursplanung-fitnessstudio/js/search.js"></script>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="styles/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
+<script src="styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
