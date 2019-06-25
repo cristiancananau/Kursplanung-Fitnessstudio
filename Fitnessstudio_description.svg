@@ -11,7 +11,7 @@
      width="771px"
      height="338px"
      viewBox="0 0 771 338"
-	fill="none"
+     fill="none"
      >
 <title></title>
 <desc>Creator: FreeHEP Graphics2D Driver Producer: org.freehep.graphicsio.svg.SVGGraphics2D Revision Source:  Date: Dienstag, 25. Juni 2019 11:36 Uhr MESZ</desc>
@@ -20,7 +20,7 @@
   <path d="M 0 0 L 771 0 L 771 338 L 0 338 L 0 0 z"/>
 </g> <!-- drawing style -->
 <g transform="matrix(1, 0, 0, 1, -314, -43)">
-<g fill-opacity="1" fill-rule="nonzero" stroke="none" fill="#ffffff">
+<g fill-opacity="1" fill-rule="nonzero" stroke="none" fill="none">
   <path d="M 0 0 L 1127 0 L 1127 426 L 0 426 L 0 0 z"/>
 </g> <!-- drawing style -->
 </g> <!-- transform -->
@@ -285,7 +285,7 @@
 </g> <!-- drawing style -->
 </g> <!-- transform -->
 <g transform="matrix(1, 0, 0, 1, -314, -43)">
-<g fill-opacity="1" fill-rule="nonzero" stroke="none" fill="#ffffff">
+<g fill-opacity="1" fill-rule="nonzero" stroke="none" fill="none">
   <path d="M 583.6435546875 102.203125 L 654.3564453125 102.203125 L 654.3564453125 115.796875 L 583.6435546875 115.796875 L 583.6435546875 102.203125 z"/>
 </g> <!-- drawing style -->
 </g> <!-- transform -->
@@ -320,7 +320,7 @@
 </g> <!-- drawing style -->
 </g> <!-- transform -->
 <g transform="matrix(1, 0, 0, 1, -314, -43)">
-<g fill-opacity="1" fill-rule="nonzero" stroke="none" fill="#ffffff">
+<g fill-opacity="1" fill-rule="nonzero" stroke="none" fill="none">
   <path d="M 598.8974609375 206.203125 L 697.1025390625 206.203125 L 697.1025390625 219.796875 L 598.8974609375 219.796875 L 598.8974609375 206.203125 z"/>
 </g> <!-- drawing style -->
 </g> <!-- transform -->
