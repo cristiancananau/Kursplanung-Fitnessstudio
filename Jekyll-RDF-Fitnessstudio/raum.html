@@ -8,10 +8,10 @@ rdf_prefix_path: "_data/prefixes.sparql"
     <title>Räume</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.3.1/css/bootstrap.min.css">
-    <link href="/plugins/fontawesome-5.9.0/css/all.css" rel="stylesheet" type="text/css">
-    <link href="/styles/animations.css" rel="stylesheet" type="text/css">
-    <link href="/styles/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="ns/kursplanung-fitnessstudio/styles/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link href="ns/kursplanung-fitnessstudio/plugins/fontawesome-5.9.0/css/all.css" rel="stylesheet" type="text/css">
+    <link href="ns/kursplanung-fitnessstudio/styles/animations.css" rel="stylesheet" type="text/css">
+    <link href="ns/kursplanung-fitnessstudio/styles/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@ rdf_prefix_path: "_data/prefixes.sparql"
     <header id="header">
         <div class="container">
             <div class="row">
-                <a class="navbar-brand" href="/index.html">Fitnessstudio BRB</a>
+                <a class="navbar-brand" href="index.html">Fitnessstudio BRB</a>
                 <div class="col-sm-12 mainmenu_wrap">
                     <div class="main-menu-icon visible-xs">
                         <span></span>
@@ -29,10 +29,10 @@ rdf_prefix_path: "_data/prefixes.sparql"
                     </div>
                     <ul id="mainmenu" class="menu sf-menu responsive-menu superfish sf-js-enabled">
                         <li >
-                            <a href="/index.html">Sport Events</a>
+                            <a href="index.html">Sport Events</a>
                         </li>
                         <li class="">
-                            <a href="/trainers.html">Trainers</a>
+                            <a href="trainers.html">Trainers</a>
                         </li>
                         <li class="active">
                             <a href="#">Räume</a>
@@ -72,7 +72,7 @@ rdf_prefix_path: "_data/prefixes.sparql"
             {% for row in places %}
                 <div class="col-sm-6 col-md-3 search">
                     <div class="thumbnail">
-                        <img width="340" height="180" src="images/Place/{{row.placeNameUrl}}.jpg">
+                        <img width="340" height="180" src="ns/kursplanung-fitnessstudioimages/Place/{{row.placeNameUrl}}.jpg">
                         <div class="caption">
                             <h4><a href="ns/kursplanung-fitnessstudio/{{row.placeNameUrl}}.html">{{row.placeName}}</a></h4>
                             <p>{{row.comment}}</p>
@@ -112,9 +112,9 @@ rdf_prefix_path: "_data/prefixes.sparql"
     </section>
 </footer>
 
-<script src="/js/jquery-3.3.1.slim.min.js"></script>
-<script src="/styles/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
-<script src="/styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
-<script src="js/search.js"></script>
+<script src="ns/kursplanung-fitnessstudio/js/jquery-3.3.1.slim.min.js"></script>
+<script src="ns/kursplanung-fitnessstudio/styles/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
+<script src="ns/kursplanung-fitnessstudio/styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+<script src="ns/kursplanung-fitnessstudio/js/search.js"></script>
 </body>
 </html>
