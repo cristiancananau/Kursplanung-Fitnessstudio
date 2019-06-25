@@ -1,0 +1,34 @@
+---
+rdf_prefix_path: "_data/prefixes.sparql"
+---
+
+<h2>Sport Events:</h2>
+    	<ul>
+        {% capture sportEvent_query %}
+
+		SELECT ?sportEventName ?locationName ?startDate ?participantGender ?participantLevel ?organizerName ?endDate ?duration ?forUrl ?organizerUrlName ?locationNameUrl
+		WHERE{
+			?SportsEvent a schema:SportsEvent;
+				schema:name ?sportEventName ;
+				schema:Place [schema:name ?locationName] ;
+				schema:startDate ?startDate;
+				schema:participant [schema:gender ?participantGender; fitness:trainingLevel ?participantLevel] ;
+				schema:organizer [schema:name ?organizerName;] ;
+				schema:endDate ?endDate ;
+				schema:duration ?duration .
+			BIND(REPLACE(STR(?organizerName), "\\s", "") AS ?organizerUrlName)
+			BIND(REPLACE(STR(?locationName), "\\s", "") AS ?locationNameUrl)						
+			BIND(REPLACE(STR(?sportEventName), "\\s", "") AS ?andZeichen) 
+			BIND(REPLACE(STR(?andZeichen), "&", "and") AS ?forUrl)
+		}
+		{% endcapture %}
+		{% assign sportEvents = page.rdf | sparql_query: sportEvent_query %}
+			{% for row in sportEvents %}
+				<li>
+					<a href="ns/kursplanung-fitnessstudio/{{row.forUrl}}.html">{{ row.sportEventName}} {{ row.startDate}} {{ row.endDate}} {{ row.duration}}</a>
+					<a href="ns/kursplanung-fitnessstudio/{{row.locationNameUrl}}.html">{{row.locationName}}</a>
+					<a href="ns/kursplanung-fitnessstudio/{{row.organizerUrlName}}.html">{{ row.organizerName}}</a>
+					<a href="ns/kursplanung-fitnessstudio/{{row.participantLevel}}{{row.participantGender}}.html">{{row.participantLevel}} {{row.participantGender}}</a>
+				</li>
+			{% endfor %}
+    	</ul>

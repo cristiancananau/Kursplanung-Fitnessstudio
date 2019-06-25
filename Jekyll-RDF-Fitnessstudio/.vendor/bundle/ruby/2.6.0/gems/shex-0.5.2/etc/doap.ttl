@@ -1,0 +1,34 @@
+@base <http://rubygems.org/gems/shex> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix ex:   <http://example.org/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rubygems.org/gems/shex> a doap:Project, earl:TestSubject, earl:Software ;
+  doap:name          "ShEx.rb" ;
+  doap:homepage      <http://ruby-rdf.github.com/shex> ;
+  doap:license       <http://creativecommons.org/licenses/publicdomain/> ;
+  doap:shortdesc     "ShEx is a Shape Expression engine for Ruby."@en ;
+  doap:description   "ShEx is an Shape Expression engine for the RDF.rb library suite."@en ;
+  doap:created       "2016-12-09"^^xsd:date ;
+  doap:programming-language "Ruby" ;
+  doap:implements    <http://shex.io/shex-semantics/> ;
+  doap:category      <http://dbpedia.org/resource/Resource_Description_Framework>,
+                     <http://dbpedia.org/resource/Ruby_(programming_language)> ;
+  doap:download-page <http://rubygems.org/gems/shex> ;
+  doap:mailing-list  <http://lists.w3.org/Archives/Public/public-rdf-ruby/> ;
+  doap:bug-database  <http://github.com/ruby-rdf/shex/issues> ;
+  doap:blog          <http://greggkellogg.net/> ;
+  doap:developer     <http://greggkellogg.net/foaf#me> ;
+  doap:maintainer    <http://greggkellogg.net/foaf#me> ;
+  doap:documenter    <http://greggkellogg.net/foaf#me> ;
+  foaf:maker         <http://greggkellogg.net/foaf#me> ;
+  dc:title           "ShEx.rb" ;
+  dc:description     "ShEx is an Shape Expression engine for the RDF.rb library suite."@en ;
+  dc:date            "2016-12-09"^^xsd:date ;
+  dc:creator         <http://greggkellogg.net/foaf#me> ;
+  dc:isPartOf        <http://rubygems.org/gems/rdf> .

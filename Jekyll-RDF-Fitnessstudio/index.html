@@ -1,0 +1,125 @@
+---
+rdf_prefix_path: "_data/prefixes.sparql"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sport Events</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.3.1/css/bootstrap.min.css">
+<link href="plugins/fontawesome-5.9.0/css/all.css" rel="stylesheet" type="text/css">
+<link href="styles/animations.css" rel="stylesheet" type="text/css">
+<link href="styles/main.css" rel="stylesheet" type="text/css">
+<link href="styles/sportevent.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<!--Header Difinire-->
+<div id="header-sticky-wrapper" class="sticky-wrapper" style="height: 100px;">
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <a class="navbar-brand" href="/index.html">Fitnessstudio BRB</a>
+                <div class="col-sm-12 mainmenu_wrap">
+                    <div class="main-menu-icon visible-xs">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul id="mainmenu" class="menu sf-menu responsive-menu superfish sf-js-enabled">
+                        <li class="active">
+                            <a href="#">Sport Events</a>
+                        </li>
+                        <li >
+                            <a href="/trainers.html">Trainers</a>
+                        </li>
+                        <li >
+                            <a href="/raum.html">Räume</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<section id="portfolio" class="darkgrey_section last_content_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="block-header animated fadeInUp"><strong>Sport Events</strong></h2>
+            </div>
+        </div>
+        <div class="search-form">
+            <div class="search-form__child">
+                <input id="forSearch" class="form-control" placeholder="Suchen">
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+
+                {% capture sportEvent_query %}
+                    SELECT ?sportEventName ?opens ?organizerName ?closes ?dayOfWeek ?forUrl ?organizerUrlName ?placeName ?placeNameUrl
+                    WHERE{
+                        ?SportsEvent a schema:SportsEvent;
+                        schema:name ?sportEventName ;
+                        schema:organizer [schema:name ?organizerName;] ;
+                        schema:opens ?opens;
+                        schema:closes ?closes ;
+                        schema:dayOfWeek ?dayOfWeek ;
+                        schema:Place [schema:name ?placeName;] .
+                    BIND(REPLACE(STR(?organizerName), "\\s", "") AS ?organizerUrlName)
+                    BIND(REPLACE(STR(?sportEventName), "\\s", "") AS ?andZeichen)
+                    BIND(REPLACE(STR(?placeName), "\\s", "") AS ?placeNameUrl)
+                    BIND(REPLACE(STR(?andZeichen), "&", "and") AS ?forUrl)
+                    }
+                {% endcapture %}
+                {% assign sportEvents = page.rdf | sparql_query: sportEvent_query %}
+                {% for row in sportEvents %}
+
+                    <div class="col-md-4 search">
+                        <div class="card mb-4 shadow-sm">
+                            <img width="340" height="180" src="images/Kurse/{{row.forUrl}}.jpg" alt="">
+                            <div class="card-body">
+                                <div class="card-body-text">
+                                    <h3><a href="ns/kursplanung-fitnessstudio/{{row.forUrl}}.html">{{row.sportEventName}}</a></h3>
+                                </div>
+                                <div class="classes-description">
+                                    <p class="with-icon date">{{row.dayOfWeek}}</p>
+									<p class="with-icon time">{{row.opens}}-{{row.closes}}</p>
+                                    <p class="with-icon location-arrow"><a href="ns/kursplanung-fitnessstudio/{{row.placeNameUrl}}.html">{{ row.placeName}}</a></p>
+                                    <p class="with-icon person"><a href="ns/kursplanung-fitnessstudio/{{row.organizerUrlName}}.html">{{ row.organizerName}}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <section id="copyright" class="light_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <i class="far fa-copyright"></i> - Fitnessstudio BRB
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="styles/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
+<script src="styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>
