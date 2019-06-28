@@ -75,7 +75,7 @@ jekyll_rdf:
 
 ### Ressourcen Beschränkung und Mapping
 
-Außerdem gibt es die Möglichkeit, in der `_config.yml` die zu generierenden Seiten anhand einer SparQL-Query zu beschränken oder die Ressourcen den Templates zuzuordnen. Z. B. Die Seiten aller Ressourcen, die einen Typ von "https://schema.org/Course" besitzen, werden mit dem Template "course.html" erstellt.
+Außerdem gibt es die Möglichkeit, in der `_config.yml` die zu generierenden Seiten anhand einer SparQL-Query zu beschränken oder die Ressourcen den Templates zuzuordnen. Z. B. Die Seiten aller Ressourcen, die einen Typ von ""https://schema.org/SportsEvent" besitzen, werden mit dem Template "SportsEvent.html" erstellt.
 
 ```yaml
 jekyll_rdf:
