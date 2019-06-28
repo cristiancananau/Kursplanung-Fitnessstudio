@@ -103,24 +103,24 @@ Die Seite wird mit einer Hauptressource aufgebaut, die später als Subjekt für 
 
 Da es mehrere Objekte gibt, wird ein Array zurückgegeben. Um die Werte im Array anzuzeigen, wird eine For-Schleife gebraucht.
 ```
-						{% for result in areaOfExpertise %}
-						{% assign areaOfExpertisename = result | rdf_property: "rdfs:label", nil, true %}
-						{% assign areaOfExpertiseComment = result | rdf_property: "rdfs:comment", nil, true %}
+	{% for result in areaOfExpertise %}
+	{% assign areaOfExpertisename = result | rdf_property: "rdfs:label", nil, true %}
+	{% assign areaOfExpertiseComment = result | rdf_property: "rdfs:comment", nil, true %}
 
-						{% assign areaOfExpertiseClassName = areaOfExpertisename | downcase %}
-						{% assign sliceClassName = areaOfExpertiseClassName | slice: 37, 37 %}
-						{% assign className = sliceClassName | split: ">]" %}
+	{% assign areaOfExpertiseClassName = areaOfExpertisename | downcase %}
+	{% assign sliceClassName = areaOfExpertiseClassName | slice: 37, 37 %}
+	{% assign className = sliceClassName | split: ">]" %}
 
-						<div class="program d-flex ftco-animate fadeInUp ftco-animated flex-end">
-							<div class="icon d-flex mr-lg-3 justify-content-center align-items-center order-lg-last">
-								<span class="{{className}}"></span>
-							</div>
-							<div class="text ml-5 mr-lg-4 text-lg-right">
-								<h3>{{areaOfExpertisename}}</h3>
-								<p>{{areaOfExpertiseComment}}</p>
-							</div>
-						</div>
-						{% endfor %}
+	<div class="program d-flex ftco-animate fadeInUp ftco-animated flex-end">
+		<div class="icon d-flex mr-lg-3 justify-content-center align-items-center order-lg-last">
+			<span class="{{className}}"></span>
+		</div>
+		<div class="text ml-5 mr-lg-4 text-lg-right">
+			<h3>{{areaOfExpertisename}}</h3>
+			<p>{{areaOfExpertiseComment}}</p>
+		</div>
+	</div>
+	{% endfor %}
 ```
 
 ### Ressourcen mit SparQL
