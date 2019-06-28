@@ -4,7 +4,8 @@ https://cananau.github.io/Kursplanung-Fitnessstudio/Fitnessstudio-Webseite/index
 
 # Kursplanung-Fitnessstudio mit Jekyll-RDF
 
-![Kursplanung-Fitnessstudio](https://github.com/Cananau/Kursplanung-Fitnessstudio/bild.png)
+https://cananau.github.io/Kursplanung-Fitnessstudio/Fitnessstudio-Webseite/index.html
+
 
 ## Übersicht
 
