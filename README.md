@@ -1,7 +1,3 @@
-
-https://cananau.github.io/Kursplanung-Fitnessstudio/Fitnessstudio-Webseite/index.html
-
-
 # Kursplanung-Fitnessstudio mit Jekyll-RDF
 
 https://cananau.github.io/Kursplanung-Fitnessstudio/Fitnessstudio-Webseite/index.html
