@@ -47,15 +47,9 @@ Auf Grundlage des visuellen Schemas wurde dieses dann in ein technisches überf�
 Zur Überführung in das technische Modell wurde der kostenfreie rdfEditor genutzt. In diesem konnten zunächst entsprechende Prefixes definiert werden, wie zum Beispiel „@prefix schema: <https://schema.org/> .“ für die Verwendung von Klassennamen von schema.org. 
 
 Mithilfe des OpenRefine-Tools wurden unsere 100 Beispiel Datensätze über jegliche Sportkurse von einer Excel in Turtle übersetzt, sodass diese dann über SPARQL abgefragt werden konnten. 
-Bei der Erstellung der Datensätze wurde auf eine Unterscheidung zwischen "Beginner"-Sportkursen und "Fortgeschrittenen"-Sportkursen unterschieden. 
-
-![Alt text](/ttl_Beginner.png?raw=true "ttl_Beginner")
+Bei der Erstellung der Datensätze wurde auf eine Unterscheidung zwischen "Beginner"-Sportkursen und "Fortgeschrittenen"-Sportkursen geachtet, um so die Differenzierung bei den SPARQL-Abfragen zu gewährleisten. 
 
 ![Alt text](/ttl_fortgeschritten.png?raw=true "ttl_fortgeschritten")
-
-
-
-
 
 
 ## Angewandte Technologien
