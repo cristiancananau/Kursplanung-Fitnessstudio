@@ -49,9 +49,9 @@ Zur Überführung in das technische Modell wurde der kostenfreie rdfEditor genut
 Mithilfe des OpenRefine-Tools wurden unsere 100 Beispiel Datensätze über jegliche Sportkurse von einer Excel in Turtle übersetzt, sodass diese dann über SPARQL abgefragt werden konnten. 
 Bei der Erstellung der Datensätze wurde auf eine Unterscheidung zwischen "Beginner"-Sportkursen und "Fortgeschrittenen"-Sportkursen unterschieden. 
 
-![Alt text](/ttl_beginner.PNG?raw=true "ttl_beginner")
+![Alt text](/ttl_Beginner.png?raw=true "ttl_Beginner")
 
-![Alt text](/ttl_fortgeschritten.PNG?raw=true "ttl_fortgeschritten")
+![Alt text](/ttl_fortgeschritten.png?raw=true "ttl_fortgeschritten")
 
 
 
