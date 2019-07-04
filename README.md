@@ -5,7 +5,7 @@ https://cananau.github.io/Kursplanung-Fitnessstudio/Fitnessstudio-Webseite/index
 ## Übersicht
 Im Rahmen des Moduls "Enterprise Knowledge Engineering" an der Technischen Hochschule Brandenburg wurde eine statische HTML-Seite durch Jekyll-RDF für die Darstellung einnes Wissensgraphen aus dem Bereich Fitnessstudio erstellt. 
 
-![Alt text](/Webseite_Fitnessstudio.png?raw=true "Webseite_Fitnessstudio")
+![Alt text](/Webseite_Fitnessstudio.PNG?raw=true "Webseite_Fitnessstudio")
 
 
 ## Beschreibung
