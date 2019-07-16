@@ -3,7 +3,7 @@
 https://cananau.github.io/Kursplanung-Fitnessstudio/Fitnessstudio-Webseite/index.html
 
 ## Übersicht
-Im Rahmen des Moduls "Enterprise Knowledge Engineering" an der Technischen Hochschule Brandenburg wurde eine statische HTML-Seite durch Jekyll-RDF für die Darstellung einnes Wissensgraphen aus dem Bereich Fitnessstudio erstellt. 
+Im Rahmen des Moduls "Enterprise Knowledge Engineering" an der Technischen Hochschule Brandenburg wurde eine statische HTML-Seite durch Jekyll-RDF für die Darstellung eines Wissensgraphens aus dem Bereich Fitnessstudio erstellt. 
 
 ![Alt text](/Webseite_Fitnessstudio.PNG?raw=true "Webseite_Fitnessstudio")
 
@@ -35,7 +35,7 @@ Zusammenfassend werden für den Nutzer folgende Fragen beantwortet, welche zur i
 
 •	Wie lange dauert der Kurs?
 
-•	Welche Sportausrüstung wird dafür benötigt?
+•	Welche Sportausrüstung wird dafür bereitgestellt?
 
 •	An welchen Teilnehmerkreis richtet sich der Kurs?
 
@@ -115,7 +115,7 @@ Die Seite wird mit einer Hauptressource aufgebaut, die später als Subjekt für 
 
 ### Property mit mehreren Objekten
 
-Da es mehrere Objekte gibt, wird ein Array zurückgegeben. Um die Werte im Array anzuzeigen, wird eine For-Schleife gebraucht. `areaOfExpertise` in ein Array. Mit `for` wird für jeden Element in dem Array durch die Variable `result` ausgegeben. Man kann auch einen anderen Variablenname geben (nicht unbedingt `result`). Man kann in Liquid auch Variablen difinieren "https://shopify.github.io/liquid/tags/variable/". Das kann man in diesem Teil sehen: `{% assign areaOfExpertisename = result | rdf_property: "rdfs:label", nil, true %}`. Die Variable `areaOfExpertisename` beieinhaltet das `"rdfs:label"`. Um die Kleinschreibung einer Variable zu bekommen kann man die Liquidfunktion `downcase` benutzen ("https://shopify.github.io/liquid/filters/downcase/"). Die `slice` Funktion ermöglicht das Schneiden mit einer Grenze (https://shopify.github.io/liquid/filters/slice/).
+Da es mehrere Objekte gibt, wird ein Array zurückgegeben. Um die Werte im Array anzuzeigen, wird eine For-Schleife gebraucht. `areaOfExpertise` in ein Array. Mit `for` wird für jeden Element in dem Array durch die Variable `result` ausgegeben. Man kann auch einen anderen Variablennamen vergeben (nicht unbedingt `result`). Man kann in Liquid auch Variablen definieren "https://shopify.github.io/liquid/tags/variable/". Das kann man in diesem Teil sehen: `{% assign areaOfExpertisename = result | rdf_property: "rdfs:label", nil, true %}`. Die Variable `areaOfExpertisename` beieinhaltet das `"rdfs:label"`. Um die Kleinschreibung einer Variable zu bekommen kann man die Liquidfunktion `downcase` benutzen ("https://shopify.github.io/liquid/filters/downcase/"). Die `slice` Funktion ermöglicht das Schneiden mit einer Grenze (https://shopify.github.io/liquid/filters/slice/).
 
 ```
 	{% for result in areaOfExpertise %}
@@ -140,7 +140,7 @@ Da es mehrere Objekte gibt, wird ein Array zurückgegeben. Um die Werte im Array
 
 ### Ressourcen mit SparQL
 
-Darüber hinaus gibt es die Möglichkeit, die Ressoucen über mehrere verkettete Knoten mit SparQL abzufragen. `?resourceUri` ist hier ein Platzhalter. Mit dem `?resourceUri` kann man das aktuelle Pfad in SparQL als Variable verwenden. Um die Lehrzeilen zu entfernen, wurde in der `BIND` die `REPLACE` Funktionen von einem String (`STR`) verwendet. `BIND(REPLACE(STR(?organizerName), "\\s", "") AS ?organizerNameUrl)`. Mit `"\\s"` werden in einem String alle Lerzeihlen gelöscht und durch `""` ersetzt. Mit `AS` werden diesen Eigenschften unter der Variable `?organizerNameUrl` gespeichert. 
+Darüber hinaus gibt es die Möglichkeit, die Ressoucen über mehrere verkettete Knoten mit SparQL abzufragen. `?resourceUri` ist hier ein Platzhalter. Mit dem `?resourceUri` kann man den aktuellen Pfad in SparQL als Variable verwenden. Um die Lehrzeilen zu entfernen, wurde in der `BIND` die `REPLACE` Funktionen von einem String (`STR`) verwendet. `BIND(REPLACE(STR(?organizerName), "\\s", "") AS ?organizerNameUrl)`. Mit `"\\s"` werden in einem String alle Lerzeihlen gelöscht und durch `""` ersetzt. Mit `AS` werden diesen Eigenschften unter der Variable `?organizerNameUrl` gespeichert. 
 
 ```
   {% assign organizerName = 'SELECT ?organizerName ?placeName ?placeNameUrl ?organizerNameUrl WHERE { ?resourceUri a schema:SportsEvent;  schema:Place [schema:name ?placeName]; schema:organizer [schema:name ?organizerName] .  BIND(REPLACE(STR(?organizerName), "\\s", "") AS ?organizerNameUrl) BIND(REPLACE(STR(?placeName), "\\s", "") AS ?placeNameUrl)}' %}
@@ -154,7 +154,7 @@ Darüber hinaus gibt es die Möglichkeit, die Ressoucen über mehrere verkettete
 
 ### Suchen JS
 
-Wenn das JavaScript-Dokument in dem Browser geladen (`$(document).ready();`) erfolgt die JQuery-Methode `on('keyup')` (https://api.jquery.com/keyup/). Sobald in dem input mit dem Id `forSearch` etwas eingegeben wird, wird der Text als kleingescrieben Text (durch Nutzung der `toLowerCase()`-Methode) unter der Variable `value` deklariert. Die filter-Methode sucht die `search`- Klassen und filtert sie. Die toggle()-Methode verbirgt die Zeile (mit `display: none`), die nicht mit der Suche übereinstimmt.
+Wenn das JavaScript-Dokument in den Browser geladen wird (`$(document).ready();`) erfolgt die JQuery-Methode `on('keyup')` (https://api.jquery.com/keyup/). Sobald in dem input mit der Id `forSearch` etwas eingegeben wird, wird der Text als kleingeschriebener Text (durch Nutzung der `toLowerCase()`-Methode) unter der Variable `value` deklariert. Die filter-Methode sucht die `search`- Klassen und filtert sie. Die toggle()-Methode verbirgt die Zeile (mit `display: none`), die nicht mit der Suche übereinstimmt.
  
  ```
 $(document).ready(function(){
