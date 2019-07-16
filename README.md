@@ -140,7 +140,7 @@ Da es mehrere Objekte gibt, wird ein Array zurückgegeben. Um die Werte im Array
 
 ### Ressourcen mit SparQL
 
-Darüber hinaus gibt es die Möglichkeit, die Ressoucen über mehrere verkettete Knoten mit SparQL abzufragen. `?resourceUri` ist hier ein Platzhalter.
+Darüber hinaus gibt es die Möglichkeit, die Ressoucen über mehrere verkettete Knoten mit SparQL abzufragen. `?resourceUri` ist hier ein Platzhalter. Mit dem `?resourceUri` kann man das aktuelle Pfad in SparQL als Variable verwenden. Um die Lehrzeilen zu entfernen, wurde in der `BIND` die `REPLACE` Funktionen von einem String (`STR`) verwendet. `BIND(REPLACE(STR(?organizerName), "\\s", "") AS ?organizerNameUrl)`. Mit `"\\s"` werden in einem String alle Lerzeihlen gelöscht und durch `""` ersetzt. Mit `AS` werden diesen Eigenschften unter der Variable `?organizerNameUrl` gespeichert. 
 
 ```
   {% assign organizerName = 'SELECT ?organizerName ?placeName ?placeNameUrl ?organizerNameUrl WHERE { ?resourceUri a schema:SportsEvent;  schema:Place [schema:name ?placeName]; schema:organizer [schema:name ?organizerName] .  BIND(REPLACE(STR(?organizerName), "\\s", "") AS ?organizerNameUrl) BIND(REPLACE(STR(?placeName), "\\s", "") AS ?placeNameUrl)}' %}
