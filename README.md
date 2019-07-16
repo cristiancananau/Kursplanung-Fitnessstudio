@@ -154,7 +154,7 @@ Darüber hinaus gibt es die Möglichkeit, die Ressoucen über mehrere verkettete
 
 ### Suchen JS
 
-Beschreibung
+Wenn das JavaScript-Dokument in dem Browser geladen (`$(document).ready();`) erfolgt die JQuery-Methode `on('keyup')` (https://api.jquery.com/keyup/). Sobald in dem input mit dem Id `forSearch` etwas eingegeben wird, wird der Text als kleingescrieben Text (durch Nutzung der `toLowerCase()`-Methode) unter der Variable `value` deklariert. Die filter-Methode sucht die `search`- Klassen und filtert sie. Die toggle()-Methode verbirgt die Zeile (mit `display: none`), die nicht mit der Suche übereinstimmt.
  
  ```
 $(document).ready(function(){
